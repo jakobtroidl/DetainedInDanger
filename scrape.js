@@ -2,7 +2,6 @@ const puppeteer = require('puppeteer');
 const ObjectsToCsv = require('objects-to-csv');
 const CronJob = require('cron').CronJob;
 
-
 async function scrapeICEPage()
 {
     const array = [];
@@ -44,13 +43,11 @@ async function scrapeICEPage()
     await csv.toDisk('data/ice.csv', false);
 }
 
-
-
 const job = new CronJob({
-    // Run at 05:00 Central time, only on weekdays
+    // Run at 07:44 EDT time, every day
     cronTime: '00 44 7 * * *',
     onTick: function() {
-        // Run whatever you like here..
+        // Run ICE scrape
         scrapeICEPage().then(r => console.log("Updated ICE data"));
     },
     start: true,
