@@ -9,7 +9,6 @@
     Mike Bostock, Pie Chart Legend
     http://bl.ocks.org/mbostock/3888852  */
 
-
 //Width and height of map
 var width = 960;
 var height = 500;
@@ -43,11 +42,11 @@ var div = d3.select("body")
     .style("opacity", 0);
 
 // Load in my states data!
-d3.csv("data/states-lived.csv", function(data) {
+d3.csv("states-lived.csv", function(data) {
     color.domain([0,1,2,3]); // setting the range of the input data
 
 // Load GeoJSON data and merge with states data
-    d3.json("data/us-states.json", function(json) {
+    d3.json("us-states.json", function(json) {
 
 // Loop through each state data value in the .csv file
         for (var i = 0; i < data.length; i++) {
@@ -97,7 +96,7 @@ d3.csv("data/states-lived.csv", function(data) {
 
 
 // Map the cities I have lived in!
-        d3.csv("data/cities-lived.csv", function(data) {
+        d3.csv("cities-lived.csv", function(data) {
 
             svg.selectAll("circle")
                 .data(data)
@@ -159,3 +158,27 @@ d3.csv("data/states-lived.csv", function(data) {
     });
 
 });
+
+
+// var dataset = [28, 40, 56, 50, 75, 90, 120, 120, 100];
+// var chartWidth = 500, chartHeight = 300, barPadding = 5;
+// var barWidth = (chartWidth / dataset.length);
+// var svg = d3.select("svg")
+// .attr("width", chartWidth)
+// .attr("height", chartHeight);
+// var barChart = svg.selectAll("rect")
+// .data(dataset)
+//     .enter()
+//     .append("rect")
+// .attr("y", function(d) {
+//     return chartHeight - d
+// })
+// .attr("height", function(d) {
+//     return d;
+// })
+// .attr("width", barWidth - barPadding)
+// .attr("fill", "#F2BF23")
+// .attr("transform", function (d, i) {
+//     var translate = [barWidth * i, 0];
+//     return "translate("+ translate +")";
+// });
