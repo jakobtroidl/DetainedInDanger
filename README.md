@@ -7,3 +7,4 @@
 * navigate to the `/humanrightsfirst-master` folder
 * run `npm install`
 * run `node app.js`
+* you can access the webpage under `http://localhost:3000/` in your browser
