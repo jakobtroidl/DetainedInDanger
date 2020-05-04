@@ -155,6 +155,7 @@ d3.csv("states-lived.csv", function(data) {
             .attr("y", 9)
             .attr("dy", ".35em")
             .text(function(d) { return d; });
+
     });
 
 });
