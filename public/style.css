@@ -1,4 +1,5 @@
 /* On mouse hover, lighten state color */
+
 path:hover {
     fill-opacity: .7;
 }
@@ -22,9 +23,54 @@ body {
     font: 11px sans-serif;
 }
 
-/* Legend Position Style */
+ Legend Position Style
 .legend {
-    position:absolute;
-    left:800px;
-    top:350px;
+    position: relative;
+    left: 800px;
+    top: 350px;
+}
+
+path {
+    stroke:white;
+    stroke-width: 1px;
+}
+
+.county {
+    font: 14px sans-serif;
+    font-weight: bold;
+}
+
+.legend {
+    font-size: 14px;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.legend_title {
+    font-size: 14px;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
+}
+
+div.tooltip {
+    position: relative;
+    left: 75px;
+    text-align: center;
+    height: 16px;
+    padding: 10px;
+    font-size: 14px;
+    background: #FFFFFF;
+    border: 1px solid #989898;
+    pointer-events: none;
+}
+
+p {
+    font-family: 'Proxima Nova', sans-serif;
+    font-size:10px;
+    margin: 20px 0 0 10px;
+}
+
+@media (max-width: 400px) {
+    .d3map {
+        display: none;
+    }
 }
