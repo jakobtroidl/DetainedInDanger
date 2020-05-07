@@ -1,76 +1,50 @@
-/* On mouse hover, lighten state color */
-
-path:hover {
-    fill-opacity: .7;
+.pathOne {
+    fill: steelblue;
+    stroke: steelblue;
 }
 
-/* Style for Custom Tooltip */
 div.tooltip {
     position: absolute;
     text-align: center;
-    width: 60px;
-    height: 28px;
+    width: 12vw;
+    height: 20vh;
     padding: 2px;
     font: 12px sans-serif;
-    background: white;
-    border: 0px;
-    border-radius: 8px;
+    background: rgba(49, 49, 49, 0.51);
+    border: thin solid rgb(14,15,85);
+    border-radius: 5px
+    /*  pointer-events: none;	This line needs to be removed */
+
+}
+
+.background {
+    fill: none;
+    pointer-events: all;
+}
+
+#states {
+    fill: #aaa;
+}
+
+#states .active {
+    display:none;
+}
+
+#state-borders {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
     pointer-events: none;
 }
 
-/* Legend Font Style */
-body {
-    font: 11px sans-serif;
+.county-boundary {
+    fill: #aaa;
+    stroke: #fff;
+    stroke-width: .5px;
 }
 
- Legend Position Style
-.legend {
-    position: relative;
-    left: 800px;
-    top: 350px;
-}
-
-path {
-    stroke:white;
-    stroke-width: 1px;
-}
-
-.county {
-    font: 14px sans-serif;
-    font-weight: bold;
-}
-
-.legend {
-    font-size: 14px;
-    font-family: 'Proxima Nova', sans-serif;
-}
-
-.legend_title {
-    font-size: 14px;
-    font-family: 'Proxima Nova', sans-serif;
-    font-weight: bold;
-}
-
-div.tooltip {
-    position: relative;
-    left: 75px;
-    text-align: center;
-    height: 16px;
-    padding: 10px;
-    font-size: 14px;
-    background: #FFFFFF;
-    border: 1px solid #989898;
-    pointer-events: none;
-}
-
-p {
-    font-family: 'Proxima Nova', sans-serif;
-    font-size:10px;
-    margin: 20px 0 0 10px;
-}
-
-@media (max-width: 400px) {
-    .d3map {
-        display: none;
-    }
+.county-boundary:hover, .state:hover {
+    fill: orange;
 }
