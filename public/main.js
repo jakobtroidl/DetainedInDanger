@@ -36,7 +36,7 @@ function initMainPage(dataArray) {
     //myScatterVis = new scatterVis('scatterDiv', dataArray[1]);
 
     // init brush
-    //myBrushVis = new brushVis('brushDiv', dataArray[0]);
+    myBrushVis = new brushVis('brushDiv', dataArray[0]);
 }
 
 
