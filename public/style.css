@@ -58,6 +58,6 @@ div.tooltip {
     font: 12px sans-serif;
     background: white;
     border: 0px;
-    border-radius: 8px;
+    border-radius: 4px;
     pointer-events: none;
 }
