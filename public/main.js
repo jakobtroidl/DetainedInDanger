@@ -15,7 +15,6 @@ let selectedState = '';
 
 // load data using promises
 let promises = [
-    d3.json("county_us.topojson"),
     d3.csv("data.csv")
 ];
 
@@ -31,13 +30,13 @@ function initMainPage(dataArray) {
     dataSet = dataArray[1];
 
     // init map
-    myMapVis = new mapVis('mapDiv', dataArray[0], dataArray[1]);
+    myMapVis = new mapVis('mapDiv', dataArray[0]);
 
     // init scatter
     //myScatterVis = new scatterVis('scatterDiv', dataArray[1]);
 
     // init brush
-    myBrushVis = new brushVis('brushDiv', dataArray[1]);
+    //myBrushVis = new brushVis('brushDiv', dataArray[0]);
 }
 
 
