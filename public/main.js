@@ -4,7 +4,7 @@
 
 // init global variables
 let myMapVis;
-let myScatterVis;
+//let myScatterVis;
 let myBrushVis;
 
 // init globalDataSets

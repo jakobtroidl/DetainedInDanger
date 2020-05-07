@@ -3,6 +3,7 @@
 * * * * * * * * * * * * * */
 var margin, width, height, active;
 var path, projection, id_name_map, g, svg, rect;
+var div;
 
 // constructor
 mapVis = function(_parentElement, _dataFill) {
@@ -60,6 +61,12 @@ mapVis.prototype.initVis = function() {
         .attr('transform', 'translate('+margin.left+','+margin.top+')')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom);
+
+    // Append Div for tooltip to SVG
+    div = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 };
 
 mapVis.prototype.ready = function(us) {
@@ -97,15 +104,29 @@ mapVis.prototype.ready = function(us) {
             .data(data).enter()
             .append("circle")
             .attr("cx", function (d) {
-                console.log(d);
                 return projection([d.lon, d.lat])[0]; })
             .attr("cy", function (d) {
                 return projection([d.lon, d.lat])[1]; })
             .attr("r", function(d) {
-                return 3;
+                return 4;
             })
             .style("fill", "rgb(217,91,67)")
-            .style("opacity", 0.85);
+            .style("opacity", 0.85)
+            .on("mouseover", function(d) {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.text(d.name)
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+
+            // fade out tooltip on mouse out
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
     });
 
     g.append("path")
