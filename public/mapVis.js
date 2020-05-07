@@ -2,7 +2,7 @@
 *          MapVis          *
 * * * * * * * * * * * * * */
 var margin, width, height, active;
-var path, projection, id_name_map, g;
+var path, projection, id_name_map, g, svg, rect;
 
 // constructor
 mapVis = function(_parentElement, _dataFill) {
@@ -32,13 +32,13 @@ mapVis.prototype.initVis = function() {
     active = d3.select(null);
 
     // init drawing area
-    let svg = d3.select("#" + this.parentElement).append("svg")
+    svg = d3.select("#" + this.parentElement).append("svg")
         .attr('class', 'center-container')
         .attr("width", width)
         .attr("height", height)
         .attr('transform', `translate (${margin.left}, ${margin.top})`);
 
-    svg.append('rect')
+    rect = svg.append('rect')
         .attr('class', 'background center-container')
         .attr('height', height + margin.top + margin.bottom)
         .attr('width', width + margin.left + margin.right)
@@ -59,7 +59,7 @@ mapVis.prototype.initVis = function() {
         .attr('class', 'center-container center-items us-state')
         .attr('transform', 'translate('+margin.left+','+margin.top+')')
         .attr('width', width + margin.left + margin.right)
-        .attr('height', height + margin.top + margin.bottom)
+        .attr('height', height + margin.top + margin.bottom);
 };
 
 mapVis.prototype.ready = function(us) {
@@ -91,11 +91,27 @@ mapVis.prototype.ready = function(us) {
             myBrushVis.wrangleData();
         });
 
+    d3.csv("facilities.csv").then(function(data) {
+    // add circles to g
+        g.selectAll("circle")
+            .data(data).enter()
+            .append("circle")
+            .attr("cx", function (d) {
+                console.log(d);
+                return projection([d.lon, d.lat])[0]; })
+            .attr("cy", function (d) {
+                return projection([d.lon, d.lat])[1]; })
+            .attr("r", function(d) {
+                return 3;
+            })
+            .style("fill", "rgb(217,91,67)")
+            .style("opacity", 0.85);
+    });
+
     g.append("path")
         .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
         .attr("id", "state-borders")
         .attr("d", path);
-
 };
 
 function clicked(d) {
