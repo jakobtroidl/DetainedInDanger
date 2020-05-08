@@ -1,9 +1,9 @@
 /* * * * * * * * * * * * * *
 *          MapVis          *
 * * * * * * * * * * * * * */
-var margin, width, height, active;
-var path, projection, id_name_map, g, svg, rect;
-var div;
+let margin, width, height, active;
+let path, projection, id_name_map, g, svg, rect;
+let div;
 
 // constructor
 mapVis = function(_parentElement, _dataFill) {
