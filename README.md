@@ -1,6 +1,7 @@
 # humanrightsfirst
 
 ## Prerequisites
+* internet connection
 * install node.js and npm. You can downlond both [here](https://www.npmjs.com/get-npm)
 
 ## Get started
