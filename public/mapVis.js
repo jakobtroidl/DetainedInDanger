@@ -3,7 +3,7 @@
 * * * * * * * * * * * * * */
 let margin, width, height, active;
 let path, projection, id_name_map, g, svg, rect;
-let div;
+let div, colorScale;
 
 // constructor
 mapVis = function(_parentElement, _dataFill) {
@@ -25,7 +25,12 @@ mapVis.prototype.initVis = function() {
         });
     });
 
-    this.colorScale = d3.scaleLinear().range(['white', 'steelblue']).domain([0, 100]);
+    //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
+    colorScale = d3.scaleQuantize()
+        .domain([0,50])
+        .range(["#ffffb0", "#ffffbf", "#FEE08B", "#fdae61",
+            "#F46D43", "#D53E4F", "#9E0142"]);
+
 
     margin = {top: 10, right: 10, bottom: 10, left: 10};
     width = $("#" + this.parentElement).width() - margin.left - margin.right;
@@ -110,12 +115,22 @@ mapVis.prototype.ready = function(us) {
             .attr("r", function(d) {
                 return 4;
             })
-            .style("fill", "rgb(217,91,67)")
+            .style("fill", function(d){
+                cases = totalCases[d.name];
+                if (typeof cases !== 'undefined'){
+                    return colorScale(cases);
+                }
+                else {
+                    return "rgb(0,0,0)";
+                }
+
+            })
             .style("opacity", 0.85)
             .on("mouseover", function(d) {
                 div.transition()
                     .duration(200)
                     .style("opacity", .9);
+
                 div.text(d.name)
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
@@ -167,5 +182,4 @@ function reset() {
         .duration(750)
         .style("stroke-width", "1.5px")
         .attr('transform', 'translate('+margin.left+','+margin.top+')');
-
 }

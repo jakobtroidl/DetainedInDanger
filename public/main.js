@@ -9,13 +9,16 @@ let myBrushVis;
 
 // init globalDataSets
 let dataSet;
+let dailyCases;
+let totalCases;
 
 // init global switches
 let selectedState = '';
 
 // load data using promises
 let promises = [
-    d3.csv("data.csv")
+    d3.csv("data.csv"),
+    d3.csv("dailydetentioncases.csv")
 ];
 
 Promise.all(promises)
@@ -24,6 +27,17 @@ Promise.all(promises)
 
 // initMainPage
 function initMainPage(dataArray) {
+
+    dailyCases = dataArray[1];
+    totalCases = [];
+    dailyCases.forEach(function (facility) {
+        let keys = Object.keys(facility);
+        let name = facility[keys[0]];
+        let cumCases = facility[keys.slice(-1)[0]];
+        totalCases[name] = cumCases;
+    });
+
+    console.log(totalCases);
 
     // log data
     console.log(dataArray);
