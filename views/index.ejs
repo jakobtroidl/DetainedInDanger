@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>ICE COVID-19 Information</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -43,10 +44,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!--        </div>-->
 <!--      </div>-->
 <!--    </div>-->
-    <div class="row" style="height: 40vh; background: white; padding: 0;">
+    <div class="row" style="height: 50vh; background: white; padding: 0;">
 <!--      <div class="col-7">-->
 <!--        <div class="row" style="height: 100%">-->
-          <div id="mapDiv" style="height: 100%; width:100%; background: white"></div>
+          <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
 <!--        </div>-->
 <!--      </div>-->
     </div>
@@ -80,13 +81,26 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- END BLOG ENTRIES -->
 </div>
 
-<!-- Introduction menu -->
+
 <div class="w3-col l4">
-  <!-- About Card -->
+  <!-- SPOT FOR BASEBALL CARD GRAPHIC -->
   <div class="w3-card w3-margin w3-margin-top">
     <div class="w3-container w3-white">
-      <h4><b>Data</b></h4>
-      <p>Infographic, regressions, etc. here</p>
+      <!-- my code for baseball card -->
+        <!-- insert graph here --> 
+        <div id="facilitygraphDiv"></div>
+        <!-- insert graph here -->
+        <div class="card-body">
+          <h4 id="facilityname" class="card-title" style="font-size: 1.5vw"><b>Click on a facility on the map for more information</b></h4>
+          <ul class="card-text" style="font-size: 1.25vw; list-style: none; padding-left: 0">
+            <li id="loc"></li>
+            <li id="cases"></li>
+            <li id="detainees"></li>
+            <li id="operator"></li>
+            <li id="newslink" class="card-body text-center"><a href="#" class="card-link" style="color:blue"><b></b></a></li>
+          </ul>
+        </div>
+      <!-- end my code for baseball card -->
     </div>
   </div><hr>
   

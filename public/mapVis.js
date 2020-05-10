@@ -141,7 +141,29 @@ mapVis.prototype.ready = function(us) {
                 div.transition()
                     .duration(500)
                     .style("opacity", 0);
+            })
+
+            // NEED TO ADD BASEBALL CARD APPEARANCE ON MOUSE CLICK //
+            .on("click", function(d) {
+                d3.select("#facilitygraphDiv")
+                // put chosen facility graph here
+                // put chosen facility graph here
+                d3.select("#facilityname")
+                    .text(d.name);
+                d3.select("#loc")
+                    .text("is located in " + d.County + ", " + d.State);
+                d3.select("#detainees")
+                    .text("has " + d['Number current ICE detainees']+ " detainees");
+                d3.select("#operator")
+                    .text("is operated by " + d['Name of Operator']);
+                // need to figure out if-then stuff, esp. if we don't format spreadsheet
+                if (d['Confirmed COVID Cases (ICE) - 5/4'] == "") 
+                    {return d3.select("#cases").text("has 0 confirmed cases")}
+                else 	
+                    {return d3.select("#cases")
+                        .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")};
             });
+            // END BASEBALL CARD CODE //
     });
 
     g.append("path")

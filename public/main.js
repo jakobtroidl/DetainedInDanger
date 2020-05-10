@@ -36,7 +36,7 @@ function initMainPage(dataArray) {
         let cumCases = facility[keys.slice(-1)[0]];
         totalCases[name] = cumCases;
     });
-
+1
     console.log(totalCases);
 
     // log data
