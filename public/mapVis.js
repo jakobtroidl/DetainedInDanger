@@ -26,10 +26,16 @@ mapVis.prototype.initVis = function() {
     });
 
     //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
-    colorScale = d3.scaleQuantize()
-        .domain([0,50])
-        .range(["#ffffb0", "#ffffbf", "#FEE08B", "#fdae61",
-            "#F46D43", "#D53E4F", "#9E0142"]);
+    var array = Object.values(totalCases);
+    array = array.filter(function(el) {
+        return el.length && el==+el;
+//  more comprehensive: return !isNaN(parseFloat(el)) && isFinite(el);
+    });
+    let max_cases = Math.max.apply(Math, array);
+    console.log(max_cases);
+    colorScale = d3.scaleLinear()
+        .domain([0, 40])
+        .range(["#ffffff", "#ff0000"]);
 
 
     margin = {top: 10, right: 10, bottom: 10, left: 10};
@@ -125,6 +131,7 @@ mapVis.prototype.ready = function(us) {
                 }
 
             })
+            .style("stroke", "black")
             .style("opacity", 0.85)
             .on("mouseover", function(d) {
                 div.transition()
