@@ -23,7 +23,7 @@ div.tooltip {
 }
 
 #states {
-    fill: #aaa;
+    fill: #c8c8c8;
 }
 
 #states .active {
@@ -60,4 +60,14 @@ div.tooltip {
     border: 0px;
     border-radius: 4px;
     pointer-events: none;
+}
+.legend {
+    font-size: 14px;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.legend_title {
+    font-size: 14px;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
 }

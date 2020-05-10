@@ -44,7 +44,7 @@ function initMainPage(dataArray) {
     dataSet = dataArray[1];
 
     // init map
-    myMapVis = new mapVis('mapDiv', dataArray[0]);
+    myMapVis = new mapVis('mapDiv', 'mapLegendDiv',  dataArray[0]);
 
     // init scatter
     //myScatterVis = new scatterVis('scatterDiv', dataArray[1]);

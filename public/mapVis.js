@@ -6,8 +6,9 @@ let path, projection, id_name_map, g, svg, rect;
 let div, colorScale;
 
 // constructor
-mapVis = function(_parentElement, _dataFill) {
+mapVis = function(_parentElement, _legendElement,  _dataFill) {
     this.parentElement = _parentElement;
+    this.legendElement = _legendElement;
     this.dataFill = _dataFill;
     this.selectedRegion = [];
 
@@ -26,10 +27,16 @@ mapVis.prototype.initVis = function() {
     });
 
     //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
-    colorScale = d3.scaleQuantize()
-        .domain([0,50])
-        .range(["#ffffb0", "#ffffbf", "#FEE08B", "#fdae61",
-            "#F46D43", "#D53E4F", "#9E0142"]);
+    let array = Object.values(totalCases);
+    array = array.filter(function(el) {
+        return el.length && el==+el;
+//  more comprehensive: return !isNaN(parseFloat(el)) && isFinite(el);
+    });
+    let max_cases = Math.max.apply(Math, array);
+    console.log(max_cases);
+    // colorScale = d3.scaleLinear()
+    //     .domain([0, 40])
+    //     .range(["#ffffff", "#ff0000"]);
 
 
     margin = {top: 10, right: 10, bottom: 10, left: 10};
@@ -72,7 +79,70 @@ mapVis.prototype.initVis = function() {
         .append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
+
+    colorScale = d3.scaleThreshold()
+        .domain([10, 20, 30, 40, 50])
+        .range(["#ffffff", "#ffd5d5", "#ffabab", "#ff8181", "#ff5757", "#ff2d2d", "#ff0000"]);
+
+    this.initLegend();
+
+
 };
+
+mapVis.prototype.initLegend = function(){
+    var ext_color_domain = [0, 10, 20, 30, 40, 50];
+    var legend_labels = ["< 10", "10+", "20+", "30+", "40+", "50+"];
+
+    let leg_margin = {top: 10, right: 10, bottom: 10, left: 10};
+    let leg_width = $("#" + this.legendElement).width() - leg_margin.left - leg_margin.right;
+    let leg_height = $("#" + this.legendElement).height() - leg_margin.top - leg_margin.bottom;
+
+    const leg_svg = d3.select("#" + this.legendElement)
+        .append("svg")
+        .attr('class', 'center-container')
+        .attr("width", leg_width)
+        .attr("height", leg_height)
+        .attr('transform', `translate (${leg_margin.left}, ${leg_margin.top})`);
+
+
+    let legend = leg_svg.selectAll("g.legend")
+        .data(ext_color_domain)
+        .enter().append("g")
+        .attr("class", "legend");
+
+    const ls_w = 73, ls_h = 7;
+
+    legend.append("rect")
+        .attr("x", function (d, i) {
+            return (i * ls_w) + ls_w;
+        })
+        .attr("y", 20)
+        .attr("width", ls_w)
+        .attr("height", ls_h)
+        .style("fill", function (d, i) {
+            return colorScale(d);
+        })
+        .style("stroke", "black");
+
+    legend.append("text")
+        .attr("x", function (d, i) {
+            return (i * ls_w) + ls_w + 10;
+        })
+        .attr("y", 45)
+        .text(function (d, i) {
+            return legend_labels[i];
+        });
+
+    const legend_title = "Number of reported cases";
+
+    leg_svg.append("text")
+        .attr("x", 20)
+        .attr("y", 10)
+        .attr("class", "legend_title")
+        .text(function () {
+            return legend_title
+        });
+}
 
 mapVis.prototype.ready = function(us) {
     g.append("g")
@@ -116,15 +186,20 @@ mapVis.prototype.ready = function(us) {
                 return 4;
             })
             .style("fill", function(d){
-                cases = totalCases[d.name];
-                if (typeof cases !== 'undefined'){
-                    return colorScale(cases);
+                let cases = totalCases[d.name];
+
+                if (cases == ""){ // facilities reporting nothing
+                    return "rgb(120, 120, 120)";
                 }
-                else {
+                else if (typeof cases === 'undefined'){ // facilities not mention by ICE list
                     return "rgb(0,0,0)";
+                }
+                else { // facilities reporting cases
+                    return colorScale(cases);
                 }
 
             })
+            .style("stroke", "black")
             .style("opacity", 0.85)
             .on("mouseover", function(d) {
                 div.transition()
