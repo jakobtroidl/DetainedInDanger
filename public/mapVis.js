@@ -25,7 +25,7 @@ mapVis.prototype.initVis = function() {
             id_name_map.set(d.id, d.name);
         });
     });
-    noReports_color = "rgb(120, 120, 120)";
+    noReports_color = "rgb(128,166,255)";
 
     //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
 //     let array = Object.values(totalCases);
