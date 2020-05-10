@@ -105,7 +105,7 @@ mapVis.prototype.ready = function(us) {
 
     d3.csv("facilities.csv").then(function(data) {
     // add circles to g
-        g.selectAll("circle")
+        g.selectAll("circle") 
             .data(data).enter()
             .append("circle")
             .attr("cx", function (d) {
@@ -153,7 +153,7 @@ mapVis.prototype.ready = function(us) {
                 d3.select("#loc")
                     .text("is located in " + d.County + ", " + d.State);
                 d3.select("#detainees")
-                    .text("has " + d['Number current ICE detainees']+ " detainees");
+                    .text("has " + d['Number current ICE detainees']+ " ICE detainees");
                 d3.select("#operator")
                     .text("is operated by " + d['Name of Operator']);
                 // need to figure out if-then stuff, esp. if we don't format spreadsheet
