@@ -51,6 +51,10 @@ function initMainPage(dataArray) {
 
     // init brush
     myBrushVis = new brushVis('brushDiv', dataArray[0]);
+
+    // init rankingtable?
+    myTableVis = new tableVis('tableDiv', dataArray[0]);
 }
+
 
 

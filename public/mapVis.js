@@ -158,7 +158,7 @@ mapVis.prototype.ready = function(us) {
                     .text("is operated by " + d['Name of Operator']);
                 // need to figure out if-then stuff, esp. if we don't format spreadsheet
                 if (d['Confirmed COVID Cases (ICE) - 5/4'] == "") 
-                    {return d3.select("#cases").text("has 0 confirmed cases")}
+                    {return d3.select("#cases").text("has no reported cases")}
                 else 	
                     {return d3.select("#cases")
                         .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")};
