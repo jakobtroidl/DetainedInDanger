@@ -36,7 +36,7 @@ mapVis.prototype.initVis = function() {
 //     let max_cases = Math.max.apply(Math, array);
 
 
-    margin = {top: 10, right: 10, bottom: 10, left: 10};
+    margin = {top: 1, right: 10, bottom: 5, left: 10};
     width = $("#" + this.parentElement).width() - margin.left - margin.right;
     height = $("#" + this.parentElement).height() - margin.top - margin.bottom;
     active = d3.select(null);
