@@ -3,7 +3,7 @@
 * * * * * * * * * * * * * */
 let margin, width, height, active;
 let path, projection, id_name_map, g, svg, rect;
-let div, colorScale;
+let div, colorScale, noReports_color;
 
 // constructor
 mapVis = function(_parentElement, _legendElement,  _dataFill) {
@@ -25,18 +25,15 @@ mapVis.prototype.initVis = function() {
             id_name_map.set(d.id, d.name);
         });
     });
+    noReports_color = "rgb(120, 120, 120)";
 
     //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
-    let array = Object.values(totalCases);
-    array = array.filter(function(el) {
-        return el.length && el==+el;
-//  more comprehensive: return !isNaN(parseFloat(el)) && isFinite(el);
-    });
-    let max_cases = Math.max.apply(Math, array);
-    console.log(max_cases);
-    // colorScale = d3.scaleLinear()
-    //     .domain([0, 40])
-    //     .range(["#ffffff", "#ff0000"]);
+//     let array = Object.values(totalCases);
+//     array = array.filter(function(el) {
+//         return el.length && el==+el;
+// //  more comprehensive: return !isNaN(parseFloat(el)) && isFinite(el);
+//     });
+//     let max_cases = Math.max.apply(Math, array);
 
 
     margin = {top: 10, right: 10, bottom: 10, left: 10};
@@ -92,6 +89,7 @@ mapVis.prototype.initVis = function() {
 mapVis.prototype.initLegend = function(){
     var ext_color_domain = [0, 10, 20, 30, 40, 50];
     var legend_labels = ["< 10", "10+", "20+", "30+", "40+", "50+"];
+    var no_reports_label = "no reports";
 
     let leg_margin = {top: 10, right: 10, bottom: 10, left: 10};
     let leg_width = $("#" + this.legendElement).width() - leg_margin.left - leg_margin.right;
@@ -132,6 +130,19 @@ mapVis.prototype.initLegend = function(){
         .text(function (d, i) {
             return legend_labels[i];
         });
+
+    legend.append("rect")
+        .attr("x", ls_w)
+        .attr("y", 60)
+        .attr("width", ls_w)
+        .attr("height", ls_h)
+        .style("fill", noReports_color)
+        .style("stroke", "black");
+
+    legend.append("text")
+        .attr("x", 2 * ls_w + 5)
+        .attr("y", 67)
+        .text(no_reports_label);
 
     const legend_title = "Number of reported cases";
 
@@ -183,13 +194,24 @@ mapVis.prototype.ready = function(us) {
             .attr("cy", function (d) {
                 return projection([d.lon, d.lat])[1]; })
             .attr("r", function(d) {
-                return 4;
+                let cases = totalCases[d.name];
+
+                if (cases == ""){ // facilities reporting nothing
+                    return 4;
+                }
+                else if (typeof cases === 'undefined'){ // facilities not mention by ICE list
+                    return 4;
+                }
+                else { // facilities reporting cases
+                    //return cases;
+                    return 4;
+                }
             })
             .style("fill", function(d){
                 let cases = totalCases[d.name];
 
                 if (cases == ""){ // facilities reporting nothing
-                    return "rgb(120, 120, 120)";
+                    return noReports_color;
                 }
                 else if (typeof cases === 'undefined'){ // facilities not mention by ICE list
                     return "rgb(0,0,0)";
