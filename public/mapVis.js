@@ -244,6 +244,7 @@ mapVis.prototype.ready = function(us) {
             .on("click", function(d) {
                 d3.select("#facilitygraphDiv")
                 // put chosen facility graph here
+                myBrushVis.wrangleData();
                 // put chosen facility graph here
                 d3.select("#facilityname")
                     .text(d.name);
@@ -258,8 +259,8 @@ mapVis.prototype.ready = function(us) {
                     {return d3.select("#cases").text("has no reported cases")}
                 else 	
                     {return d3.select("#cases")
-                        .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")};
-            });
+                        .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")}
+                    });
             // END BASEBALL CARD CODE //
     });
 
