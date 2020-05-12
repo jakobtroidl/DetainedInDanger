@@ -172,17 +172,17 @@ mapVis.prototype.ready = function(us) {
         .enter().append("path")
         .attr("d", path)
         .attr("class", "state")
-        .on("click", clicked)
-        .on('mouseover', function(d){
-            let id = d.id + "000";
-            selectedState = id_name_map.get(id);
-            myBrushVis.wrangleData();
-        })
-        .on('mouseout', function(d){
-            // reset selectedState
-            selectedState = '';
-            myBrushVis.wrangleData();
-        });
+        .on("click", clicked);
+        // .on('mouseover', function(d){
+        //     let id = d.id + "000";
+        //     selectedState = id_name_map.get(id);
+        //     myBrushVis.wrangleData();
+        // })
+        // .on('mouseout', function(d){
+        //     // reset selectedState
+        //     selectedState = '';
+        //     myBrushVis.wrangleData();
+        // });
 
     d3.csv("facilities.csv").then(function(data) {
     // add circles to g
@@ -242,7 +242,7 @@ mapVis.prototype.ready = function(us) {
 
             // NEED TO ADD BASEBALL CARD APPEARANCE ON MOUSE CLICK //
             .on("click", function(d) {
-                d3.select("#facilitygraphDiv")
+                selectedCenter = d.name;
                 // put chosen facility graph here
                 myBrushVis.wrangleData();
                 // put chosen facility graph here

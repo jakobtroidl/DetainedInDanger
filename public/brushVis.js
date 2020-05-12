@@ -34,7 +34,7 @@ brushVis.prototype.initVis = function() {
     vis.svg.append('g')
         .attr('class', 'title')
         .append('text')
-        .text('Title for Timeline')
+        .text('Covid-19 Cases Over Time in')
         .attr('transform', `translate(${vis.width/2}, -20)`)
         .attr('text-anchor', 'middle');
 
@@ -135,7 +135,7 @@ brushVis.prototype.wrangleData = function(){
     vis.displayData = [];
 
     // iterate over filteredData and gab only selected States
-    if (selectedState === '') {
+    if (selectedCenter === '') {
         vis.filteredData.forEach(d => {
             vis.displayData.push(d);
         })
@@ -170,7 +170,7 @@ brushVis.prototype.updateVis = function() {
         .attr("clip-path", "url(#clip)");
 
     // draw pathTwo if selectedState
-    if (selectedState !== ''){
+    if (selectedCenter !== ''){
         vis.pathTwo.datum(vis.displayData)
             .transition().duration(400)
             .attr('fill', 'rgba(255,0,0,0.47)')
