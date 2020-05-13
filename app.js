@@ -20,8 +20,8 @@ app.get('/', function (req, res)
     const day = latestUpdate.getDate();
     const month = latestUpdate.toLocaleString('default', { month: 'long' });
     const year = latestUpdate.getFullYear();
-
     let out = month + " " + day + " " + year;
+
     res.render("index", {latestUpdate: out});
 });
 
@@ -97,19 +97,19 @@ async function scrapeICEPage()
     await csv.toDisk('data/dailydetentioncases.csv', false);
 }
 
-//scrapeICEPage();
+scrapeICEPage();
 
 
-const job = new CronJob({
-    // Run at 15:05 EDT time, every day
-    cronTime: '00 00 06 * * *',
-    onTick: function() {
-        // Run ICE scrape
-        scrapeICEPage().then(r => console.log("Updated dailydetentioncases.csv"));
-    },
-    start: true,
-    timeZone: 'America/New_York'
-});
+// const job = new CronJob({
+//     // Run at 15:05 EDT time, every day
+//     cronTime: '00 00 06 * * *',
+//     onTick: function() {
+//         // Run ICE scrape
+//         scrapeICEPage().then(r => console.log("Updated dailydetentioncases.csv"));
+//     },
+//     start: true,
+//     timeZone: 'America/New_York'
+// });
 
 //app.listen(process.env.PORT, process.env.IP);
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
