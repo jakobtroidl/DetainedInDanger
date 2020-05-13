@@ -295,7 +295,7 @@ mapVis.prototype.ready = function(us) {
         .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
         .attr("id", "state-borders")
         .attr("d", path);
-};
+}
 
 function clicked(d) {
     if (d3.select('.background').node() === this) return reset;
