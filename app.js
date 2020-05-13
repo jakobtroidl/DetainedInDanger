@@ -4,20 +4,22 @@ const csv_loader = require('csv-load-sync');
 const csv_writer = require('objects-to-csv');
 const CronJob = require('cron').CronJob;
 
-const app = express()
-const port = 5000
+const app = express();
+const port = 5000;
 
 app.use(express.static("public"));
 app.use(express.static("data"));
 app.set("view engine", "ejs");
 
+let data = csv_loader('data/dailydetentioncases.csv');
+
 app.get('/', function (req, res)
 {
-    //TODO actually send the correct date
-    let today = new Date();
-    const day = today.getDate();
-    const month = today.toLocaleString('default', { month: 'long' });
-    const year = today.getFullYear();
+    let keys = Object.keys(data[0]);
+    let latestUpdate = new Date(keys[keys.length - 1]);
+    const day = latestUpdate.getDate();
+    const month = latestUpdate.toLocaleString('default', { month: 'long' });
+    const year = latestUpdate.getFullYear();
 
     let out = month + " " + day + " " + year;
     res.render("index", {latestUpdate: out});
@@ -65,16 +67,14 @@ async function scrapeICEPage()
             terminate = true;
         }
     }
-
     browser.close();
 
     let timeHistory = [];
-    let data = csv_loader('data/dailydetentioncases.csv');
 
     data.forEach(function (row) {
         let infections_today;
         let result = array.find(obj => obj.jail === row.Name);
-        console.log(row.Name + " -> " + result);
+        //console.log(row.Name + " -> " + result);
         if (result !== undefined){
             infections_today = result.infections;
             //console.log(row.Name + " -> " + result.infections + ' ' + result.jail);
@@ -91,6 +91,7 @@ async function scrapeICEPage()
 
         timeHistory.push(row);
     })
+
     //console.log(timeHistory);
     const csv = new csv_writer(timeHistory);
     await csv.toDisk('data/dailydetentioncases.csv', false);
