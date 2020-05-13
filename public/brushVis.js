@@ -92,13 +92,19 @@ brushVis.prototype.initVis = function() {
 brushVis.prototype.initDataWrangling = function() {
     let vis = this;
 
-    let parseDate = d3.timeParse("%Y");
+    // let parseDate = d3.timeParse("%Y");
 
     vis.data.forEach(function(d){
         d.date = parseDate(d.date);
-        d.average = parseFloat(d.average);
-        d.salary = parseFloat(d.salary);
-    });
+        // d.average = parseFloat(d.average);
+        d.cases = parseFloat(d.cases);
+        });
+
+    // vis.data.forEach(function(d){
+    //     d.date = parseDate(d.date);
+    //     d.average = parseFloat(d.average);
+    //     d.salary = parseFloat(d.salary);
+    // });
 
     vis.filteredData = vis.data.sort(function(a,b){
         return a.date - b.date
@@ -123,7 +129,6 @@ brushVis.prototype.initDataWrangling = function() {
             {date: tmpDate, average: tmpSum/tmpLength}
         )
     });
-
     this.wrangleData();
 };
 

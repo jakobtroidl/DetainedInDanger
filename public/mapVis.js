@@ -2,7 +2,7 @@
 *          MapVis          *
 * * * * * * * * * * * * * */
 let margin, width, height, active;
-let path, projection, id_name_map, g, svg, rect;
+let path, projection, id_name_map, g, svg, rect, svg1;
 let div, colorScale, noReports_color;
 
 // constructor
@@ -25,7 +25,7 @@ mapVis.prototype.initVis = function() {
             id_name_map.set(d.id, d.name);
         });
     });
-    noReports_color = "rgb(128,166,255)";
+    noReports_color = "rgb(0,0,0)";
 
     //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
 //     let array = Object.values(totalCases);
@@ -54,6 +54,11 @@ mapVis.prototype.initVis = function() {
         .attr('width', width + margin.left + margin.right)
         .on('click', clicked);
 
+    // TESTING
+    svg1 = d3.select("#chart").append("svg")
+    graph = svg.append("g");
+    // TESTING
+    
     Promise.resolve(d3.json('county_us.topojson'))
         .then(this.ready);
 
@@ -214,7 +219,7 @@ mapVis.prototype.ready = function(us) {
                     return noReports_color;
                 }
                 else if (typeof cases === 'undefined'){ // facilities not mention by ICE list
-                    return "rgb(0,0,0)";
+                    return "rgb(50,205,50)";
                 }
                 else { // facilities reporting cases
                     return colorScale(cases);
@@ -240,27 +245,42 @@ mapVis.prototype.ready = function(us) {
                     .style("opacity", 0);
             })
 
-            // NEED TO ADD BASEBALL CARD APPEARANCE ON MOUSE CLICK //
+            // BASEBALL CARD APPEARANCE ON MOUSE CLICK //
             .on("click", function(d) {
                 selectedCenter = d.name;
-                // put chosen facility graph here
-                myBrushVis.wrangleData();
-                // put chosen facility graph here
+
+                // name of facility
                 d3.select("#facilityname")
                     .text(d.name);
+
+                // location
                 d3.select("#loc")
                     .text("is located in " + d.County + ", " + d.State);
-                d3.select("#detainees")
+
+                // # of ICE detainees
+                if (d['Number current ICE detainees'] == "") {
+                    d3.select("#detainees")
+                    .text("has an unknown # of ICE detainees");
+                }
+                else {
+                    d3.select("#detainees")
                     .text("has " + d['Number current ICE detainees']+ " ICE detainees");
+                };
+
+                // operator
                 d3.select("#operator")
                     .text("is operated by " + d['Name of Operator']);
-                // need to figure out if-then stuff, esp. if we don't format spreadsheet
+
+                // # of confirmed COVID cases
                 if (d['Confirmed COVID Cases (ICE) - 5/4'] == "") 
                     {return d3.select("#cases").text("has no reported cases")}
                 else 	
                     {return d3.select("#cases")
                         .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")}
                     });
+
+                d3.csv("timehistorylist.csv").then(function(data) {
+                    myBrushVis.wrangleData()});
             // END BASEBALL CARD CODE //
     });
 

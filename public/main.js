@@ -17,7 +17,7 @@ let selectedCenter = '';
 
 // load data using promises
 let promises = [
-    d3.csv("data.csv"),
+    // d3.csv("data.csv"),
     d3.csv("dailydetentioncases.csv"),
     d3.csv("timehistory.csv")
 ];

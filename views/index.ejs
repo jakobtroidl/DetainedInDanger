@@ -77,7 +77,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container w3-white">
       <!-- my code for baseball card -->
         <!-- insert graph here --> 
-        <div class="w3-container" style="height: 15vh; background: white; padding: 0;">
+        <div id="graph" class="w3-container" style="height: 15vh; background: white; padding: 0;">
           <div id="brushDiv" style="height: 100%; width:100%; background: white"></div>
         </div>
         <!-- insert graph here -->
@@ -85,9 +85,9 @@ and is wrapped around the whole page content, except for the footer in this exam
           <h4 id="facilityname" class="card-title" style="font-size: 1.5vw"><b>Click on a facility on the map for more information</b></h4>
           <ul class="card-text w3-container" style="font-size: 1.25vw; list-style: none; padding-left: 0">
             <li id="loc"></li>
-            <li id="cases"></li>
-            <li id="detainees"></li>
-            <li id="operator"></li>
+            <li id="cases">There are <b>881 total confirmed COVID-19 cases</b> among ICE detainees.</li>
+            <li id="detainees">ICE has administered <b>1,736 COVID-19 tests.</b></li>
+            <li id="operator">There are <b>29,675 detainees</b> currently being held in ICE facilities.</li>
             <li id="newslink" class="card-body text-center"><a href="#" class="card-link" style="color:blue"><b></b></a></li>
           </ul>
         </div>
