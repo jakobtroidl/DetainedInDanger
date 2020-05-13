@@ -13,7 +13,14 @@ app.set("view engine", "ejs");
 
 app.get('/', function (req, res)
 {
-    res.render("index");
+    //TODO actually send the correct date
+    let today = new Date();
+    const day = today.getDate();
+    const month = today.toLocaleString('default', { month: 'long' });
+    const year = today.getFullYear();
+
+    let out = month + " " + day + " " + year;
+    res.render("index", {latestUpdate: out});
 });
 
 async function scrapeICEPage()
