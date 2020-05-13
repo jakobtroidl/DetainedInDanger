@@ -102,5 +102,6 @@ const job = new CronJob({
     start: true,
     timeZone: 'America/New_York'
 });
-//app.listen(process.env.PORT, process.env.IP);
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+
+app.listen(process.env.PORT, process.env.IP);
+//app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

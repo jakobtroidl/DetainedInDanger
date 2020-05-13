@@ -11,15 +11,16 @@ let myBrushVis;
 let dataSet;
 let dailyCases;
 let totalCases;
+let totalICEHistory
 
 // init global switches
 let selectedCenter = '';
 
 // load data using promises
 let promises = [
-    // d3.csv("data.csv"),
-    d3.csv("dailydetentioncases.csv"),
-    d3.csv("timehistory.csv")
+    d3.csv("data.csv"),
+    d3.csv("dailydetentioncases_bak.csv"),
+    //d3.csv("timehistory.csv")
 ];
 
 Promise.all(promises)
@@ -31,14 +32,32 @@ function initMainPage(dataArray) {
 
     dailyCases = dataArray[1];
     totalCases = [];
+    totalICEHistory = [];
+
+    let keys = [];
     dailyCases.forEach(function (facility) {
-        let keys = Object.keys(facility);
+        keys = Object.keys(facility);
         let name = facility[keys[0]];
         let cumCases = facility[keys.slice(-1)[0]];
         totalCases[name] = cumCases;
     });
-1
     console.log(totalCases);
+
+
+    //extracting total ICE history for timeline
+    dailyCases.map(function(d){
+        Object.keys(d).forEach(function (col) {
+            if(!isNaN(d[col]) && d[col] !== ""){ // check if numerical value
+                if(!(col in totalICEHistory))
+                {
+                    totalICEHistory[col] = 0;
+                }
+                totalICEHistory[col] = parseInt(totalICEHistory[col]) + parseInt(d[col]);
+            }
+        });
+    });
+
+    console.log(totalICEHistory);
 
     // log data
     console.log(dataArray);

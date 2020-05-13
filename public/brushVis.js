@@ -94,7 +94,7 @@ brushVis.prototype.initDataWrangling = function() {
 
     // let parseDate = d3.timeParse("%Y");
 
-    vis.data.forEach(function(d){
+    totalICEHistory.forEach(function(d){
         d.date = parseDate(d.date);
         // d.average = parseFloat(d.average);
         if (d.cases == '') {

@@ -227,7 +227,7 @@ mapVis.prototype.ready = function(us) {
 
             })
             .style("stroke", "black")
-            .style("opacity", 0.85)
+            .style("opacity", 1.0)
             .on("mouseover", function(d) {
                 div.transition()
                     .duration(200)
