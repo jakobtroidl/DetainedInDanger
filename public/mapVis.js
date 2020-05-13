@@ -54,10 +54,10 @@ mapVis.prototype.initVis = function() {
         .attr('width', width + margin.left + margin.right)
         .on('click', clicked);
 
-    // TESTING
+    // maybe need to make a new area for the facility graph visualization
     svg1 = d3.select("#chart").append("svg")
     graph = svg.append("g");
-    // TESTING
+    // 
     
     Promise.resolve(d3.json('county_us.topojson'))
         .then(this.ready);
@@ -278,11 +278,18 @@ mapVis.prototype.ready = function(us) {
                     {return d3.select("#cases")
                         .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")}
                     });
-
-                d3.csv("timehistorylist.csv").then(function(data) {
-                    myBrushVis.wrangleData()});
             // END BASEBALL CARD CODE //
     });
+    
+    // facility graph on click using timehistory csv
+    // d3.csv("timehistorylist.csv").then(function(data) {
+    //     g.selectAll("circle")
+    //     .on("click", function(d) {
+    //     selectedCenter == d.name;
+    //     myBrushVis.wrangleData();
+    //     });
+    // });
+
 
     g.append("path")
         .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))

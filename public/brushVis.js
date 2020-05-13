@@ -97,7 +97,12 @@ brushVis.prototype.initDataWrangling = function() {
     vis.data.forEach(function(d){
         d.date = parseDate(d.date);
         // d.average = parseFloat(d.average);
+        if (d.cases == '') {
+            d.cases = 0;
+        }
+        else {
         d.cases = parseFloat(d.cases);
+        }
         });
 
     // vis.data.forEach(function(d){
