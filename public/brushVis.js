@@ -34,7 +34,7 @@ brushVis.prototype.initVis = function() {
     vis.svg.append('g')
         .attr('class', 'title')
         .append('text')
-        .text('Title for Timeline')
+        .text('Covid-19 Cases Over Time in')
         .attr('transform', `translate(${vis.width/2}, -20)`)
         .attr('text-anchor', 'middle');
 
@@ -92,13 +92,19 @@ brushVis.prototype.initVis = function() {
 brushVis.prototype.initDataWrangling = function() {
     let vis = this;
 
-    let parseDate = d3.timeParse("%Y");
+    // let parseDate = d3.timeParse("%Y");
 
     vis.data.forEach(function(d){
         d.date = parseDate(d.date);
-        d.average = parseFloat(d.average);
-        d.salary = parseFloat(d.salary);
-    });
+        // d.average = parseFloat(d.average);
+        d.cases = parseFloat(d.cases);
+        });
+
+    // vis.data.forEach(function(d){
+    //     d.date = parseDate(d.date);
+    //     d.average = parseFloat(d.average);
+    //     d.salary = parseFloat(d.salary);
+    // });
 
     vis.filteredData = vis.data.sort(function(a,b){
         return a.date - b.date
@@ -123,7 +129,6 @@ brushVis.prototype.initDataWrangling = function() {
             {date: tmpDate, average: tmpSum/tmpLength}
         )
     });
-
     this.wrangleData();
 };
 
@@ -135,7 +140,7 @@ brushVis.prototype.wrangleData = function(){
     vis.displayData = [];
 
     // iterate over filteredData and gab only selected States
-    if (selectedState === '') {
+    if (selectedCenter === '') {
         vis.filteredData.forEach(d => {
             vis.displayData.push(d);
         })
@@ -170,7 +175,7 @@ brushVis.prototype.updateVis = function() {
         .attr("clip-path", "url(#clip)");
 
     // draw pathTwo if selectedState
-    if (selectedState !== ''){
+    if (selectedCenter !== ''){
         vis.pathTwo.datum(vis.displayData)
             .transition().duration(400)
             .attr('fill', 'rgba(255,0,0,0.47)')

@@ -39,9 +39,11 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container" style="height: 100px; width: 100%; background: white; padding: 0;">
       <div id="mapLegendDiv" style="height: 100%; width:100%; background: white"></div>
     </div>
-    <div class="w3-container" style="height: 10vh; background: white; padding: 0;">
+    <!-- uncomment this later whoops -->
+    <!-- <div class="w3-container" style="height: 10vh; background: white; padding: 0;">
       <div id="brushDiv" style="height: 100%; width:100%; background: white"></div>
-    </div>
+    </div> -->
+    <!-- sorry! -->
   </div>
   <hr>
 
@@ -75,15 +77,17 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container w3-white">
       <!-- my code for baseball card -->
         <!-- insert graph here --> 
-        <div id="facilitygraphDiv"></div>
+        <div id="graph" class="w3-container" style="height: 15vh; background: white; padding: 0;">
+          <div id="brushDiv" style="height: 100%; width:100%; background: white"></div>
+        </div>
         <!-- insert graph here -->
-        <div class="card-body">
+        <div class="card-body w3-container">
           <h4 id="facilityname" class="card-title" style="font-size: 1.5vw"><b>Click on a facility on the map for more information</b></h4>
-          <ul class="card-text" style="font-size: 1.25vw; list-style: none; padding-left: 0">
+          <ul class="card-text w3-container" style="font-size: 1.25vw; list-style: none; padding-left: 0">
             <li id="loc"></li>
-            <li id="cases"></li>
-            <li id="detainees"></li>
-            <li id="operator"></li>
+            <li id="cases">There are <b>881 total confirmed COVID-19 cases</b> among ICE detainees.</li>
+            <li id="detainees">ICE has administered <b>1,736 COVID-19 tests.</b></li>
+            <li id="operator">There are <b>29,675 detainees</b> currently being held in ICE facilities.</li>
             <li id="newslink" class="card-body text-center"><a href="#" class="card-link" style="color:blue"><b></b></a></li>
           </ul>
         </div>
@@ -95,29 +99,8 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
       <h4>ICE Centers</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <!--<img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">-->
-        <span class="w3-large">Catahoula Correctional Center</span><br>
-        <span><i>Catahoula, Louisiana</i></span>
-      </li>
-      <li class="w3-padding-16">
-        <!--<img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">-->
-        <span class="w3-large">LaSalle ICE Processing Center</span><br>
-        <span><i>LaSalle, Lousiana</i></span>
-      </li> 
-      <li class="w3-padding-16">
-        <!--<img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">-->
-        <span class="w3-large">La Palma Correctional Center</span><br>
-        <span><i>Pinal, Arizona</i></span>
-      </li>   
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <!--<img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">-->
-        <span class="w3-large">Otay Mesa Detention Center</span><br>
-        <span><i>San Diego, California</i></span>
-      </li>  
-    </ul>
+    </div id="rankingtable">
+    <!-- insert list of ice centers by rank -->
   </div>
   <hr> 
  
@@ -147,6 +130,8 @@ and is wrapped around the whole page content, except for the footer in this exam
     <script src="mapVis.js"></script>
 <!--    <script src="scatterVis.js"></script>-->
     <script src="brushVis.js"></script>
+    <script src="graphVis.js"></script>
     <script src="main.js"></script>
+
 </body>
 </html>
