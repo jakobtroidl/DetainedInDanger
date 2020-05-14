@@ -10,7 +10,7 @@ brushVis = function (_parentElement, _data) {
 // init brushVis
 brushVis.prototype.initVis = function () {
 
-    let margin = {top: 20, right: 50, bottom: 20, left: 50};
+    let margin = {top: 20, right: 50, bottom: 40, left: 50};
     width = $("#" + this.parentElement).width() - margin.left - margin.right;
     height = $("#" + this.parentElement).height() - margin.top - margin.bottom;
 
