@@ -31,7 +31,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="w3-card-4 w3-margin w3-white">
     <div class="w3-container">
       <h3><b>Detention Center Map</b></h3>
-      <h5>Updated as of, <span class="w3-opacity">May 5th, 2020</span></h5>
+      <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
     </div>
     <div class="w3-container" style="height: 70vh; width: 100%; background: white;">
           <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
@@ -40,9 +40,9 @@ and is wrapped around the whole page content, except for the footer in this exam
       <div id="mapLegendDiv" style="height: 100%; width:100%; background: white"></div>
     </div>
     <!-- uncomment this later whoops -->
-    <!-- <div class="w3-container" style="height: 10vh; background: white; padding: 0;">
+    <div class="w3-container" style="height: 10vh; background: white; padding: 0;">
       <div id="brushDiv" style="height: 100%; width:100%; background: white"></div>
-    </div> -->
+    </div>
     <!-- sorry! -->
   </div>
   <hr>
@@ -133,8 +133,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <script src="mapVis.js"></script>
 <!--    <script src="scatterVis.js"></script>-->
     <script src="brushVis.js"></script>
-    <script src="chart.js"></script>
-    <script src="graphVis.js"></script>
+<!--    <script src="graphVis.js"></script>-->
     <script src="main.js"></script>
 
 </body>

@@ -4,13 +4,14 @@
 let margin, width, height, active;
 let path, projection, id_name_map, g, svg, rect, svg1;
 let div, colorScale, noReports_color;
+let totalCasesPerFacility;
 
 // constructor
-mapVis = function(_parentElement, _legendElement,  _dataFill) {
+mapVis = function(_parentElement, _legendElement,  _dataFill)
+{
     this.parentElement = _parentElement;
     this.legendElement = _legendElement;
-    this.dataFill = _dataFill;
-    this.selectedRegion = [];
+    totalCasesPerFacility = _dataFill;
 
     // call method initVis
     this.initVis();
@@ -199,7 +200,7 @@ mapVis.prototype.ready = function(us) {
             .attr("cy", function (d) {
                 return projection([d.lon, d.lat])[1]; })
             .attr("r", function(d) {
-                let cases = totalCases[d.name];
+                let cases = totalCasesPerFacility[d.name];
 
                 if (cases == ""){ // facilities reporting nothing
                     return 4;
@@ -213,7 +214,7 @@ mapVis.prototype.ready = function(us) {
                 }
             })
             .style("fill", function(d){
-                let cases = totalCases[d.name];
+                let cases = totalCasesPerFacility[d.name];
 
                 if (cases == ""){ // facilities reporting nothing
                     return noReports_color;
@@ -227,7 +228,7 @@ mapVis.prototype.ready = function(us) {
 
             })
             .style("stroke", "black")
-            .style("opacity", 0.85)
+            .style("opacity", 1.0)
             .on("mouseover", function(d) {
                 div.transition()
                     .duration(200)

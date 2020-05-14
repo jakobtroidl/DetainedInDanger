@@ -1,208 +1,66 @@
-brushVis = function(_parentElement, _data) {
+brushVis = function (_parentElement, _data) {
     this.parentElement = _parentElement;
     this.data = _data;
     this.displayData = [];
 
+    console.log("Hello timeline");
     // call method initVis
     this.initVis();
 };
 
 // init brushVis
-brushVis.prototype.initVis = function() {
-    let vis = this;
+brushVis.prototype.initVis = function () {
 
-    vis.margin = {top: 20, right: 50, bottom: 20, left: 50};
-    vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = $("#" + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
+    let margin = {top: 20, right: 50, bottom: 20, left: 50};
+    width = $("#" + this.parentElement).width() - margin.left - margin.right;
+    height = $("#" + this.parentElement).height() - margin.top - margin.bottom;
 
     // SVG drawing area
-    vis.svg = d3.select("#" + vis.parentElement).append("svg")
-        .attr("width", vis.width + vis.margin.left + vis.margin.right)
-        .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+    let svg = d3.select("#" + this.parentElement).append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // clip path
-    vis.svg.append("defs")
-        .append("clipPath")
-        .attr("id", "clip")
-        .append("rect")
-        .attr("width", vis.width)
-        .attr("height", vis.height);
-
-    // add title
-    vis.svg.append('g')
-        .attr('class', 'title')
-        .append('text')
-        .text('Covid-19 Cases Over Time in')
-        .attr('transform', `translate(${vis.width/2}, -20)`)
-        .attr('text-anchor', 'middle');
-
-    // init scales
-    vis.x = d3.scaleTime().range([0, vis.width]);
-    vis.y = d3.scaleLinear().range([vis.height, 0]);
-
-    // init x & y axis
-    vis.xAxis = vis.svg.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + vis.height + ")");
-    vis.yAxis = vis.svg.append("g")
-        .attr("class", "axis axis--y");
-
-    // init pathGroup
-    vis.pathGroup = vis.svg.append('g').attr('class','pathGroup');
-
-    // init path one (average)
-    vis.pathOne = vis.pathGroup
-        .append('path')
-        .attr("class", "pathOne");
-
-    // init path two (single state)
-    vis.pathTwo = vis.pathGroup
-        .append('path')
-        .attr("class", "pathTwo");
-
-    // init path generator
-    vis.area = d3.area()
-        .curve(d3.curveMonotoneX)
-        .x(function(d) { return vis.x(d.date); })
-        .y0(vis.y(0))
-        .y1(function(d) { return vis.y(d.average); });
-
-    // init brushGroup:
-    vis.brushGroup = vis.svg.append("g")
-        .attr("class", "brush");
-
-    // init brush
-    vis.brush = d3.brushX()
-        .extent([[0, 0], [vis.width, vis.height]])
-        .on("brush end", function(){
-            let currentBrushRegion = d3.event.selection;
-            myMapVis.selectedRegion = [vis.x.invert(currentBrushRegion[0]), vis.x.invert(currentBrushRegion[1])];
-            myMapVis.wrangleData();
-            myScatterVis.selectedRegion = [vis.x.invert(currentBrushRegion[0]), vis.x.invert(currentBrushRegion[1])];
-            myScatterVis.wrangleData();
-        });
-
-    // call method initVis
-    this.initDataWrangling();
-};
-
-// initDataWrangling - data wrangling, done only once
-brushVis.prototype.initDataWrangling = function() {
-    let vis = this;
-
-    // let parseDate = d3.timeParse("%Y");
-
-    vis.data.forEach(function(d){
-        d.date = parseDate(d.date);
-        // d.average = parseFloat(d.average);
-        if (d.cases == '') {
-            d.cases = 0;
+    console.log("init timeline");
+    let new_data = [];
+    Object.keys(this.data).forEach(function (k) {
+            new_data.push({date: new Date(k), infections: totalICEHistory[k]});
         }
-        else {
-        d.cases = parseFloat(d.cases);
-        }
-        });
+    )
 
-    // vis.data.forEach(function(d){
-    //     d.date = parseDate(d.date);
-    //     d.average = parseFloat(d.average);
-    //     d.salary = parseFloat(d.salary);
-    // });
+    var x = d3.scaleTime()
+        .domain(d3.extent(new_data, function (d) {
+            return d.date;
+        }))
+        .range([0, width]);
 
-    vis.filteredData = vis.data.sort(function(a,b){
-        return a.date - b.date
-    });
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
 
-    let dataByDate = d3.nest()
-        .key(function(d) { return d.date; })
-        .entries(vis.filteredData);
+    // Add Y axis
+    var y = d3.scaleLinear()
+        .domain([0, d3.max(new_data, function (d) {
+            return +d.infections;
+        })])
+        .range([height, 0]);
+    svg.append("g")
+        .call(d3.axisLeft(y));
 
-    vis.averageData = [];
-
-    // iterate over each year
-    dataByDate.forEach( year => {
-        let tmpSum = 0;
-        let tmpLength = year.values.length;
-        let tmpDate = year.values[0].date;
-        year.values.forEach( value => {
-            tmpSum += value.average;
-        });
-
-        vis.averageData.push (
-            {date: tmpDate, average: tmpSum/tmpLength}
+    // Add the line
+    svg.append("path")
+        .datum(new_data)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 1.5)
+        .attr("d", d3.line()
+            .x(function (d) {
+                console.log(d);
+                return x(d.date);
+            })
+            .y(function (d) {
+                return y(d.infections);
+            })
         )
-    });
-    this.wrangleData();
 };
-
-// wrangleData - gets called whenever a state is selected
-brushVis.prototype.wrangleData = function(){
-    let vis = this;
-
-    // reset displayData
-    vis.displayData = [];
-
-    // iterate over filteredData and gab only selected States
-    if (selectedCenter === '') {
-        vis.filteredData.forEach(d => {
-            vis.displayData.push(d);
-        })
-    } else {
-        vis.filteredData.forEach(d => {
-            if (d.state === selectedState) {
-                vis.displayData.push(d);
-            }
-        })
-    }
-
-    // Update the visualization
-    this.updateVis();
-};
-
-// updateVis
-brushVis.prototype.updateVis = function() {
-    let vis = this;
-
-    // update domains
-    vis.x.domain( d3.extent(vis.displayData, function(d) { return d.date }) );
-    vis.y.domain( d3.extent(vis.filteredData, function(d) { return d.average }) );
-
-    // draw x & y axis
-    vis.xAxis.transition().duration(400).call(d3.axisBottom(vis.x));
-    vis.yAxis.transition().duration(400).call(d3.axisLeft(vis.y).ticks(2));
-
-    // draw pathOne
-    vis.pathOne.datum(vis.averageData)
-        .transition().duration(400)
-        .attr("d", vis.area)
-        .attr("clip-path", "url(#clip)");
-
-    // draw pathTwo if selectedState
-    if (selectedCenter !== ''){
-        vis.pathTwo.datum(vis.displayData)
-            .transition().duration(400)
-            .attr('fill', 'rgba(255,0,0,0.47)')
-            .attr('stroke', 'darkred')
-            .attr("d", vis.area);
-    } else {
-        vis.pathTwo.datum([vis.filteredData[1], vis.filteredData[299]])
-            .transition().duration(400)
-            .attr('fill', 'rgba(255,0,0,0)')
-            .attr('stroke', 'transparent')
-            .attr("d", vis.area);
-    }
-
-    vis.brushGroup
-        .call(vis.brush);
-};
-
-
-// tooltip - in case one wants it
-/*div.transition().duration(100)
-    .style('opacity', 1)
-    .style("left", (d3.event.pageX) + "px")
-    .style("top", (d3.event.pageY - 28) + "px");
-div
-    .html(`<div class="row"><div class="col-12" style="color: lightcyan">plain text</div></div>`);*/
