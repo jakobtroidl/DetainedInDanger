@@ -1,4 +1,4 @@
-let margin, height, width;
+let brush_margin, brush_height, brush_width;
 
 brushVis = function (_parentElement, _data) {
     this.parentElement = _parentElement;
@@ -12,16 +12,16 @@ brushVis = function (_parentElement, _data) {
 // init brushVis
 brushVis.prototype.initVis = function () {
 
-    margin = {top: 20, right: 50, bottom: 40, left: 50};
-    width = $("#" + this.parentElement).width() - margin.left - margin.right;
-    height = $("#" + this.parentElement).height() - margin.top - margin.bottom;
+    brush_margin = {top: 20, right: 50, bottom: 40, left: 50};
+    brush_width = $("#" + this.parentElement).width() - brush_margin.left - brush_margin.right;
+    brush_height = $("#" + this.parentElement).height() - brush_margin.top - brush_margin.bottom;
 
     // SVG drawing area
     let svg = d3.select("#" + this.parentElement).append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("width", brush_width + brush_margin.left + brush_margin.right)
+        .attr("height", brush_height + brush_margin.top + brush_margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + brush_margin.left + "," + brush_margin.top + ")");
 
     let new_data = [];
     Object.keys(this.data).forEach(function (k) {
@@ -33,10 +33,10 @@ brushVis.prototype.initVis = function () {
         .domain(d3.extent(new_data, function (d) {
             return d.date;
         }))
-        .range([0, width]);
+        .range([0, brush_width]);
 
     svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + brush_height + ")")
         .call(d3.axisBottom(x));
 
     // Add Y axis
@@ -44,7 +44,7 @@ brushVis.prototype.initVis = function () {
         .domain([0, d3.max(new_data, function (d) {
             return d.infections;
         })])
-        .range([height, 0]);
+        .range([brush_height, 0]);
 
     svg.append("g")
         .call(d3.axisLeft(y));
