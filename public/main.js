@@ -8,7 +8,6 @@ let myMapVis;
 let myBrushVis;
 
 // init globalDataSets
-let dataSet;
 let dailyCases;
 let totalCases;
 let totalICEHistory
@@ -18,9 +17,7 @@ let selectedCenter = '';
 
 // load data using promises
 let promises = [
-    d3.csv("data.csv"),
-    d3.csv("dailydetentioncases_bak.csv"),
-    //d3.csv("timehistory.csv")
+    d3.csv("dailydetentioncases.csv")
 ];
 
 Promise.all(promises)
@@ -30,9 +27,9 @@ Promise.all(promises)
 // initMainPage
 function initMainPage(dataArray) {
 
-    dailyCases = dataArray[1];
-    totalCases = [];
-    totalICEHistory = [];
+    dailyCases = dataArray[0]; //TODO should be used in baseball card timeline
+    totalCases = []; // used for dot color coding on map
+    totalICEHistory = []; // TODO should be used in global timeline
 
     let keys = [];
     dailyCases.forEach(function (facility) {
@@ -42,7 +39,6 @@ function initMainPage(dataArray) {
         totalCases[name] = cumCases;
     });
     console.log(totalCases);
-
 
     //extracting total ICE history for timeline
     dailyCases.map(function(d){
@@ -59,18 +55,11 @@ function initMainPage(dataArray) {
 
     console.log(totalICEHistory);
 
-    // log data
-    console.log(dataArray);
-    dataSet = dataArray[1];
-
     // init map
-    myMapVis = new mapVis('mapDiv', 'mapLegendDiv',  dataArray[0]);
-
-    // init scatter
-    //myScatterVis = new scatterVis('scatterDiv', dataArray[1]);
+    myMapVis = new mapVis('mapDiv', 'mapLegendDiv', totalCases);
 
     // init brush
-    myBrushVis = new brushVis('brushDiv', dataArray[0]);
+    myBrushVis = new brushVis('brushDiv', totalICEHistory);
 
 }
 
