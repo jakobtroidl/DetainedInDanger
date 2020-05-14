@@ -107,7 +107,6 @@ mapVis.prototype.initLegend = function(){
         .attr("height", leg_height)
         .attr('transform', `translate (${leg_margin.left}, ${leg_margin.top})`);
 
-
     let legend = leg_svg.selectAll("g.legend")
         .data(ext_color_domain)
         .enter().append("g")
