@@ -57,7 +57,7 @@ brushVis.prototype.initVis = function () {
         .datum(new_data)
         .attr("fill", "none")
         .attr("stroke", "steelblue")
-        .attr("stroke-width", 1.5)
+        .attr("stroke-width", 2.5)
         .attr("d", d3.line()
             .x(function (d) {
                 return x(d.date);
