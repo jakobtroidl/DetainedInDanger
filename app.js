@@ -80,6 +80,7 @@ async function scrapeICEPage()
             //console.log(row.Name + " -> " + result.infections + ' ' + result.jail);
         }
         else {
+            //console.log("Cant find entry for: " + row.Name );
             infections_today = "";
         }
         let today = new Date();

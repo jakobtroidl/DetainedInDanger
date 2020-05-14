@@ -3,7 +3,6 @@ brushVis = function (_parentElement, _data) {
     this.data = _data;
     this.displayData = [];
 
-    console.log("Hello timeline");
     // call method initVis
     this.initVis();
 };
@@ -22,7 +21,6 @@ brushVis.prototype.initVis = function () {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    console.log("init timeline");
     let new_data = [];
     Object.keys(this.data).forEach(function (k) {
             new_data.push({date: new Date(k), infections: totalICEHistory[k]});
@@ -42,11 +40,15 @@ brushVis.prototype.initVis = function () {
     // Add Y axis
     var y = d3.scaleLinear()
         .domain([0, d3.max(new_data, function (d) {
-            return +d.infections;
+            return d.infections;
         })])
         .range([height, 0]);
+
     svg.append("g")
         .call(d3.axisLeft(y));
+
+    // sorting array by date
+    new_data = new_data.sort((a, b) => b.date - a.date)
 
     // Add the line
     svg.append("path")
@@ -56,7 +58,6 @@ brushVis.prototype.initVis = function () {
         .attr("stroke-width", 1.5)
         .attr("d", d3.line()
             .x(function (d) {
-                console.log(d);
                 return x(d.date);
             })
             .y(function (d) {
