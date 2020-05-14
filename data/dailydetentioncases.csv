@@ -17,11 +17,11 @@ Broward Transitional Center,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,2,2,2,2
 Buffalo Federal Detention Facility,,,,,4,7,7,8,11,12,13,45,46,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49
 Burnet County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Butler County Correctional Complex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Calhoun County Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Calhoun County Correction Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2
 Caroline Detention Facility,,,,,,,,,,,,,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3
 Carver County Jail Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Cass County Jail Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Catahoula Correctional Center,,,,,,,,,,,,1,1,1,1,1,3,7,7,7,7,7,7,9,9,9,15,15,20,20,39,39
+Catahoula Correctional Center,,,,,,,,,,,,1,1,1,1,1,3,7,7,7,7,7,7,9,9,9,15,15,20,20,39,52
 Central Arizona Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Chautauqua County Jail,,,,,,,,,,,,,,,,,0,0,,,,,,,,,,,,,,
 Clay County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -76,10 +76,10 @@ Karnes County Residential Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Kay County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Kenosha County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Krome Detention Center,,,,,1,1,1,1,1,1,2,2,2,2,2,2,4,4,4,7,9,9,9,10,10,10,11,11,11,11,13,13
-La Palma Correctional Facility,1,1,2,2,2,2,2,2,2,6,6,13,18,18,18,18,23,24,24,26,29,29,29,30,33,33,36,52,53,56,57,57
+La Palma Correctional Facility,1,1,2,2,2,2,2,2,2,6,6,13,18,18,18,18,23,24,24,26,29,29,29,30,33,33,36,52,53,56,57,58
 La Salle County Regional Detention Center,,,1,1,1,1,2,2,2,2,2,2,,,,,,,,,,,,,,,,,,,,
 Laredo Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-LaSalle ICE Processing Center,,,,,,,,1,1,1,1,1,3,3,3,20,20,7,7,8,10,10,10,10,10,11,11,11,11,11,11,11
+LaSalle ICE Processing Center,,,,,,,,1,1,1,1,1,3,3,3,20,20,7,7,8,10,10,10,10,10,11,11,11,11,11,11,12
 McHenry County Adult Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Mesa Verde ICE Processing Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Monmouth County Correctional Institution,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -92,13 +92,13 @@ Nevada Southern Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Northwest Regional Corrections Center/Polk County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Orange County Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Otay Mesa Detention Center,,1,1,5,10,10,12,15,15,17,18,20,29,42,42,57,75,84,94,98,105,105,105,106,124,132,133,139,144,147,149,149
-Otero County Processing Center,,,,,,1,1,1,1,1,1,1,1,1,2,2,2,3,3,4,6,6,6,6,10,12,12,12,20,20,36,36
+Otero County Processing Center,,,,,,1,1,1,1,1,1,1,1,1,2,2,2,3,3,4,6,6,6,6,10,12,12,12,20,20,36,38
 Pike County Correctional Facility,1,4,5,5,5,5,5,5,6,7,7,11,11,13,13,14,14,16,16,16,16,16,16,18,18,20,20,20,20,20,20,20
 Pine Prairie ICE Processing Center,1,1,1,1,1,1,2,2,2,2,4,9,6,15,15,15,17,17,19,20,21,21,21,25,26,26,26,26,27,28,30,30
 Plymouth County Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Port Isabel Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1
 Prairieland Detention Center,,,,,,,,,1,3,3,24,28,33,35,35,36,41,41,41,41,41,41,41,41,42,42,43,45,45,45,45
-Pulaski County Detention Center,,,,,,3,3,3,3,3,3,6,6,7,9,9,9,12,12,12,13,13,13,14,14,14,14,17,17,17,19,19
+Pulaski County Detention Center,,,,,,3,3,3,3,3,3,6,6,7,9,9,9,12,12,12,13,13,13,14,14,14,14,17,17,17,19,22
 Richwood Correctional Center,,,,,,1,1,1,2,2,20,20,27,28,32,32,37,45,46,55,60,60,60,61,63,64,64,64,64,64,64,64
 Rio Grande Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 River Correctional Center,,,,,,,,,,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
