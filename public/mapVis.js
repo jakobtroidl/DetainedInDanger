@@ -58,7 +58,6 @@ mapVis.prototype.initVis = function() {
     // maybe need to make a new area for the facility graph visualization
     svg1 = d3.select("#chart").append("svg")
     graph = svg.append("g");
-    // 
     
     Promise.resolve(d3.json('county_us.topojson'))
         .then(this.ready);
@@ -179,16 +178,6 @@ mapVis.prototype.ready = function(us) {
         .attr("d", path)
         .attr("class", "state")
         .on("click", clicked);
-        // .on('mouseover', function(d){
-        //     let id = d.id + "000";
-        //     selectedState = id_name_map.get(id);
-        //     myBrushVis.wrangleData();
-        // })
-        // .on('mouseout', function(d){
-        //     // reset selectedState
-        //     selectedState = '';
-        //     myBrushVis.wrangleData();
-        // });
 
     d3.csv("facilities.csv").then(function(data) {
     // add circles to g
@@ -311,7 +300,7 @@ function clicked(d) {
         dy = bounds[1][1] - bounds[0][1],
         x = (bounds[0][0] + bounds[1][0]) / 2,
         y = (bounds[0][1] + bounds[1][1]) / 2,
-        scale = .9 / Math.max(dx / width, dy / height),
+        scale = 0.9 / Math.max(dx / width, dy / height),
         translate = [width / 2 - scale * x, height / 2 - scale * y];
 
     g.transition()
