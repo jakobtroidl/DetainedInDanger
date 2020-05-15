@@ -9,7 +9,7 @@ facilityGraph = function (_parentElement, _data) {
 // init facilitygraph
 facilityGraph.prototype.initVis = function () {
 
-    bc_margin = {top: 20, right: 50, bottom: 40, left: 50};
+    bc_margin = {top: 20, right: 20, bottom: 20, left: 20};
     bc_width = $("#" + this.parentElement).width() - bc_margin.left - bc_margin.right;
     bc_height = $("#" + this.parentElement).height() - bc_margin.top - bc_margin.bottom;
 
@@ -36,9 +36,9 @@ facilityGraph.prototype.plotGraph = function (selectedFacility) {
             for (let el in row) {
                 if (row[el] !== selectedFacility) {
                     if (row[el] === "") {
-                        fgData.push({date: new Date(el), infections: 0});
+                        fgData.push({date: new Date(el), infections: parseInt(0)});
                     } else {
-                        fgData.push({date: new Date(el), infections: row[el]});
+                        fgData.push({date: new Date(el), infections: parseInt(row[el])});
                     }
                 }
             }
@@ -55,6 +55,10 @@ facilityGraph.prototype.plotGraph = function (selectedFacility) {
     fg_svg.append("g")
         .attr("transform", "translate(0," + bc_height + ")")
         .call(d3.axisBottom(fg_x));
+
+    console.log(d3.max(fgData, function (d) {
+        return d.infections;
+    }))
 
     // Add Y axis
     let fg_y = d3.scaleLinear()
