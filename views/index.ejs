@@ -83,10 +83,9 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container w3-white">
       <!-- my code for baseball card -->
         <!-- insert graph here --> 
-        <div id="graph" class="w3-container" style="height: 15vh; background: white; padding: 0;">
-          <div id="brushDiv" style="height: 100%; width:100%; background: white"></div>
+        <div id="facilitygraph" class="w3-container" style="height: 100vh; width: 100%; background: white; padding: 0;">
         </div>
-        <!-- insert graph here -->
+        <!-- insert graph here ^-->
         <div class="card-body w3-container">
           <h4 id="facilityname" class="card-title" style="font-size: 1.5vw"><b>Click on a facility on the map for more information</b></h4>
           <ul class="card-text w3-container" style="font-size: 1.25vw; list-style: none; padding-left: 0">
@@ -103,9 +102,9 @@ and is wrapped around the whole page content, except for the footer in this exam
   
   <!-- Posts -->
   <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
+    <div class="w3-container w3-padding" style="height: 100%; width:100">
       <h4>ICE Centers</h4>
-      <div id="rankingtable"> <!-- div is scrollable-->
+      <div id="rankingtable" style="height: 100%; width:100%; background: white"> <!-- div is scrollable-->
       <!-- insert list of ice centers by rank -->
       </div>
   </div>
@@ -152,7 +151,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <script src="mapVis.js"></script>
 <!--    <script src="scatterVis.js"></script>-->
     <script src="brushVis.js"></script>
-<!--    <script src="graphVis.js"></script>-->
+   <script src="facilitygraph.js"></script>
     <script src="main.js"></script>
 
 </body>

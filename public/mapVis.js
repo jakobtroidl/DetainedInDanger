@@ -267,17 +267,13 @@ mapVis.prototype.ready = function(us) {
                     {return d3.select("#cases")
                         .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")}
                     });
-            // END BASEBALL CARD CODE //
+            // END BASEBALL CARD TEXT //
+            // BEGIN FACILITY GRAPH //
+        
+            // END FACILITY GRAPH //
     });
     
-    // facility graph on click using timehistory csv
-    // d3.csv("timehistorylist.csv").then(function(data) {
-    //     g.selectAll("circle")
-    //     .on("click", function(d) {
-    //     selectedCenter == d.name;
-    //     myBrushVis.wrangleData();
-    //     });
-    // });
+
 
 
     g.append("path")

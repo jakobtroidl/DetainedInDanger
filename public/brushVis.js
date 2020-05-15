@@ -22,7 +22,7 @@ brushVis.prototype.initVis = function () {
         .attr("height", brush_height + brush_margin.top + brush_margin.bottom)
         .append("g")
         .attr("transform", "translate(" + brush_margin.left + "," + brush_margin.top + ")");
-
+    
     let new_data = [];
     Object.keys(this.data).forEach(function (k) {
             new_data.push({date: new Date(k), infections: totalICEHistory[k]});

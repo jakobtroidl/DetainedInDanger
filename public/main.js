@@ -61,6 +61,9 @@ function initMainPage(dataArray) {
     // init brush
     myBrushVis = new brushVis('brushDiv', totalICEHistory);
 
+    facilitygraph = new facilitygraph('facilitygraph');
+    
+    chart = new chart('chart', totalCases);
 }
 
 
