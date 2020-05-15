@@ -13,7 +13,6 @@ facilityGraph.prototype.initVis = function () {
     bc_width = $("#" + this.parentElement).width() - bc_margin.left - bc_margin.right;
     bc_height = $("#" + this.parentElement).height() - bc_margin.top - bc_margin.bottom;
 
-    console.log(this.parentElement);
     // SVG drawing area
     fg_svg = d3.select("#" + this.parentElement).append("svg")
         .attr("width", bc_width + bc_margin.left + bc_margin.right)
@@ -44,7 +43,6 @@ facilityGraph.prototype.plotGraph = function (selectedFacility) {
             }
         }
     });
-    console.log(fgData);
 
     let fg_x = d3.scaleTime()
         .domain(d3.extent(fgData, function (d) {
@@ -55,10 +53,6 @@ facilityGraph.prototype.plotGraph = function (selectedFacility) {
     fg_svg.append("g")
         .attr("transform", "translate(0," + bc_height + ")")
         .call(d3.axisBottom(fg_x));
-
-    console.log(d3.max(fgData, function (d) {
-        return d.infections;
-    }))
 
     // Add Y axis
     let fg_y = d3.scaleLinear()
