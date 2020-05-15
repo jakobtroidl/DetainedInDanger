@@ -23,7 +23,7 @@ div.tooltip {
 }
 
 #states {
-    fill: #c8c8c8;
+    fill: #898989;
 }
 
 #states .active {
@@ -40,7 +40,7 @@ div.tooltip {
 }
 
 .county-boundary {
-    fill: #aaa;
+    fill: #898989;
     stroke: #fff;
     stroke-width: .5px;
 }

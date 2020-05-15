@@ -180,7 +180,7 @@ mapVis.prototype.ready = function(us) {
 
     d3.csv("facilities.csv").then(function(data) {
     // add circles to g
-        g.selectAll("circle") 
+        g.selectAll("circle")
             .data(data).enter()
             .append("circle")
             .attr("cx", function (d) {
@@ -215,9 +215,14 @@ mapVis.prototype.ready = function(us) {
                 }
 
             })
-            .style("stroke", "black")
+            .style("stroke", "white")
             .style("opacity", 1.0)
             .on("mouseover", function(d) {
+                d3.select(this).
+                    transition()
+                    .duration(200)
+                    .attr('r', 8);
+
                 div.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -229,6 +234,11 @@ mapVis.prototype.ready = function(us) {
 
             // fade out tooltip on mouse out
             .on("mouseout", function(d) {
+                d3.select(this).
+                transition()
+                    .duration(200)
+                    .attr('r', 4);
+
                 div.transition()
                     .duration(500)
                     .style("opacity", 0);
@@ -302,6 +312,10 @@ function clicked(d) {
         .duration(750)
         .style("stroke-width", 1.5 / scale + "px")
         .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+
+    // g.selectAll("circle").transition()
+    //     .duration(750)
+    //     .attr("transform", "scale(" + scale + ")");
 }
 
 
@@ -314,4 +328,9 @@ function reset() {
         .duration(750)
         .style("stroke-width", "1.5px")
         .attr('transform', 'translate('+margin.left+','+margin.top+')');
+    g.selectAll("circle")
+        .transition()
+        .delay(850)
+        .duration(1)
+        .style("stroke-width", "1px");
 }
