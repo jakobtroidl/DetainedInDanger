@@ -246,44 +246,8 @@ mapVis.prototype.ready = function(us) {
 
             // BASEBALL CARD APPEARANCE ON MOUSE CLICK //
             .on("click", function(d) {
-                selectedCenter = d.name;
-
-                // name of facility
-                d3.select("#facilityname")
-                    .text(d.name);
-
-                // location
-                d3.select("#loc")
-                    .text("is located in " + d.County + ", " + d.State);
-
-                // # of ICE detainees
-                if (d['Number current ICE detainees'] == "") {
-                    d3.select("#detainees")
-                    .text("has an unknown # of ICE detainees");
-                }
-                else {
-                    d3.select("#detainees")
-                    .text("has " + d['Number current ICE detainees']+ " ICE detainees");
-                };
-
-                
-                // operator
-                d3.select("#operator")
-                    .text("is operated by " + d['Name of Operator']);
-
-                // # of confirmed COVID cases
-                if (d['Confirmed COVID Cases (ICE) - 5/4'] == "") 
-                    {d3.select("#cases").text("has no reported cases");
-                }
-                else 	
-                    {d3.select("#cases")
-                        .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases");
-                    };
-                selectedCenter = d.name;
-                facilitygraph.initVis();
+                myBaseballCard.renderCenter(d);
             });
-            // END BASEBALL CARD TEXT //
-            
     });
     
 

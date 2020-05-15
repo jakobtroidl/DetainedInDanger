@@ -6,7 +6,7 @@
 let myMapVis;
 //let myScatterVis;
 let myBrushVis;
-
+let myBaseballCard;
 let myfacilitygraph;
 
 // init globalDataSets
@@ -63,9 +63,11 @@ function initMainPage(dataArray) {
     // init brush
     myBrushVis = new brushVis('brushDiv', totalICEHistory);
 
-    myfacilitygraph = new facilitygraph('facilitygraph');
+    //myfacilitygraph = new facilitygraph('facilitygraph');
+    myBaseballCard = new baseballCard("baseballCard");
 
-    chart = new chart('chart', totalCases);
+
+    //chart = new chart('chart', totalCases);
 }
 
 
