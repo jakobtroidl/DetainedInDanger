@@ -280,7 +280,7 @@ mapVis.prototype.ready = function(us) {
                         .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases");
                     };
                 selectedCenter = d.name;
-                facilitygraph.wrangleData();
+                facilitygraph.initVis();
             });
             // END BASEBALL CARD TEXT //
             
