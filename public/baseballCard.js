@@ -3,10 +3,11 @@
 * * * * * * * * * * * * * */
 
 // constructor
-baseballCard = function(_parentElement)
+baseballCard = function(_parentElement, _totalCases, _dailyCases)
 {
     this.parentElement = _parentElement;
-
+    this.totalCases = _totalCases;
+    this.dailyCases = _dailyCases;
     // call method initVis
     this.init();
 };
@@ -18,6 +19,7 @@ baseballCard.prototype.init = function() {
 
 baseballCard.prototype.renderCenter = function(center){
 
+    console.log(center);
     // name of facility
     d3.select("#facilityname")
         .text(center.name);
@@ -34,21 +36,20 @@ baseballCard.prototype.renderCenter = function(center){
     else {
         d3.select("#detainees")
             .text("has " + center['Number current ICE detainees']+ " ICE detainees");
-    };
-
+    }
 
     // operator
     d3.select("#operator")
         .text("is operated by " + center['Name of Operator']);
 
     // # of confirmed COVID cases
-    if (center['Confirmed COVID Cases (ICE) - 5/4'] == "")
-    {d3.select("#cases").text("has no reported cases");
+    let cases = totalCases[center.name];
+    if (cases == "") {
+        d3.select("#cases").text("has no reported cases");
     }
-    else
-    {d3.select("#cases")
-        .text("has "+center['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases");
-    };
-    //selectedCenter = d.name;
+    else {
+        d3.select("#cases")
+        .text("has "+ cases + " confirmed cases");
+    }
     //facilitygraph.initVis();
 }

@@ -64,7 +64,7 @@ function initMainPage(dataArray) {
     myBrushVis = new brushVis('brushDiv', totalICEHistory);
 
     //myfacilitygraph = new facilitygraph('facilitygraph');
-    myBaseballCard = new baseballCard("baseballCard");
+    myBaseballCard = new baseballCard("baseballCard", totalCases, dailyCases);
 
 
     //chart = new chart('chart', totalCases);
