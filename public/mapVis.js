@@ -266,21 +266,24 @@ mapVis.prototype.ready = function(us) {
                     .text("has " + d['Number current ICE detainees']+ " ICE detainees");
                 };
 
+                
                 // operator
                 d3.select("#operator")
                     .text("is operated by " + d['Name of Operator']);
 
                 // # of confirmed COVID cases
                 if (d['Confirmed COVID Cases (ICE) - 5/4'] == "") 
-                    {return d3.select("#cases").text("has no reported cases")}
+                    {d3.select("#cases").text("has no reported cases");
+                }
                 else 	
-                    {return d3.select("#cases")
-                        .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases")}
-                    });
+                    {d3.select("#cases")
+                        .text("has "+d['Confirmed COVID Cases (ICE) - 5/4']+" confirmed cases");
+                    };
+                selectedCenter = d.name;
+                facilitygraph.wrangleData();
+            });
             // END BASEBALL CARD TEXT //
-            // BEGIN FACILITY GRAPH //
-        
-            // END FACILITY GRAPH //
+            
     });
     
 

@@ -7,6 +7,8 @@ let myMapVis;
 //let myScatterVis;
 let myBrushVis;
 
+let myfacilitygraph;
+
 // init globalDataSets
 let dailyCases;
 let totalCases;
@@ -61,8 +63,8 @@ function initMainPage(dataArray) {
     // init brush
     myBrushVis = new brushVis('brushDiv', totalICEHistory);
 
-    facilitygraph = new facilitygraph('facilitygraph');
-    
+    myfacilitygraph = new facilitygraph('facilitygraph');
+
     chart = new chart('chart', totalCases);
 }
 
