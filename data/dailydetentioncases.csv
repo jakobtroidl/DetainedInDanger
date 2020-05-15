@@ -13,7 +13,7 @@ Boone County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Bossier Parish Medium Security Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Bristol County House of Corrections,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1,1,1,1,1
 Brooks County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Broward Transitional Center,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,2,2,2,2,2
+Broward Transitional Center,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,2,2,2,2,3
 Buffalo Federal Detention Facility,,,,,4,7,7,8,11,12,13,45,46,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49
 Burnet County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Butler County Correctional Complex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -21,7 +21,7 @@ Calhoun County Correction Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,2
 Caroline Detention Facility,,,,,,,,,,,,,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3
 Carver County Jail Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Cass County Jail Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Catahoula Correctional Center,,,,,,,,,,,,1,1,1,1,1,3,7,7,7,7,7,7,9,9,9,15,15,20,20,39,52,52
+Catahoula Correctional Center,,,,,,,,,,,,1,1,1,1,1,3,7,7,7,7,7,7,9,9,9,15,15,20,20,39,52,53
 Central Arizona Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Chautauqua County Jail,,,,,,,,,,,,,,,,,0,0,,,,,,,,,,,,,,,
 Clay County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -64,7 +64,7 @@ Howard County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Hudson County Jail,2,2,2,4,5,5,5,5,5,5,5,8,8,8,8,8,8,9,9,10,10,10,10,10,11,11,12,13,13,13,13,13,13
 IAH Secure Adult Detention Facility,,,,,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,9,9,12,12,14,15,16,16,16
 Imperial Regional Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Irwin County Detention Center,,,,,,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,5,5,6,6,6
+Irwin County Detention Center,,,,,,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,5,5,6,6,7
 Jack Harwell Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Jackson Parish Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 James A. Musick Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -89,7 +89,7 @@ Montgomery County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Montgomery Processing Center,,,,,,,,,,,,1,2,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4
 Morrow County Correctional Facility,,,,,,,,,,,,,,,,,1,6,6,6,7,7,7,47,47,47,47,47,47,47,47,47,47
 Natchitoches Parish Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Nevada Southern Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Nevada Southern Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
 Polk County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1
 Orange County Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Otay Mesa Detention Center,,1,1,5,10,10,12,15,15,17,18,20,29,42,42,57,75,84,94,98,105,105,105,106,124,132,133,139,144,147,149,149,149
@@ -132,7 +132,7 @@ Webb County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1,1,1,1,1,1
 Weber County Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 West Texas Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Willacy County Regional Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Winn Correctional Center,,,,,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,7,7,7,7,12,16,16,16,16,20,20,20,20,20
+Winn Correctional Center,,,,,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,7,7,7,7,12,16,16,16,16,20,20,20,20,37
 Worcester County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Wyatt Detention Center,,,,,,,,,,,,,,,,,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2
 York County Prison,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1

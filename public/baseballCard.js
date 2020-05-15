@@ -11,6 +11,7 @@ baseballCard = function(_parentElement, _totalCases, _dailyCases)
 
     // call method initVis
     this.init();
+    myFacilityGraph.initVis();
 };
 
 // init baseball card
@@ -26,6 +27,8 @@ baseballCard.prototype.init = function() {
 };
 
 baseballCard.prototype.renderCenter = function(center){
+    selectedCenter = center;
+
     // name of facility
     d3.select("#facilityname")
         .text(center.name);
@@ -57,5 +60,6 @@ baseballCard.prototype.renderCenter = function(center){
         d3.select("#cases")
         .text("has "+ cases + " confirmed cases");
     }
-    //facilitygraph.initVis();
+
+    myFacilityGraph.plotGraph(center.name);
 }

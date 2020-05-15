@@ -7,7 +7,7 @@ let myMapVis;
 //let myScatterVis;
 let myBrushVis;
 let myBaseballCard;
-let myfacilitygraph;
+let myFacilityGraph;
 
 // init globalDataSets
 let dailyCases;
@@ -31,7 +31,7 @@ function initMainPage(dataArray) {
 
     dailyCases = dataArray[0]; //TODO should be used in baseball card timeline
     totalCases = []; // used for dot color coding on map
-    totalICEHistory = []; // TODO should be used in global timeline
+    totalICEHistory = []; // used for global timeline
 
     let keys = [];
     dailyCases.forEach(function (facility) {
@@ -40,7 +40,7 @@ function initMainPage(dataArray) {
         let cumCases = facility[keys.slice(-1)[0]];
         totalCases[name] = cumCases;
     });
-    console.log(totalCases);
+    //console.log(dailyCases);
 
     //extracting total ICE history for timeline
     dailyCases.map(function(d){
@@ -55,17 +55,15 @@ function initMainPage(dataArray) {
         });
     });
 
-    console.log(totalICEHistory);
+    //console.log(totalICEHistory);
 
     // init map
     myMapVis = new mapVis('mapDiv', 'mapLegendDiv', totalCases);
 
     // init brush
     myBrushVis = new brushVis('brushDiv', totalICEHistory);
-
-    //myfacilitygraph = new facilitygraph('facilitygraph');
+    myFacilityGraph = new facilityGraph('facilityGraphDiv', dailyCases);
     myBaseballCard = new baseballCard("baseballCard", totalCases, dailyCases);
-
 
     //chart = new chart('chart', totalCases);
 }

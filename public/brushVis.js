@@ -29,7 +29,7 @@ brushVis.prototype.initVis = function () {
         }
     )
 
-    var x = d3.scaleTime()
+    let x = d3.scaleTime()
         .domain(d3.extent(new_data, function (d) {
             return d.date;
         }))
@@ -40,7 +40,7 @@ brushVis.prototype.initVis = function () {
         .call(d3.axisBottom(x));
 
     // Add Y axis
-    var y = d3.scaleLinear()
+    let y = d3.scaleLinear()
         .domain([0, d3.max(new_data, function (d) {
             return d.infections;
         })])
