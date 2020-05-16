@@ -56,7 +56,7 @@ brushVis.prototype.initVis = function () {
     svg.append("path")
         .datum(new_data)
         .attr("fill", "none")
-        .attr("stroke", "steelblue")
+        .attr("stroke", "red")
         .attr("stroke-width", 2.5)
         .attr("d", d3.line()
             .x(function (d) {
@@ -65,5 +65,5 @@ brushVis.prototype.initVis = function () {
             .y(function (d) {
                 return y(d.infections);
             })
-        )
+        );
 };

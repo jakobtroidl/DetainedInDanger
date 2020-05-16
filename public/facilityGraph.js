@@ -71,7 +71,7 @@ facilityGraph.prototype.plotGraph = function (selectedFacility) {
     fg_svg.append("path")
         .datum(fgData)
         .attr("fill", "none")
-        .attr("stroke", "steelblue")
+        .attr("stroke", "red")
         .attr("stroke-width", 2.5)
         .attr("d", d3.line()
             .x(function (d) {
