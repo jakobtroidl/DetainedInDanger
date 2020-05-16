@@ -5,6 +5,7 @@ let margin, width, height, active;
 let path, projection, id_name_map, g, svg, rect, svg1;
 let div, colorScale, noReports_color;
 let totalCasesPerFacility;
+let lastScale;
 
 // constructor
 mapVis = function(_parentElement, _legendElement,  _dataFill)
@@ -218,10 +219,11 @@ mapVis.prototype.ready = function(us) {
             .style("stroke", "white")
             .style("opacity", 1.0)
             .on("mouseover", function(d) {
+
                 d3.select(this).
                     transition()
                     .duration(200)
-                    .attr('r', 8);
+                    .attr('r', 7);
 
                 div.transition()
                     .duration(200)
@@ -234,8 +236,9 @@ mapVis.prototype.ready = function(us) {
 
             // fade out tooltip on mouse out
             .on("mouseout", function(d) {
-                d3.select(this).
-                transition()
+
+                d3.select(this)
+                    .transition()
                     .duration(200)
                     .attr('r', 4);
 
@@ -280,9 +283,9 @@ function clicked(d) {
         .style("stroke-width", 1.5 / scale + "px")
         .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
 
-    // g.selectAll("circle").transition()
+    // svg.selectAll("circle").transition()
     //     .duration(750)
-    //     .attr("transform", "scale(" + scale + ")");
+    //     .attr("transform", "translate(" + translate + ")");
 }
 
 
@@ -295,9 +298,12 @@ function reset() {
         .duration(750)
         .style("stroke-width", "1.5px")
         .attr('transform', 'translate('+margin.left+','+margin.top+')');
-    g.selectAll("circle")
-        .transition()
-        .delay(850)
-        .duration(1)
-        .style("stroke-width", "1px");
+
+    // g.selectAll("circle")
+    //     .transition()
+    //     .delay(850)
+    //     .duration(1)
+    //     .attr("r",);
+        //.style("stroke-width", "1px");
+
 }
