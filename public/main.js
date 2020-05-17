@@ -8,6 +8,7 @@ let myMapVis;
 let myBrushVis;
 let myBaseballCard;
 let myFacilityGraph;
+let myChart;
 
 // init globalDataSets
 let dailyCases;
@@ -65,8 +66,5 @@ function initMainPage(dataArray) {
     myFacilityGraph = new facilityGraph('facilityGraphDiv', dailyCases);
     myBaseballCard = new baseballCard("baseballCard", totalCases, dailyCases);
 
-    //chart = new chart('chart', totalCases);
+    myChart = new chart('chart', totalCases);
 }
-
-
-

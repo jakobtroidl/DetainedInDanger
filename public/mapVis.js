@@ -57,8 +57,8 @@ mapVis.prototype.initVis = function() {
         .on('click', clicked);
 
     // maybe need to make a new area for the facility graph visualization
-    svg1 = d3.select("#chart").append("svg")
-    graph = svg.append("g");
+    // svg1 = d3.select("#chart").append("svg")
+    // graph = svg.append("g");
     
     Promise.resolve(d3.json('county_us.topojson'))
         .then(this.ready);
