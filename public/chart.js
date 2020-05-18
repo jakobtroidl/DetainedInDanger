@@ -1,8 +1,7 @@
 /* * * * * * * * * * * * * *
 *      Ranking chart       *
 * * * * * * * * * * * * * */
-let chart_svg, c_margin, c_width, c_height;
-let chart_table, chart_data;
+let chart_data;
 
 // constructor
 chart = function(_parentElement, _totalCases)
