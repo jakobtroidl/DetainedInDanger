@@ -8,12 +8,12 @@ Baker County Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Bedford Heights City Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Bergen County Jail,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
 Berks Family Residential Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Bluebonnet Detention Facility,,,,,,,,,,,,,,1,1,1,1,20,24,27,27,27,27,39,41,41,41,42,72,72,79,79,79,79,79,79
+Bluebonnet Detention Facility,,,,,,,,,,,,,,1,1,1,1,20,24,27,27,27,27,39,41,41,41,42,72,72,79,79,79,79,79,84
 Boone County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Bossier Parish Medium Security Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Bristol County House of Corrections,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1,1,1,1,1,1,1,1
 Brooks County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Broward Transitional Center,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,2,2,2,2,3,3,3,3
+Broward Transitional Center,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,2,2,2,2,3,3,3,19
 Buffalo Federal Detention Facility,,,,,4,7,7,8,11,12,13,45,46,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49
 Burnet County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Butler County Correctional Complex,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -21,7 +21,7 @@ Calhoun County Correction Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,2,2,2,2
 Caroline Detention Facility,,,,,,,,,,,,,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3
 Carver County Jail Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Cass County Jail Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Catahoula Correctional Center,,,,,,,,,,,,1,1,1,1,1,3,7,7,7,7,7,7,9,9,9,15,15,20,20,39,52,53,53,53,53
+Catahoula Correctional Center,,,,,,,,,,,,1,1,1,1,1,3,7,7,7,7,7,7,9,9,9,15,15,20,20,39,52,53,53,53,60
 Central Arizona Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Chautauqua County Jail,,,,,,,,,,,,,,,,,0,0,,,,,,,,,,,,,,,,,,
 Clay County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -34,7 +34,7 @@ Douglas County Department of Corrections,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 East Hidalgo Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Eden Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 El Paso County Criminal Justice Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-El Paso Processing Center,,,,,,,,,,,,4,5,5,5,5,7,7,8,8,8,8,8,8,8,8,8,8,9,10,10,10,10,10,10,10
+El Paso Processing Center,,,,,,,,,,,,4,5,5,5,5,7,7,8,8,8,8,8,8,8,8,8,8,9,10,10,10,10,10,10,12
 El Valle Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Elizabeth Detention Center,,,,7,7,7,7,7,7,7,7,13,13,13,13,13,13,13,13,13,17,17,17,18,18,18,18,18,18,18,18,18,18,18,18,18
 Eloy Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -59,9 +59,9 @@ Hall County Department of Corrections,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Hardin County Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Henderson County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Henderson Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Houston Contract Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,2,8,11,18,21,22,22,22,22,22,22
+Houston Contract Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,2,8,11,18,21,22,22,22,22,22,25
 Howard County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Hudson County Jail,2,2,2,4,5,5,5,5,5,5,5,8,8,8,8,8,8,9,9,10,10,10,10,10,11,11,12,13,13,13,13,13,13,13,13,13
+Hudson County Jail,2,2,2,4,5,5,5,5,5,5,5,8,8,8,8,8,8,9,9,10,10,10,10,10,11,11,12,13,13,13,13,13,13,13,13,14
 IAH Secure Adult Detention Facility,,,,,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,9,9,12,12,14,15,16,16,16,16,16,16
 Imperial Regional Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Irwin County Detention Center,,,,,,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,5,5,6,6,7,7,7,7
@@ -69,17 +69,17 @@ Jack Harwell Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Jackson Parish Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 James A. Musick Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Jefferson County Justice Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Joe Corley Detention Center,,,,,,,,,,,,,,,,,,2,5,14,15,15,15,17,21,21,25,25,29,29,32,32,32,32,32,32
+Joe Corley Detention Center,,,,,,,,,,,,,,,,,,2,5,14,15,15,15,17,21,21,25,25,29,29,32,32,32,32,32,34
 Johnson County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Karnes County Correctional Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Karnes County Residential Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Kay County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Kenosha County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Krome Detention Center,,,,,1,1,1,1,1,1,2,2,2,2,2,2,4,4,4,7,9,9,9,10,10,10,11,11,11,11,13,13,13,13,13,13
-La Palma Correctional Facility,1,1,2,2,2,2,2,2,2,6,6,13,18,18,18,18,23,24,24,26,29,29,29,30,33,33,36,52,53,56,57,58,58,58,58,58
+La Palma Correctional Facility,1,1,2,2,2,2,2,2,2,6,6,13,18,18,18,18,23,24,24,26,29,29,29,30,33,33,36,52,53,56,57,58,58,58,58,62
 La Salle County Regional Detention Center,,,1,1,1,1,2,2,2,2,2,2,,,,,,,,,,,,,,,,,,,,,,,,
 Laredo Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-LaSalle ICE Processing Center,,,,,,,,1,1,1,1,1,3,3,3,4,5,7,7,8,10,10,10,10,10,11,11,11,11,11,11,12,12,12,12,12
+LaSalle ICE Processing Center,,,,,,,,1,1,1,1,1,3,3,3,4,5,7,7,8,10,10,10,10,10,11,11,11,11,11,11,12,12,12,12,15
 Lincoln County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1,1
 McHenry County Adult Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Mesa Verde ICE Processing Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -92,8 +92,8 @@ Natchitoches Parish Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Nevada Southern Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1
 Polk County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1,1
 Orange County Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Otay Mesa Detention Center,,1,1,5,10,10,12,15,15,17,18,20,29,42,42,57,75,84,94,98,105,105,105,106,124,132,133,139,144,147,149,149,149,149,149,149
-Otero County Processing Center,,,,,,1,1,1,1,1,1,1,1,1,2,2,2,3,3,4,6,6,6,6,10,12,12,12,20,20,36,38,38,38,38,38
+Otay Mesa Detention Center,,1,1,5,10,10,12,15,15,17,18,20,29,42,42,57,75,84,94,98,105,105,105,106,124,132,133,139,144,147,149,149,149,149,149,151
+Otero County Processing Center,,,,,,1,1,1,1,1,1,1,1,1,2,2,2,3,3,4,6,6,6,6,10,12,12,12,20,20,36,38,38,38,38,55
 Pike County Correctional Facility,1,4,5,5,5,5,5,5,6,7,7,11,11,13,13,14,14,16,16,16,16,16,16,18,18,20,20,20,20,20,20,20,20,20,20,20
 Pine Prairie ICE Processing Center,1,1,1,1,1,1,2,2,2,2,4,9,6,15,15,15,17,17,19,20,21,21,21,25,26,26,26,26,27,28,30,30,30,30,30,30
 Plymouth County Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -105,7 +105,7 @@ Rio Grande Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 River Correctional Center,,,,,,,,,,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
 Robert A. Deyton Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Roger D. Wilson Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Rolling Plains Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,3,23,23,34,34,35,35,35,35,35,35,35,35
+Rolling Plains Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,3,23,23,34,34,35,35,35,35,35,35,35,37
 Santa Ana City Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Seneca County Jail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Sherburne County Jail Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -132,7 +132,7 @@ Webb County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1,1,1,1,1,1,1,1,1
 Weber County Correctional Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 West Texas Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Willacy County Regional Detention Facility,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Winn Correctional Center,,,,,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,7,7,7,7,12,16,16,16,16,20,20,20,20,37,37,37,37
+Winn Correctional Center,,,,,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,7,7,7,7,12,16,16,16,16,20,20,20,20,37,37,37,58
 Worcester County Detention Center,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Wyatt Detention Center,,,,,,,,,,,,,,,,,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2
 York County Prison,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1

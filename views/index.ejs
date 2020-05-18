@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <title>ICE COVID-19 Information</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    body, h1, h2, h3, h4, h5 {
+        font-family: "Raleway", sans-serif
+    }
 </style>
 <body class="w3-light-grey">
 
@@ -16,6 +19,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
 
+<<<<<<< HEAD
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32"> 
   <h1><b>ICE COVID-19 Information</b></h1>
@@ -58,131 +62,197 @@ and is wrapped around the whole page content, except for the footer in this exam
   </div>
 
   <hr>
+=======
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-32">
+        <h1><b>ICE COVID-19 Information</b></h1>
+        <p>Compiled by <span class="w3-tag">Human Rights First</span></p>
+        <p> SUMMARY: sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+            est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+            tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+            autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
+            qui dolorem eum fugiat quo voluptas nulla pariat</p>
+    </header>
 
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>Case Study</b></h3>
-      <h5>By HCDAG <span class="w3-opacity">May 10th, 2020</span></h5>
+    <!-- Grid -->
+    <div class="w3-row">
+
+        <!-- Blog entries -->
+        <div class="w3-col l8 s12">
+            <!-- Blog entry -->
+            <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-container">
+                    <h3><b>Detention Center Map</b></h3>
+                    <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                </div>
+                <div class="w3-container" style="height: 70vh; width: 100%; background: white;">
+                    <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
+                </div>
+                <div class="w3-container" style="height: 100px; width: 100%; background: white; padding: 0;">
+                    <div id="mapLegendDiv" style="height: 100%; width:100%; background: white"></div>
+                </div>
+            </div>
+
+            <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-container">
+                    <h3><b>Total Infections</b></h3>
+                    <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                </div>
+                <div class="w3-container" style="height: 25vh; width: 100%; background: white;">
+                    <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Blog entry -->
+            <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-container">
+                    <h3><b>Case Study</b></h3>
+                    <h5>By HCDAG <span class="w3-opacity">May 10th, 2020</span></h5>
+                </div>
+
+                <div class="w3-container">
+                    <p>In this article, we analyze ICE's response to COVID-19 by referring to data, specific facilities
+                        and detainees themselves.
+                        By doing so, we hope to inform the public, while maintaining a strictly objective viewpoint.</p>
+                    <div class="w3-row">
+                        <div class="w3-col m8 s12">
+                            <p>
+                                <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b>
+                                </button>
+                            </p>
+                        </div>
+                        <div class="w3-col m4 w3-hide-small">
+                            <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BLOG ENTRIES -->
+        </div>
+>>>>>>> 7620b5afaaf371704420eabb32e4e8f21eabec63
+
+
+        <div class="w3-col l4">
+            <!-- SPOT FOR BASEBALL CARD GRAPHIC -->
+            <div class="w3-card w3-margin w3-margin-top">
+                <div id="baseballCard" class="w3-container w3-white">
+                    <!-- insert graph here -->
+                    <div class="w3-container" style="height: 100%; width: 100%; background: white; padding: 0;">
+                        <div id="facilityGraphDiv" style="height: 25vh; width: 100%; background: white"></div>
+                    </div>
+                    <!-- insert graph here ^-->
+                    <div class="card-body w3-container"
+                         style="height: 100%; width: 100%; background: white; padding: 0;">
+                        <h4 id="facilityname" class="card-title w3-container"></h4>
+                        <ul class="card-text w3-container" style="list-style: none; padding-left: 0">
+                            <li id="loc"></li>
+                            <li id="cases"></li>
+                            <li id="detainees"></li>
+                            <li id="operator"></li>
+                            <li id="newslink" class="card-body text-center"><a href="#" class="card-link"
+                                                                               style="color:blue"><b></b></a></li>
+                        </ul>
+                    </div>
+                    <!-- end my code for baseball card -->
+                </div>
+            </div>
+            <hr>
+
+            <!-- Posts -->
+            <div class="w3-card w3-margin">
+                <div class="w3-container w3-padding" style="height: 100%; width:100%">
+                    <h4>ICE Centers</h4>
+                    <!--      <div class="w3-container" style="height: 100%; width: 100%; background: white;">-->
+                    <!--        <div id="chartDiv" class="rankingtable" style="height: 15vh; width:100%; background: white">  &lt;!&ndash; div is scrollable &ndash;&gt;</div>-->
+                    <!--      </div>-->
+                </div>
+                <div style="height: 40vh; width: 100%; background: white">
+                    <ul id="chartDiv" class="w3-ul w3-hoverable w3-white" style="overflow-y: auto; height: 100%; width:100%">
+                        <!-- ranking table is instered here-->
+                    </ul>
+                </div>
+                <hr>
+
+
+                <div class="w3-card w3-margin">
+                    <div class="w3-container w3-padding" style="height:100%; width:100%; background-color:white">
+                        <div class="infographics" style="background-color: white">
+                            <h3><b>Data Visualizations</b></h3>
+                            <div class="infoLeft">
+                                <img src="SOURCE" alt="Infographic #1">
+                                </img>
+                            </div>
+                            <div class="infoRight">
+                                <img src="SOURCE" alt="Infographic #2">
+                                </img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="w3-card w3-margin">
+                    <div class="w3-container w3-padding" style="height:100%; width:100%; background-color: white">
+                        <div class="acknowledgements" style="background-color: white">
+                            <h3><b>Acknowledgements</b></h3>
+                            <div class="info">
+                                <p><h4><i>ICE.gov</i></h4> We use a webscraping algorithm to take a publicly-available
+                                ICE detainee COVID-19 count from ice.gov</p>
+                            </div>
+                            <div class="infosec">
+                                <p><h4><i>W3</i></h4> We utilized and modified a W3 template for the HTML and CSS of
+                                this website </p>
+                            </div>
+                            <div class="infothird">
+                                <p><h4><i>R. Roessler</i></h4> Our map visualization and chart was derived from the
+                                template created by Robert Roessler (https://github.com/rob3rtroessler)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Labels / tags -->
+
+                <!-- END Introduction Menu -->
+            </div>
+
+            <!-- END GRID -->
+        </div>
+        <br>
+
+        <!-- END w3-content -->
     </div>
 
-    <div class="w3-container">
-      <p>In this article, we analyze ICE's response to COVID-19 by referring to data, specific facilities and detainees themselves. 
-      By doing so, we hope to inform the public, while maintaining a strictly objective viewpoint.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
-
-<div class="w3-col l4">
-  <!-- SPOT FOR BASEBALL CARD GRAPHIC -->
-  <div class="w3-card w3-margin w3-margin-top">
-    <div id="baseballCard" class="w3-container w3-white">
-        <!-- insert graph here --> 
-        <div class="w3-container" style="height: 100%; width: 100%; background: white; padding: 0;">
-          <div id="facilityGraphDiv" style="height: 25vh; width: 100%; background: white"></div>
-        </div>
-        <!-- insert graph here ^-->
-        <div class="card-body w3-container" style="height: 100%; width: 100%; background: white; padding: 0;">
-          <h4 id="facilityname" class="card-title w3-container"></h4>
-          <ul class="card-text w3-container" style="list-style: none; padding-left: 0">
-            <li id="loc"></li>
-            <li id="cases"></li>
-            <li id="detainees"></li>
-            <li id="operator"></li>
-            <li id="newslink" class="card-body text-center"><a href="#" class="card-link" style="color:blue"><b></b></a></li>
-          </ul>
-        </div>
-      <!-- end my code for baseball card -->
-    </div>
-  </div><hr>
-  
-  <!-- Posts -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding" style="height: 100%; width:100%">
-      <h4>ICE Centers</h4>
-      <div class="w3-container" style="height: 100%; width: 100%; background: white;">
-        <div id="chartDiv" style="height: 15vh; width:100%; background: white">  <!-- div is scrollable -->
-        </div>
-  </div>
-  </div>
-  <hr> 
-
-
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding" style ="height:100%; width:100%; background-color:white">
-       <div class="infographics" style="background-color: white">
-         <h3><b>Data Visualizations</b></h3>
-          <div class="infoLeft">
-            <img src="SOURCE" alt="Infographic #1"> 
-            </img>
-          </div>
-          <div class="infoRight">
-            <img src="SOURCE" alt="Infographic #2">
-            </img>
-          </div>
-        </div>
-    </div>
-    </div>
-    
-      
-    <div class="w3-card w3-margin">
-      <div class="w3-container w3-padding" style ="height:100%; width:100%; background-color: white">
-         <div class="acknowledgements" style="background-color: white">
-           <h3><b>Acknowledgements</b></h3>
-           <div class="info">
-             <p><h4><i>ICE.gov</i></h4> We use a webscraping algorithm to take a publicly-available ICE detainee COVID-19 count from ice.gov</p>
-           </div>
-           <div class="infosec">
-             <p><h4><i>W3</i></h4> We utilized and modified a W3 template for the HTML and CSS of this website </p>
-           </div>
-          <div class="infothird">
-             <p><h4><i>R. Roessler</i></h4> Our map visualization and chart was derived from the template created by Robert Roessler (https://github.com/rob3rtroessler)</p>
-           </div>
-        </div>
-      </div>
-    </div>
- 
-  <!-- Labels / tags -->
-  
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-</footer>
+    <!-- Footer -->
+    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+    </footer>
     <!-- BOOTSTRAP -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
     <script type="text/javascript" src="https://d3js.org/topojson.v3.min.js"></script>
 
     <!-- OWN JS -->
     <script src="mapVis.js"></script>
-<!--    <script src="scatterVis.js"></script>-->
+    <!--    <script src="scatterVis.js"></script>-->
     <script src="brushVis.js"></script>
     <script src="facilityGraph.js"></script>
     <script src="baseballCard.js"></script>
     <script src="main.js"></script>
     <script src="chart.js"></script>
-        
+
 
 </body>
 </html>
