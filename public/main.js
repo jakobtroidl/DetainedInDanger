@@ -41,7 +41,8 @@ function initMainPage(dataArray) {
         let cumCases = facility[keys.slice(-1)[0]];
         totalCases[name] = cumCases;
     });
-    //console.log(dailyCases);
+
+    console.log(totalCases);
 
     //extracting total ICE history for timeline
     dailyCases.map(function(d){
