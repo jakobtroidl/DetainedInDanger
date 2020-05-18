@@ -2,7 +2,7 @@
 *          MapVis          *
 * * * * * * * * * * * * * */
 let margin, width, height, active;
-let path, projection, id_name_map, g, svg, rect, svg1;
+let path, projection, id_name_map, g, svg, rect;
 let div, colorScale, noReports_color;
 let totalCasesPerFacility;
 let lastScale;
@@ -55,10 +55,6 @@ mapVis.prototype.initVis = function() {
         .attr('height', height + margin.top + margin.bottom)
         .attr('width', width + margin.left + margin.right)
         .on('click', clicked);
-
-    // maybe need to make a new area for the facility graph visualization
-    // svg1 = d3.select("#chart").append("svg")
-    // graph = svg.append("g");
     
     Promise.resolve(d3.json('county_us.topojson'))
         .then(this.ready);
@@ -88,7 +84,6 @@ mapVis.prototype.initVis = function() {
         .range(["#ffffff", "#ffd5d5", "#ffabab", "#ff8181", "#ff5757", "#ff2d2d", "#ff0000"]);
 
     this.initLegend();
-
 
 };
 

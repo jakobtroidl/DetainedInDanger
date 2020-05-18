@@ -56,6 +56,10 @@ baseballCard.prototype.renderCenter = function(center){
     if (cases == "") {
         d3.select("#cases").text("has no reported cases");
     }
+    else if (cases == 1) {
+        d3.select("#cases")
+        .text("has "+ cases + " confirmed case");
+    }
     else {
         d3.select("#cases")
         .text("has "+ cases + " confirmed cases");
