@@ -16,37 +16,6 @@ chart = function(_parentElement, _totalCases)
 
 // init chart
 chart.prototype.init = function() {
-    // margin, width, height
-    c_margin = {top: 20, right: 10, bottom: 20, left: 10};
-    c_width = $("#" + this.parentElement).width() - c_margin.left - c_margin.right;
-    c_height = $("#" + this.parentElement).height() - c_margin.top - c_margin.bottom;
-
-    // init drawing area
-    chart_table = d3.select("#" + this.parentElement)
-        .append('table')
-        .style("border-collapse", "collapse")
-        .style("border", "2px black solid");
-
-    this.display();
-    }
-
-chart.prototype.display = function() {
-
-
-
-    // headers
-    chart_table.append("thead").append("tr")
-        .selectAll("th")
-        .data(["Name", "Cases"])
-        .enter().append("th")
-        .text(function(d) { return d; })
-        .style("border", "1px black solid")
-        .style("padding", "5px")
-        .style("background-color", "lightgray")
-        .style("font-weight", "bold")
-        .style("text-transform", "uppercase");
-
-    //console.log(Object.keys(this.data));
 
     let new_data = [];
     Object.keys(chart_data).forEach(function (center) {
@@ -54,31 +23,28 @@ chart.prototype.display = function() {
         }
     )
 
-    console.log(new_data);
+    new_data = new_data.sort((a, b) => b.cases - a.cases)
 
-    // data
-    chart_table.append("tbody")
-        .selectAll("tr").data(new_data)
-        .enter().append("tr")
-        .selectAll("td")
-        .data(function(d){
-            console.log(d);
-            return d.cases;
-        })
-        .enter().append("td")
-        .style("border", "1px black solid")
-        .style("padding", "5px")
-        .on("mouseover", function(){
-            d3.select(this).style("background-color", "powderblue");
-        })
-        .on("mouseout", function(){
-            d3.select(this).style("background-color", "white");
-        })
-        .text(function(d){return d;})
-        .style("font-size", "12px");
+    for(let i = 0; i < new_data.length; i++){
+        console.log(new_data[i]);
+        let list_el = d3.select("#" + this.parentElement)
+            .append("li")
+            .attr("class", "w3-padding-16");
 
-    // chart_table.selectAll("tr")
-    //     .sort(function(a, b) {
-    //         return d3.descending(a['Confirmed Cases'], b['Confirmed Cases']);
-    //     });
+        list_el.append("span")
+            .attr("class", "w3-large")
+            .text(new_data[i].name);
+
+        list_el.append("br");
+
+        list_el.append("span")
+            .text(function (){
+
+                let cases = new_data[i].cases;
+                if(cases === ""){
+                    return "Unknown #cases"
+                }
+                return cases;
+            });
+    }
 }

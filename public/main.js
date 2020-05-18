@@ -42,7 +42,7 @@ function initMainPage(dataArray) {
         totalCases[name] = cumCases;
     });
 
-    console.log(totalCases);
+    //console.log(totalCases);
 
     //extracting total ICE history for timeline
     dailyCases.map(function(d){
