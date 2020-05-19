@@ -16,40 +16,53 @@ chart = function(_parentElement, _totalCases)
 // init chart
 chart.prototype.init = function() {
 
-    let new_data = [];
-    Object.keys(chart_data).forEach(function (center) {
-            new_data.push({name: center, cases: chart_data[center]});
-        }
-    )
+        let new_data = [];
+        Object.keys(chart_data).forEach(function (center) {
+                new_data.push({name: center, cases: chart_data[center]});
+            }
+        )
 
-    new_data = new_data.sort((a, b) => b.cases - a.cases)
+        new_data = new_data.sort((a, b) => b.cases - a.cases)
 
-    for ( let i = 0; i < new_data.length; i++){
+        for (let i = 0; i < new_data.length; i++) {
 
-        let list_el = d3.select("#" + this.parentElement)
-            .append("li")
-            .attr("class", "w3-padding-16");
+            let list_el = d3.select("#" + this.parentElement)
+                .append("li")
+                .attr("class", "w3-padding-16");
 
-        list_el.append("span")
-            .attr("class", "w3-large")
-            .attr("id", "facility_name")
-            .text(new_data[i].name);
+            list_el.append("span")
+                .attr("class", "w3-large")
+                .attr("id", "facility_name")
+                .text(new_data[i].name);
 
-        list_el.append("br");
+            list_el.append("br");
 
-        list_el.append("span")
-            .text(function (){
+            list_el.append("span")
+                .text(function () {
 
-                let cases = new_data[i].cases;
-                if(cases === ""){
-                    return "no reported cases"
-                }
-                return cases + " confirmed cases";
+                    let cases = new_data[i].cases;
+                    if (cases === "") {
+                        return "no reported cases"
+                    }
+                    return cases + " confirmed cases";
+                });
+
+            list_el.on("click", function () {
+
+                //d3.select("#chartDiv").selectAll("li").style("background-color", "rgb(255,255,255)");
+
+
+                //d3.select(this).style("background-color", "rgb(204, 204, 204)");
+                selectedCenter = this.firstElementChild.textContent;
+                d3.csv("facilities.csv").then(function(data) {
+                    data.forEach(function (row) {
+                        if (row.name === selectedCenter){
+                            myBaseballCard.renderCenter(row);
+                            myMapVis.updateDot(row);
+                        }
+                    })
+                })
             });
 
-        // list_el.addEventListener('click',(e)=>{
-        //     console.log(e.target.textContent);
-        // });
-
-    }
+        }
 }

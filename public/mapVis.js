@@ -174,11 +174,16 @@ mapVis.prototype.ready = function(us) {
         .attr("class", "state")
         .on("click", clicked);
 
+
+
     d3.csv("facilities.csv").then(function(data) {
-    // add circles to g
+        // add circles to g
         g.selectAll("circle")
             .data(data).enter()
             .append("circle")
+            .attr("id", function (d){
+                return d.name.replace(/\s+/g, '');
+            })
             .attr("cx", function (d) {
                 return projection([d.lon, d.lat])[0]; })
             .attr("cy", function (d) {
@@ -216,7 +221,7 @@ mapVis.prototype.ready = function(us) {
             .on("mouseover", function(d) {
 
                 d3.select(this).
-                    transition()
+                transition()
                     .duration(200)
                     .attr('r', 7);
 
@@ -247,8 +252,6 @@ mapVis.prototype.ready = function(us) {
                 myBaseballCard.renderCenter(d);
             });
     });
-    
-
 
 
     g.append("path")
@@ -301,4 +304,12 @@ function reset() {
     //     .attr("r",);
         //.style("stroke-width", "1px");
 
+}
+
+mapVis.prototype.updateDot = function(center) {
+    d3.selectAll("circle").attr("r", 4);
+    let dot_id = center.name.replace(/\s+/g, '')
+    d3.selectAll("#" + dot_id).transition()
+        .duration(200)
+        .attr("r", 7);
 }
