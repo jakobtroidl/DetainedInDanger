@@ -219,6 +219,8 @@ mapVis.prototype.ready = function(us) {
             .style("stroke", "white")
             .style("opacity", 1.0)
             .on("mouseover", function(d) {
+                //reset radii
+
 
                 d3.select(this).
                 transition()
@@ -249,6 +251,7 @@ mapVis.prototype.ready = function(us) {
 
             // BASEBALL CARD APPEARANCE ON MOUSE CLICK //
             .on("click", function(d) {
+                d3.selectAll("circle").attr("r", 4);
                 myBaseballCard.renderCenter(d);
             });
     });
