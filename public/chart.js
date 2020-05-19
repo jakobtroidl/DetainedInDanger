@@ -47,9 +47,9 @@ chart.prototype.init = function() {
                 return cases + " confirmed cases";
             });
 
-        list_el.addEventListener('click',(e)=>{
-            console.log(e.target.textContent);
-        });
+        // list_el.addEventListener('click',(e)=>{
+        //     console.log(e.target.textContent);
+        // });
 
     }
 }
