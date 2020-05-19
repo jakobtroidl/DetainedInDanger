@@ -48,11 +48,6 @@ chart.prototype.init = function() {
                 });
 
             list_el.on("click", function () {
-
-                //d3.select("#chartDiv").selectAll("li").style("background-color", "rgb(255,255,255)");
-
-
-                //d3.select(this).style("background-color", "rgb(204, 204, 204)");
                 selectedCenter = this.firstElementChild.textContent;
                 d3.csv("facilities.csv").then(function(data) {
                     data.forEach(function (row) {
@@ -63,6 +58,5 @@ chart.prototype.init = function() {
                     })
                 })
             });
-
         }
 }

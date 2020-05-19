@@ -44,10 +44,6 @@ async function scrapeICEPage()
             // extracting data
             const list = name.split(/\s+/);
             const cases = list[0];
-            // const state = list[list.length - 1].replace(")", "");
-            // const city = list[list.length - 2]
-            //     .replace("(", "")
-            //     .replace(",", "");
 
             // find end of jail name
             let idx;
@@ -74,13 +70,10 @@ async function scrapeICEPage()
     data.forEach(function (row) {
         let infections_today;
         let result = array.find(obj => obj.jail === row.Name);
-        //console.log(row.Name + " -> " + result);
         if (result !== undefined){
             infections_today = result.infections;
-            //console.log(row.Name + " -> " + result.infections + ' ' + result.jail);
         }
         else {
-            //console.log("Cant find entry for: " + row.Name );
             infections_today = "";
         }
         let today = new Date();

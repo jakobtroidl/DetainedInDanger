@@ -19,7 +19,7 @@ baseballCard.prototype.init = function() {
     d3.select("#facilityname")
         .text("Click on a facility on the map for more information");
     d3.select("#cases")
-        .text("There are 881 total confirmed COVID-19 cases among ICE detainees.");
+        .text("There are  total confirmed COVID-19 cases among ICE detainees.");
     d3.select("#detainees")
         .text("ICE has administered 1.736 COVID-19 tests.");
     d3.select("#operator")
