@@ -24,14 +24,15 @@ chart.prototype.init = function() {
 
     new_data = new_data.sort((a, b) => b.cases - a.cases)
 
-    for(let i = 0; i < new_data.length; i++){
-        console.log(new_data[i]);
+    for ( let i = 0; i < new_data.length; i++){
+
         let list_el = d3.select("#" + this.parentElement)
             .append("li")
             .attr("class", "w3-padding-16");
 
         list_el.append("span")
             .attr("class", "w3-large")
+            .attr("id", "facility_name")
             .text(new_data[i].name);
 
         list_el.append("br");
@@ -45,5 +46,11 @@ chart.prototype.init = function() {
                 }
                 return cases;
             });
+
+        list_el.on("click", function () {
+            //let name = list_el.select("#facility_name").textContent;
+            console.log(list_el.select("#facility_name"));
+        })
+
     }
 }
