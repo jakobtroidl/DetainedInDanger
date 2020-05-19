@@ -57,15 +57,9 @@ function initMainPage(dataArray) {
         });
     });
 
-    //console.log(totalICEHistory);
-
-    // init map
     myMapVis = new mapVis('mapDiv', 'mapLegendDiv', totalCases);
-
-    // init brush
     myBrushVis = new brushVis('brushDiv', totalICEHistory);
     myFacilityGraph = new facilityGraph('facilityGraphDiv', dailyCases);
     myBaseballCard = new baseballCard("baseballCard", totalCases, dailyCases);
-
     myChart = new chart('chartDiv', totalCases);
 }

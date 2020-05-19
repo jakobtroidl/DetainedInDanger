@@ -42,15 +42,14 @@ chart.prototype.init = function() {
 
                 let cases = new_data[i].cases;
                 if(cases === ""){
-                    return "Unknown #cases"
+                    return "no reported cases"
                 }
-                return cases;
+                return cases + " confirmed cases";
             });
 
-        list_el.on("click", function () {
-            //let name = list_el.select("#facility_name").textContent;
-            console.log(list_el.select("#facility_name"));
-        })
+        list_el.addEventListener('click',(e)=>{
+            console.log(e.target.textContent);
+        });
 
     }
 }
