@@ -5,7 +5,7 @@ let margin, width, height, active;
 let path, projection, id_name_map, g, svg, rect;
 let div, colorScale, noReports_color;
 let totalCasesPerFacility;
-let lastScale;
+let dotRadiusBig, dotRadiusSmall;
 
 // constructor
 mapVis = function(_parentElement, _legendElement,  _dataFill)
@@ -28,6 +28,8 @@ mapVis.prototype.initVis = function() {
         });
     });
     noReports_color = "rgb(0,0,0)";
+    dotRadiusBig = 9;
+    dotRadiusSmall = 4;
 
     //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
 //     let array = Object.values(totalCases);
@@ -219,13 +221,10 @@ mapVis.prototype.ready = function(us) {
             .style("stroke", "white")
             .style("opacity", 1.0)
             .on("mouseover", function(d) {
-                //reset radii
-
-
                 d3.select(this).
                 transition()
                     .duration(200)
-                    .attr('r', 7);
+                    .attr('r', dotRadiusBig);
 
                 div.transition()
                     .duration(200)
@@ -242,7 +241,7 @@ mapVis.prototype.ready = function(us) {
                 d3.select(this)
                     .transition()
                     .duration(200)
-                    .attr('r', 4);
+                    .attr('r', dotRadiusSmall);
 
                 div.transition()
                     .duration(500)
@@ -251,7 +250,7 @@ mapVis.prototype.ready = function(us) {
 
             // BASEBALL CARD APPEARANCE ON MOUSE CLICK //
             .on("click", function(d) {
-                d3.selectAll("circle").attr("r", 4);
+                d3.selectAll("circle").attr("r", dotRadiusSmall);
                 myBaseballCard.renderCenter(d);
             });
     });
@@ -284,9 +283,6 @@ function clicked(d) {
         .style("stroke-width", 1.5 / scale + "px")
         .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
 
-    // svg.selectAll("circle").transition()
-    //     .duration(750)
-    //     .attr("transform", "translate(" + translate + ")");
 }
 
 
@@ -299,20 +295,12 @@ function reset() {
         .duration(750)
         .style("stroke-width", "1.5px")
         .attr('transform', 'translate('+margin.left+','+margin.top+')');
-
-    // g.selectAll("circle")
-    //     .transition()
-    //     .delay(850)
-    //     .duration(1)
-    //     .attr("r",);
-        //.style("stroke-width", "1px");
-
 }
 
 mapVis.prototype.updateDot = function(center) {
-    d3.selectAll("circle").attr("r", 4);
+    d3.selectAll("circle").attr("r", dotRadiusSmall);
     let dot_id = center.name.replace(/\s+/g, '')
     d3.selectAll("#" + dot_id).transition()
         .duration(200)
-        .attr("r", 7);
+        .attr("r", dotRadiusBig);
 }
