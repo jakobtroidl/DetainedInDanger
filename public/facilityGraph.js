@@ -13,7 +13,7 @@ facilityGraph.prototype.initVis = function () {
     bc_width = $("#" + this.parentElement).width() - bc_margin.left - bc_margin.right;
     bc_height = $("#" + this.parentElement).height() - bc_margin.top - bc_margin.bottom;
 
-    // SVG drawing area
+    // // SVG drawing area
     fg_svg = d3.select("#" + this.parentElement).append("svg")
         .attr("width", bc_width + bc_margin.left + bc_margin.right)
         .attr("height", bc_height + bc_margin.top + bc_margin.bottom)
@@ -22,7 +22,6 @@ facilityGraph.prototype.initVis = function () {
 };
 
 facilityGraph.prototype.plotGraph = function (selectedFacility) {
-
     // clear svg first before plotting something new
     fg_svg.selectAll("*").remove();
 

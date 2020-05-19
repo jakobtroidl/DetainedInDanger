@@ -23,8 +23,11 @@ and is wrapped around the whole page content, except for the footer in this exam
     <header class="w3-container w3-center w3-padding-32">
         <h1><b>ICE COVID-19 Information</b></h1>
         <p>Compiled by <span class="w3-tag">Human Rights First</span></p>
+        <div class="w3-card w3-center" style="background: white; margin: 30px; padding: 2%">
+          <div class="w3-container">
         <p> The interactive map below shows the numbers of confirmed cases of COVID-19 inside Immigration and Customs Enforcement (ICE) detention centers across the US, illustrating one important aspect of the epidemic within ICE’s facilities. Note that these numbers come from the official ICE website and may not account for deported persons who tested positive for COVID-19 or detained persons who were transferred between facilities.</p>
-    </header>
+        </div></div>
+      </header>
 
     <!-- Grid -->
     <div class="w3-row">
@@ -32,25 +35,25 @@ and is wrapped around the whole page content, except for the footer in this exam
         <!-- Blog entries -->
         <div class="w3-col l8 s12">
             <!-- Blog entry -->
-            <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-card-4 w3-margin">
                 <div class="w3-container">
-                    <h3><b>Detention Center Map</b></h3>
+                    <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers</b></h3>
                     <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
                 </div>
-                <div class="w3-container" style="height: 70vh; width: 100%; background: white;">
+                <div class="w3-container w3-white" style="height: 70vh; width: 100%; background: white;">
                     <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
                 </div>
-                <div class="w3-container" style="height: 100px; width: 100%; background: white; padding: 0;">
+                <div class="w3-container w3-white" style="height: 100px; width: 100%; background: white; padding: 0;">
                     <div id="mapLegendDiv" style="height: 100%; width:100%; background: white"></div>
                 </div>
             </div>
 
-            <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-card-4 w3-margin">
                 <div class="w3-container">
-                    <h3><b>Confirmed cases in ICE detention centers</b></h3>
+                    <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
                     <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
                 </div>
-                <div class="w3-container" style="height: 25vh; width: 100%; background: white;">
+                <div class="w3-container w3-white" style="height: 25vh; width: 100%; background: white;">
                     <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
                 </div>
             </div>
@@ -89,25 +92,31 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="w3-col l4">
             <!-- SPOT FOR BASEBALL CARD GRAPHIC -->
             <div class="w3-card w3-margin w3-margin-top">
-                <div id="baseballCard" class="w3-container w3-white">
+              <!-- <div id="facilityGraphDiv" class="w3-container" style="height: 100%; width: 100%; background: white"></div> -->
+                <div id="baseballCard" class="w3-container">
+    
+                  <br>
                     <!-- insert graph here -->
                     <div class="w3-container" style="height: 100%; width: 100%; background: white; padding: 0;">
-                        <div id="facilityGraphDiv" style="height: 25vh; width: 100%; background: white"></div>
+                      <h id="title" style="text-align: center; background:white"></h>  
+                      <div id="facilityGraphDiv" class="w3-container w3-white" style="height: 25vh; width: 100%"></div>
                     </div>
                     <!-- insert graph here ^-->
-                    <div class="card-body w3-container"
-                         style="height: 100%; width: 100%; background: white; padding: 0;">
-                        <h4 id="facilityname" class="card-title w3-container"></h4>
-                        <ul class="card-text w3-container" style="list-style: none; padding-left: 0">
+                    <div class="card-body w3-container w3-white"
+                         style="height: 100%; width: 100%; background: white; padding: 6;">
+                        <h4 id="facilityname" class="card-title w3-container" style="padding-top: 6"></h4>
+                        <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6;">
                             <li id="loc"></li>
                             <li id="cases"></li>
                             <li id="detainees"></li>
                             <li id="operator"></li>
-                            <li id="newslink" class="card-body text-center"><a href="#" class="card-link"
-                                                                               style="color:blue"><b></b></a></li>
+                            <!-- <li id="newslink" class="card-body text-center"><a href="#" class="card-link"
+                                                                               style="color:blue"><b></b></a></li> -->
                         </ul>
+                        <br>
                     </div>
                     <!-- end my code for baseball card -->
+                    <br>
                 </div>
             </div>
             <hr>
@@ -115,7 +124,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             <!-- Posts -->
             <div class="w3-card w3-margin">
                 <div class="w3-container w3-padding" style="height: 100%; width:100%">
-                    <h4>ICE Centers</h4>
+                    <h4><b>ICE Centers Ranked by Confirmed Cases</b></h4>
                     <!--      <div class="w3-container" style="height: 100%; width: 100%; background: white;">-->
                     <!--        <div id="chartDiv" class="rankingtable" style="height: 15vh; width:100%; background: white">  &lt;!&ndash; div is scrollable &ndash;&gt;</div>-->
                     <!--      </div>-->
@@ -153,28 +162,28 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <h3><b>Acknowledgements</b></h3>
                         <div class="info">
                             <p><h4><i>Authors</i></h4> This website is the result of a collaboration between the
-                            <a href="https://www.harvardanalytics.org/"><i>Harvard College Data Analytics Club</i></a>
+                            <a href="https://www.harvardanalytics.org/" style="color:#00BFFF"><i>Harvard College Data Analytics Group</i></a>
                             and
-                            <a href="https://www.humanrightsfirst.org/"><i>Human Rights First</i></a>.
+                            <a href="https://www.humanrightsfirst.org/" style="color:#00BFFF"><i>Human Rights First</i></a>.
 
                             The main authors are <i>Anna Duffy</i>, <i>Paige Lee</i>, <i>Noah List</i>, <i>Jakob Troidl</i>, <i>Kathryn Kuhar</i> and <i>Alex Domash</i>.
                             </p>
                         </div>
                         <div class="info">
-                            <p><h4><a href="https://www.ice.gov/coronavirus"><i>ICE.gov</i></a></h4> We use a
+                            <p><h4><a href="https://www.ice.gov/coronavirus" style="color:#00BFFF"><i>ICE.gov</i></a></h4> We use a
                             webscraping algorithm to take a publicly-available
                             ICE detainee COVID-19 count from ice.gov</p>
                         </div>
 
                         <div class="infosec">
                             <p><h4>
-                                <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_blog&stacked=h"><i>W3</i></a>
+                                <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_blog&stacked=h" style="color: #00BFFF"><i>W3</i></a>
                             </h4> We utilized and modified a W3 template for the HTML and CSS of
                             this website </p>
                         </div>
                         <div class="infothird">
                             <p><h4>
-                                <a href="http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782"><i>bl.ocks.org</i></a>
+                                <a href="http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782" style="color: #00BFFF"><i>bl.ocks.org</i></a>
                             </h4> Our map visualization was derived from the
                             template by bl.ocks.org</p>
                         </div>
