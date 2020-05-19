@@ -28,7 +28,7 @@ mapVis.prototype.initVis = function() {
         });
     });
     noReports_color = "rgb(0,0,0)";
-    dotRadiusBig = 9;
+    dotRadiusBig = 13;
     dotRadiusSmall = 4;
 
     //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
