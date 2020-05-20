@@ -25,17 +25,15 @@ baseballCard.prototype.init = function() {
             bc_new_data.push({date: new Date(k), infections: totalICEHistory[k]});
         }
     )
-
     // sorting array by date
-    bc_new_data = bc_new_data.sort((a, b) => b.date - a.date)
-
-    console.log(bc_new_data);
+    bc_new_data = bc_new_data.sort((a, b) => b.date - a.date);
+    
     d3.select("#cases")
         .text("There are  " + bc_new_data[0].infections + " total confirmed COVID-19 cases among ICE detainees.");
     d3.select("#detainees")
-        .text("ICE has administered 1.736 COVID-19 tests.");
+        .text("ICE has administered " + num_test + " COVID-19 tests.");
     d3.select("#operator")
-        .text("There are 29,675 detainees currently being held in ICE facilities.");
+        .text("There are " + num_detained + " detainees currently being held in ICE facilities.");
 };
 
 baseballCard.prototype.renderCenter = function(center){

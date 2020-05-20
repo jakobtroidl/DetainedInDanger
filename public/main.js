@@ -18,9 +18,13 @@ let totalICEHistory
 // init global switches
 let selectedCenter = '';
 
+let num_test = "";
+let num_detained = "";
+
 // load data using promises
 let promises = [
-    d3.csv("dailydetentioncases.csv")
+    d3.csv("dailydetentioncases.csv"),
+    d3.csv("meta_data.csv")
 ];
 
 Promise.all(promises)
@@ -42,8 +46,6 @@ function initMainPage(dataArray) {
         totalCases[name] = cumCases;
     });
 
-
-
     //extracting total ICE history for timeline
     dailyCases.map(function(d){
         Object.keys(d).forEach(function (col) {
@@ -57,7 +59,14 @@ function initMainPage(dataArray) {
         });
     });
 
-    console.log(totalICEHistory);
+    dataArray[1].forEach(function (d) {
+            if (d[0] === "num_tested"){
+                num_test = d[1];
+            }
+            if (d[0] === "num_detained"){
+                num_detained = d[1];
+            }
+        })
 
     myMapVis = new mapVis('mapDiv', 'mapLegendDiv', totalCases);
     myBrushVis = new brushVis('brushDiv', totalICEHistory);

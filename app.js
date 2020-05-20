@@ -54,8 +54,7 @@ async function scrapeICEPage()
             }
             const jail = list.slice(3, idx).join(" ");
 
-            //console.log(jail + ", " + cases);
-            const entry = {infections: cases, jail: jail/*, city: city, state: state*/};
+            const entry = {infections: cases, jail: jail};
             array.push(entry);
             i++;
         }
@@ -63,7 +62,30 @@ async function scrapeICEPage()
             terminate = true;
         }
     }
+
+    // scrape number of tests
+    const [el_tests] = await page.$x('//*[@id="node-page-56400"]/div/div/div[2]/table[1]/tbody/tr/td[1]/div[4]');
+    const text_tests = await el_tests.getProperty('textContent');
+    const name_tests = await text_tests.jsonValue();
+
+    let number_tests = name_tests.replace(",", "");
+
+    // scrape number of people detained
+    const [el_detained] = await page.$x('//*[@id="node-page-56400"]/div/div/div[2]/p[2]');
+    const text_detained = await el_detained.getProperty('textContent');
+    const name_detained = await text_detained.jsonValue();
+
+    let number_detained = name_detained.split(":")[1].replace(",", "").replace(".", "").split(/\s+/)[1];
+
     browser.close();
+
+    let th = [];
+    th.push(["num_detained", parseInt(number_detained)]);
+    th.push(["num_tested", parseInt(number_tests)]);
+
+    //console.log(th);
+    const meta_csv = new csv_writer(th);
+    await meta_csv.toDisk('data/meta_data.csv', false);
 
     let timeHistory = [];
 
