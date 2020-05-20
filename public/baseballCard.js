@@ -16,8 +16,6 @@ baseballCard = function(_parentElement, _totalCases, _dailyCases)
 
 // init baseball card
 baseballCard.prototype.init = function() {
-    d3.select("#facilityname")
-        .text("Click on a facility on the map for more information");
     d3.select("#cases")
         .text("There are  total confirmed COVID-19 cases among ICE detainees.");
     d3.select("#detainees")
@@ -28,7 +26,7 @@ baseballCard.prototype.init = function() {
 
 baseballCard.prototype.renderCenter = function(center){
     selectedCenter = center;
-
+    d3.select("#moreinfo").text("");
     // graph title
     d3.select("#title").text("Confirmed COVID-19 Cases Over Time")
     .attr("x", (width / 2))             

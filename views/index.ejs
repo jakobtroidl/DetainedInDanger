@@ -22,11 +22,18 @@ and is wrapped around the whole page content, except for the footer in this exam
     <!-- Header -->
     <header class="w3-container w3-center w3-padding-32">
         <h1><b>ICE COVID-19 Information</b></h1>
-        <p>Compiled by <span class="w3-tag">Human Rights First</span></p>
-        <p> This database tracks instances of COVID-19 in ICE detention centers across the country. To date, ___ ICE detainees have tested positive for COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared living spaces and ration PPE. In early May, the inevitable occured: after being denied release, the first ICE detainee tragically passed away from COVID-19.
-            The map below provides an opportunity to learn about how the pandemic has infiltrated each ICE detention center differently. We then report data on testing administration and bring the map to life by tracking the lived experiences of detainees held at three key detention centers: Otay Mesa, Adelanto and __.
-            While this database aims to provide a complete visualization of the hidden epidemic, several limitations must be noted. First, by public health standards, ICE has not tested enough detainees; half of all tests yield positive results, so the total number of positive detainees may be higher than indicated by ICE. Second, ICE updates its data 2-3 days after detention centers confirm cases, indicating a time lag. Third, the data does not include information about positive tests among US Marshal Service inmates and facility staffers; most detention centers are multi-purposed to house both US Marshal Service inmates and ICE detainees. Thus, the data included does not indicate the true level of pandemic severity at each listed detention center.</p>
-    </header>
+        <p style="text-align: center;">
+          <span class="w3-card w3-center" style="background: white; display: inline-block; padding: 10px;">Compiled by <b>Human Rights First and the Harvard 
+            College Data Analytics Group</b></span></p>
+        <div class="w3-card w3-center" style="background: white; margin: 30px; padding: 2%">
+          <div class="w3-container">
+        <p style="font-size: larger;"> The interactive map below shows the numbers of confirmed cases of COVID-19 
+            inside Immigration and Customs Enforcement (ICE) detention centers across the US, 
+            illustrating one important aspect of the epidemic within ICE’s facilities. Note that these
+            numbers come from the official ICE website and may not account for deported persons who
+            tested positive for COVID-19 or detained persons who were transferred between facilities.</p>
+        </div></div>
+      </header>
 
     <!-- Grid -->
     <div class="w3-row">
@@ -92,22 +99,22 @@ and is wrapped around the whole page content, except for the footer in this exam
             <!-- SPOT FOR BASEBALL CARD GRAPHIC -->
             <div class="w3-card w3-margin w3-margin-top">
               <!-- <div id="facilityGraphDiv" class="w3-container" style="height: 100%; width: 100%; background: white"></div> -->
-                <div id="baseballCard" class="w3-container">
+                <div id="baseballCard" class="w3-container w3-card ">
                   <br>
                     <!-- insert graph here -->
-                    <div class="w3-container" style="height: 100%; width: 100%; background: white; padding: 0;">
-                     
-                      <!-- IMAGE -->
-                      <img src="views/hrf-logo.png" alt="Human Rights First Logo">
-                      <img src="views/hcdag_logo.png" alt="hcdag Logo">
-                      <h id="title" style="text-align: center; background:white"></h>  
-                      <div id="facilityGraphDiv" class="w3-container w3-white" style="height: 25vh; width: 100%"></div>
-                    </div>
-                    <!-- insert graph here ^-->
-                    <div class="card-body w3-container w3-white"
-                         style="height: 100%; width: 100%; background: white; padding: 6;">
-                        <h4 id="facilityname" class="card-title w3-container" style="padding-top: 6"></h4>
-                        <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6;">
+                    <p class="w3-card w3-center" style="text-align: center; background: white;">
+                      <img src="hrf_logo.png" style="max-width:75%; max-height:75%; display: block; margin-left: auto;
+                      margin-right: auto;" alt="Human Rights First Logo"><br>
+                     <img src="hcdag_logo.png" style="max-width:85%; max-height:85%; display: block; margin-left: auto;
+                      margin-right: auto; " alt="HCDAG Logo"></p>
+                        <br>
+                       <div class="w3-card w3-container w3-white" style="height: 100%; width: 100%; background: white; padding: 6;">
+                        <span id="title" style="background: white; display: inline-block; padding: 10px;"></span>
+                        <h3 id="moreinfo" style=>Click a facility on the map for <br> up-to-date statistics.</h3>
+                        <div id="facilityGraphDiv" class="w3-container w3-white" style="height: 25vh; width: 100%"></div>
+                        <div>
+                        <h4 id="facilityname" style="padding-top: 6; font-size: x-large;"></h4>
+                        <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6; font-size: larger;">
                             <li id="loc"></li>
                             <li id="cases"></li>
                             <li id="detainees"></li>
@@ -116,6 +123,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                                                                                style="color:blue"><b></b></a></li> -->
                         </ul>
                         <br>
+                      </div>
                     </div>
                     <!-- end my code for baseball card -->
                     <br>
@@ -127,6 +135,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             <div class="w3-card w3-margin">
                 <div class="w3-container w3-padding" style="height: 100%; width:100%">
                     <h4><b>ICE Centers Ranked by Confirmed Cases</b></h4>
+                    <h5>Select a facility from the list to view location and statistics.</h5>
                     <!--      <div class="w3-container" style="height: 100%; width: 100%; background: white;">-->
                     <!--        <div id="chartDiv" class="rankingtable" style="height: 15vh; width:100%; background: white">  &lt;!&ndash; div is scrollable &ndash;&gt;</div>-->
                     <!--      </div>-->
