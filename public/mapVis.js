@@ -238,19 +238,23 @@ mapVis.prototype.ready = function(us) {
             // fade out tooltip on mouse out
             .on("mouseout", function(d) {
 
-                d3.select(this)
-                    .transition()
-                    .duration(200)
-                    .attr('r', dotRadiusSmall);
+                if(d !== selectedCenter) {
+                    d3.select(this)
+                        .transition()
+                        .duration(200)
+                        .attr('r', dotRadiusSmall);
 
-                div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
+                    div.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                }
             })
 
             // BASEBALL CARD APPEARANCE ON MOUSE CLICK //
             .on("click", function(d) {
+                selectedCenter = d;
                 d3.selectAll("circle").attr("r", dotRadiusSmall);
+                d3.select("#" + d.name.replace(/\s+/g, '')).attr("r", dotRadiusBig);
                 myBaseballCard.renderCenter(d);
             });
     });

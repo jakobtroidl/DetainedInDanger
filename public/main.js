@@ -42,7 +42,7 @@ function initMainPage(dataArray) {
         totalCases[name] = cumCases;
     });
 
-    //console.log(totalCases);
+
 
     //extracting total ICE history for timeline
     dailyCases.map(function(d){
@@ -56,6 +56,8 @@ function initMainPage(dataArray) {
             }
         });
     });
+
+    console.log(totalICEHistory);
 
     myMapVis = new mapVis('mapDiv', 'mapLegendDiv', totalCases);
     myBrushVis = new brushVis('brushDiv', totalICEHistory);
