@@ -12,6 +12,7 @@ app.use(express.static("data"));
 app.set("view engine", "ejs");
 
 let data = csv_loader('data/dailydetentioncases.csv');
+let meta = csv_loader("data/meta_data.csv")
 
 app.get('/', function (req, res)
 {
@@ -22,7 +23,7 @@ app.get('/', function (req, res)
     const year = latestUpdate.getFullYear();
     let out = month + " " + day + " " + year;
 
-    res.render("index", {latestUpdate: out});
+    res.render("index", {latestUpdate: out, });
 });
 
 async function scrapeICEPage()
@@ -83,7 +84,6 @@ async function scrapeICEPage()
     th.push(["num_detained", parseInt(number_detained)]);
     th.push(["num_tested", parseInt(number_tests)]);
 
-    //console.log(th);
     const meta_csv = new csv_writer(th);
     await meta_csv.toDisk('data/meta_data.csv', false);
 
@@ -113,19 +113,19 @@ async function scrapeICEPage()
     await csv.toDisk('data/dailydetentioncases.csv', false);
 }
 
-scrapeICEPage();
+//scrapeICEPage();
 
 
- // const job = new CronJob({
- //     // Run at 15:05 EDT time, every day
- //     cronTime: '00 00 06 * * *',
- //     onTick: function() {
- //         // Run ICE scrape
- //         scrapeICEPage().then(r => console.log("Updated dailydetentioncases.csv"));
- //     },
- //     start: true,
- //     timeZone: 'America/New_York'
- // });
+ const job = new CronJob({
+     // Run at 15:05 EDT time, every day
+     cronTime: '00 00 06 * * *',
+     onTick: function() {
+         // Run ICE scrape
+         scrapeICEPage().then(r => console.log("Updated dailydetentioncases.csv"));
+     },
+     start: true,
+     timeZone: 'America/New_York'
+ });
 
-//app.listen(process.env.PORT, process.env.IP);
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(process.env.PORT, process.env.IP);
+//app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

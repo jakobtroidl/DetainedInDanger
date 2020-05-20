@@ -27,7 +27,7 @@ baseballCard.prototype.init = function() {
     )
     // sorting array by date
     bc_new_data = bc_new_data.sort((a, b) => b.date - a.date);
-    
+
     d3.select("#cases")
         .text("There are  " + bc_new_data[0].infections + " total confirmed COVID-19 cases among ICE detainees.");
     d3.select("#detainees")
