@@ -31,8 +31,7 @@ baseballCard.prototype.init = function() {
     formatComma = d3.format(",");
 
     d3.select("#facilityname").text("");
-    // d3.select("#loc").text("Global Statistics")
-    //     .style("font-size", "24px");
+    d3.select("#loc").text("")
     d3.select("#title").text("Global Statistics");
     d3.select("#cases")
         .text("There are  " + formatComma(bc_new_data[0].infections) + " total confirmed COVID-19 cases among ICE detainees.")
@@ -61,13 +60,13 @@ baseballCard.prototype.renderCenter = function(center){
     //.style("text-decoration", "underline")  ;
 
     // name of facility
-    d3.select("#facilityname")
-        .text(center.name);
+    // d3.select("#facilityname")
+    //     .text(center.name);
 
     // location
     d3.select("#loc")
         .text("is located in " + center.County + ", " + center.State)
-        .style("font-size", "15px");;
+        .style("font-size", "15px");
 
     // # of ICE detainees
     if (center['Number current ICE detainees'] == "") {

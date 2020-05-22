@@ -59,7 +59,7 @@ brushVis.prototype.initVis = function () {
     svg.append("path")
         .datum(new_data)
         .attr("fill", "none")
-        .attr("stroke", "red")
+        .attr("stroke", '#275889')
         .attr("stroke-width", 2.5)
         .attr("d", d3.line()
             .x(function (d) {
