@@ -60,8 +60,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 
             <div class="w3-col l4 s8">
 
-
-
                 <div class="w3-row l4 s8">
                     <!-- Posts -->
                     <div class="w3-card w3-margin">
@@ -72,7 +70,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                             <!--        <div id="chartDiv" class="rankingtable" style="height: 15vh; width:100%; background: white">  &lt;!&ndash; div is scrollable &ndash;&gt;</div>-->
                             <!--      </div>-->
                         </div>
-                        <div style="height: 40vh; width: 100%; background: white">
+                        <div style="height: 25vh; width: 100%; background: white">
                             <ul id="chartDiv" class="w3-ul w3-hoverable w3-white"
                                 style="overflow-y: auto; height: 100%; width:100%">
                                 <!-- ranking table is instered here-->
@@ -146,7 +144,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                             <h5></h5>
                         </div>
                         <div class="w3-container w3-white"
-                             style="display: inline-block; position: relative;overflow: hidden; height: 70vh;width: 100%;background: white;">
+                             style="display: inline-block; position: relative;overflow: hidden; height: 75vh;width: 100%;background: white;">
                             <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
                         </div>
                         <div class="w3-container w3-white"
@@ -155,20 +153,40 @@ and is wrapped around the whole page content, except for the footer in this exam
                         </div>
                     </div>
                 </div>
-                <div class="w3-row l8 s12">
-                    <div class="w3-card-4 w3-margin">
-                        <div class="w3-container">
-                            <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
-                            <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
-                        </div>
-                        <div class="w3-container w3-white" style="height: 25vh; width: 100%; background: white;">
-                            <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
-                        </div>
+
+            </div>
+
+        </div>
+
+        <div class="w3-row l8 s12">
+            <div class="w3-col l4 s12">
+                <div class="w3-card w3-margin">
+                    <div class="w3-container w3-padding" style="height: 100%; width:100%">
+                        <h3><b>Limitations</b></h3>
                     </div>
 
+                    <div style="height: 40vh; width: auto; opacity: 0.85; margin: 5px; padding: 15px">
+                        <p style="font-size: medium;">While this database aims to provide a complete visualization of the hidden epidemic, several limitations must be noted.
+                            First, by public health standards, ICE has not tested enough detainees; half of all tests yield positive results, so the total number of positive detainees may be higher than indicated by ICE.
+                            Second, ICE updates its data 2-3 days after detention centers confirm cases, indicating a time lag.
+                            Third, the data does not include information about positive tests among US Marshal Service inmates and facility staffers; most detention centers are multi-purposed to house both US Marshal Service inmates and ICE detainees.
+                            Thus, the data included does not indicate the true level of pandemic severity at each listed detention center. </p>
+                    </div>
                 </div>
             </div>
 
+            <div class="w3-col l8 s12">
+                <div class="w3-card-4 w3-margin">
+                    <div class="w3-container">
+                        <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
+                        <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                    </div>
+                    <div class="w3-container w3-white" style="height: 39vh; width: 100%; background: white;">
+                        <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
 
