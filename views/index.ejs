@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
     body, h1, h2, h3, h4, h5 {
-        font-family: "Raleway", sans-serif
+        font-family: "Arial", sans-serif
     }
 </style>
 <body class="w3-light-grey">
@@ -25,14 +25,17 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="w3-card w3-center" style="background: white; margin: 30px; padding: 2%">
             <div class="title" style="padding-bottom: 50px;">
                 <h1 style="float: left;"><b>ICE COVID-19 Information</b></h1>
+                <img src="girl.jpg" style="max-width:25%; max-height:25%">
+                <img src="prison_hallway.jpg" style="max-width:25%; max-height:25%">
                 <p style="text-align: center; float: right; padding-top: 10px;">
                 <span class="hcdagheader" style="display: inline-block; padding: 10px;">Compiled by <b>Human Rights First and the Harvard 
                     College Data Analytics Group</b></span></p>
             </div>
           <div class="w3-container">
-        <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers across the country. To date, ___ ICE detainees have tested positive for COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared living spaces and ration PPE. In early May, the inevitable occured: after being denied release, the first ICE detainee tragically passed away from COVID-19.
+        <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers across the country. To date, <span id="positives"></span> ICE detainees have tested positive for COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared living spaces and ration PPE. In early May, the inevitable occured: after being denied release, the first ICE detainee tragically passed away from COVID-19.
             The map below provides an opportunity to learn about how the pandemic has infiltrated each ICE detention center differently. We then report data on testing administration and bring the map to life by tracking the lived experiences of detainees held at three key detention centers: Otay Mesa, Adelanto and __.</p>
-        </div></div>
+        </div>
+    </div>
       </header>
 
     <!-- Grid -->
@@ -110,11 +113,11 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <br>
                        <div class="w3-card w3-container w3-white" style="height: 100%; width: 100%; background: white; padding: 6;">
                         <span id="title" style="background: white; display: inline-block; padding: 10px;"></span>
-                        <h3 id="moreinfo" style=>Click a facility on the map for <br> up-to-date statistics.</h3>
+                        <h3 id="moreinfo" style="text-align: center;">Click a facility on the map for <br> up-to-date facility-specific statistics.</h3>
                         <div id="facilityGraphDiv" class="w3-container w3-white" style="height: 25vh; width: 100%"></div>
                         <div>
-                        <h4 id="facilityname" style="padding-top: 6; font-size: x-large;"></h4>
-                        <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6; font-size: larger;">
+                        <h4 id="facilityname" style="padding-top: 6; font-size: x-large; font-weight: bold;"></h4>
+                        <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6; font-size:20px; font-weight: bold;">
                             <li id="loc"></li>
                             <li id="cases"></li>
                             <li id="detainees"></li>
@@ -122,6 +125,9 @@ and is wrapped around the whole page content, except for the footer in this exam
                             <!-- <li id="newslink" class="card-body text-center"><a href="#" class="card-link"
                                                                                style="color:blue"><b></b></a></li> -->
                         </ul>
+        
+                        <div style=" text-align: center"><button type="button" style="text-align: center">Return to global statistics</button>
+                        </div>
                         <br>
                       </div>
                     </div>
