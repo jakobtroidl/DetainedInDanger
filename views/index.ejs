@@ -30,17 +30,17 @@ and is wrapped around the whole page content, except for the footer in this exam
                  style="height: 60vh; background: white; margin: 30px; background-image: url('barbed.jpg');background-size: cover;">
                 <div class="title" style="padding-bottom: 50px;">
                     <h1 class="w3-container w3-card"
-                        style="float: left; margin: 20px; background-color: white; opacity: .90; padding: 20px;"><b>ICE
+                        style="border: 1px solid #275889;float: left; margin: 20px; background-color: white; opacity: .90; padding: 20px;"><b>ICE
                             COVID-19 Information</b></h1>
                 </div>
                 <div style="height: 10vh"></div>
                 <p class="w3-container" style="text-align: center; float: right;">
                         <span class="hcdagheader"
-                              style="display: inline-block; background-color: white; opacity: .85; padding: 15px">Compiled by <b>Human Rights First and the Harvard
+                              style="border: 1px solid #bc541e; display: inline-block; background-color: white; opacity: .85; padding: 15px">Compiled by <b>Human Rights First and the Harvard
                             College Data Analytics Group</b></span></p>
                 <div style="height: 10vh"></div>
                 <div class="w3-container w3-card"
-                     style="height: auto; width: auto; background-color: white; opacity: 0.85; margin: 30px; padding: 15px">
+                     style="border: 1px solid #f1ac7b; height: auto; width: auto; background-color: white; opacity: 0.85; margin: 30px; padding: 15px">
                     <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers
                         across the country. To date, <span id="positives"></span> ICE detainees have tested positive for
                         COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared
@@ -65,7 +65,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <div class="w3-row l4 s8">
                     <!-- Posts -->
                     <div class="w3-card w3-margin">
-                        <div class="w3-container w3-padding" style="height: 100%; width:100%">
+                        <div class="w3-container w3-padding" style="background-color: #f1ac7b; height: 100%; width:100%">
                             <h4><b>ICE Centers Ranked by Confirmed Cases</b></h4>
                             <h5>Select a facility from the list to view location and statistics.</h5>
                             <!--      <div class="w3-container" style="height: 100%; width: 100%; background: white;">-->
@@ -140,7 +140,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <!-- map -->
                 <div class="w3-row l8 s12">
                     <div class="w3-card-4 w3-margin">
-                        <div class="w3-container">
+                        <div class="w3-container" style="background-color: #275889; color: white">
                             <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers</b></h3>
                             <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
                             <h5></h5>
@@ -157,7 +157,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 </div>
                 <div class="w3-row l8 s12">
                     <div class="w3-card-4 w3-margin">
-                        <div class="w3-container">
+                        <div class="w3-container" style="background-color: #275889; color: white">
                             <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
                             <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
                         </div>
@@ -326,17 +326,17 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <h3><b>Acknowledgements</b></h3>
                         <div class="info">
                             <p><h4><i>Authors</i></h4> This website is the result of a collaboration between the
-                            <a href="https://www.harvardanalytics.org/" style="color:#00BFFF"><i>Harvard College Data
+                            <a href="https://www.harvardanalytics.org/" style="color:#275889"><i>Harvard College Data
                                     Analytics Group</i></a>
                             and
-                            <a href="https://www.humanrightsfirst.org/" style="color:#00BFFF"><i>Human Rights First</i></a>.
+                            <a href="https://www.humanrightsfirst.org/" style="color:#275889"><i>Human Rights First</i></a>.
 
                             The main authors are <i>Anna Duffy</i>, <i>Paige Lee</i>, <i>Noah List</i>, <i>Jakob
                                 Troidl</i>, <i>Kathryn Kuhar</i> and <i>Alex Domash</i>.
                             </p>
                         </div>
                         <div class="info">
-                            <p><h4><a href="https://www.ice.gov/coronavirus" style="color:#00BFFF"><i>ICE.gov</i></a>
+                            <p><h4><a href="https://www.ice.gov/coronavirus" style="color:#275889"><i>ICE.gov</i></a>
                             </h4> We use a
                             webscraping algorithm to take a publicly-available
                             ICE detainee COVID-19 count from ice.gov</p>
@@ -345,14 +345,14 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <div class="infosec">
                             <p><h4>
                                 <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_blog&stacked=h"
-                                   style="color: #00BFFF"><i>W3</i></a>
+                                   style="color: #275889"><i>W3</i></a>
                             </h4> We utilized and modified a W3 template for the HTML and CSS of
                             this website </p>
                         </div>
                         <div class="infothird">
                             <p><h4>
                                 <a href="http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782"
-                                   style="color: #00BFFF"><i>bl.ocks.org</i></a>
+                                   style="color: #275889"><i>bl.ocks.org</i></a>
                             </h4> Our map visualization was derived from the
                             template by bl.ocks.org</p>
                         </div>
