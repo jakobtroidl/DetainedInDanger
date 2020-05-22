@@ -31,9 +31,9 @@ baseballCard.prototype.init = function() {
     formatComma = d3.format(",");
 
     d3.select("#facilityname").text("");
-    d3.select("#loc").text("Global Statistics")
-        .style("font-size", "24px");
-    d3.select("#title").text("");
+    // d3.select("#loc").text("Global Statistics")
+    //     .style("font-size", "24px");
+    d3.select("#title").text("Global Statistics");
     d3.select("#cases")
         .text("There are  " + formatComma(bc_new_data[0].infections) + " total confirmed COVID-19 cases among ICE detainees.")
         .style("font-size", "20px");
@@ -53,12 +53,12 @@ baseballCard.prototype.renderCenter = function(center){
     selectedCenter = center;
 
     // graph title
-    d3.select("#title").text("Confirmed COVID-19 Cases Over Time")
+    d3.select("#title").text(center.name)
     .attr("x", (width / 2))             
     .attr("y", 0 - (margin.top / 2))
     .attr("text-anchor", "middle")  
-    .style("font-size", "16px") 
-    .style("text-decoration", "underline")  ;
+    //.style("font-size", "16px")
+    //.style("text-decoration", "underline")  ;
 
     // name of facility
     d3.select("#facilityname")

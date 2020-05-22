@@ -30,7 +30,8 @@ and is wrapped around the whole page content, except for the footer in this exam
                  style="height: 50vh; background: white; margin: 30px; background-image: url('barbed.jpg');background-size: cover;">
                 <div class="title" style="padding-bottom: 50px;">
                     <h1 class="w3-container w3-card"
-                        style="border: 1px solid #275889;float: left; margin: 20px; background-color: white; opacity: .90; padding: 20px;"><b>ICE
+                        style="border: 1px solid #275889;float: left; margin: 20px; background-color: white; opacity: .90; padding: 20px;">
+                        <b>ICE
                             COVID-19 Information</b></h1>
                 </div>
                 <div style="height: 10vh"></div>
@@ -63,12 +64,10 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <div class="w3-row l4 s8">
                     <!-- Posts -->
                     <div class="w3-card w3-margin">
-                        <div class="w3-container w3-padding" style="background-color: #f1ac7b; height: 100%; width:100%">
+                        <div class="w3-container w3-padding"
+                             style="background-color: #f1ac7b; height: 100%; width:100%">
                             <h4><b>ICE Centers Ranked by Confirmed Cases</b></h4>
                             <h5>Select a facility from the list to view location and statistics.</h5>
-                            <!--      <div class="w3-container" style="height: 100%; width: 100%; background: white;">-->
-                            <!--        <div id="chartDiv" class="rankingtable" style="height: 15vh; width:100%; background: white">  &lt;!&ndash; div is scrollable &ndash;&gt;</div>-->
-                            <!--      </div>-->
                         </div>
                         <div style="height: 25vh; width: 100%; background: white">
                             <ul id="chartDiv" class="w3-ul w3-hoverable w3-white"
@@ -87,24 +86,31 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <div id="baseballCard">
                             <!-- insert graph here -->
                             <div class="w3-card w3-container w3-white"
-                                 style="height: 100%; width: 100%; background: #ffffff; padding: 6px;">
-                        <span id="title"
-                              style="background: white; display: inline-block; padding: 0px; font-size: large; font-weight: bold;"></span>
+                                 style="height: 100%; width: 100%; background: #ffffff; padding: 0px;">
+                                <div class="w3-container w3-padding"
+                                     style="background-color: #f1ac7b; height: 100%; width:100%">
+                                    <h4 id="title"
+                                          style="display: inline-block; padding: 0px; font-size: large; font-weight: bold;"></h4>
+                                </div>
+
+
                                 <div id="graphcover">
                                     <div id="facilityGraphDiv" class="w3-container w3-white"
                                          style="height: 25vh; width: 100%"></div>
                                 </div>
-                                <div>
-                                    <h4 id="facilityname"
-                                        style="display: inline; padding-top: 6px; font-size: large; font-weight: bold;"></h4>
+
+                                <div style=" opacity: 0.85; margin: 5px; padding: 15px">
+<!--                                    <div class="w3-container w3-padding"-->
+<!--                                         style="background-color: #f1ac7b; height: 100%; width:100%">-->
+<!--                                        <h4 id="loc"></h4>-->
+<!--                                    </div>-->
+
                                     <ul class="card-text w3-container"
                                         style="list-style: none; padding-left: 6px; padding-bottom: 6px; font-size: 15px; font-weight: bold;">
                                         <li id="loc"></li>
                                         <li id="cases"></li>
                                         <li id="detainees"></li>
                                         <li id="operator"></li>
-                                        <!-- <li id="newslink" class="card-body text-center"><a href="#" class="card-link"
-                                                                                           style="color:blue"><b></b></a></li> -->
                                     </ul>
 
                                     <div id="globalbutton" style=" text-align: center">
@@ -158,17 +164,24 @@ and is wrapped around the whole page content, except for the footer in this exam
 
         <div class="w3-row l8 s12">
             <div class="w3-col l4 s12">
-                <div class="w3-card w3-margin">
+                <div class="w3-card-4 w3-margin">
                     <div class="w3-container w3-padding" style="height: 100%; width:100%">
                         <h3><b>Limitations</b></h3>
                     </div>
 
                     <div style="height: 40vh; width: auto; opacity: 0.85; margin: 5px; padding: 15px">
-                        <p style="font-size: medium;">While this database aims to provide a complete visualization of the hidden epidemic, several limitations must be noted.
-                            First, by public health standards, ICE has not tested enough detainees; half of all tests yield positive results, so the total number of positive detainees may be higher than indicated by ICE.
-                            Second, ICE updates its data 2-3 days after detention centers confirm cases, indicating a time lag.
-                            Third, the data does not include information about positive tests among US Marshal Service inmates and facility staffers; most detention centers are multi-purposed to house both US Marshal Service inmates and ICE detainees.
-                            Thus, the data included does not indicate the true level of pandemic severity at each listed detention center. </p>
+                        <p style="font-size: medium;">While this database aims to provide a complete visualization of
+                            the hidden epidemic, several limitations must be noted.
+                            First, by public health standards, ICE has not tested enough detainees; half of all tests
+                            yield positive results, so the total number of positive detainees may be higher than
+                            indicated by ICE.
+                            Second, ICE updates its data 2-3 days after detention centers confirm cases, indicating a
+                            time lag.
+                            Third, the data does not include information about positive tests among US Marshal Service
+                            inmates and facility staffers; most detention centers are multi-purposed to house both US
+                            Marshal Service inmates and ICE detainees.
+                            Thus, the data included does not indicate the true level of pandemic severity at each listed
+                            detention center. </p>
                     </div>
                 </div>
             </div>
