@@ -30,19 +30,27 @@ baseballCard.prototype.init = function() {
     
     formatComma = d3.format(",");
 
+    d3.select("#facilityname").text("");
+    d3.select("#loc").text("Global Statistics")
+        .style("font-size", "24px");
+    d3.select("#title").text("");
     d3.select("#cases")
-        .text("There are  " + formatComma(bc_new_data[0].infections) + " total confirmed COVID-19 cases among ICE detainees.");
+        .text("There are  " + formatComma(bc_new_data[0].infections) + " total confirmed COVID-19 cases among ICE detainees.")
+        .style("font-size", "20px");
     d3.select("#detainees")
-        .text("ICE has administered " + formatComma(num_test) + " COVID-19 tests.");
+        .text("ICE has administered " + formatComma(num_test) + " COVID-19 tests.")
+        .style("font-size", "20px");
     d3.select("#operator")
-        .text("There are " + formatComma(num_detained) + " detainees currently being held in ICE facilities.");
+        .text("There are " + formatComma(num_detained) + " detainees currently being held in ICE facilities.")
+        .style("font-size", "20px");
     d3.select("#positives").text(formatComma(bc_new_data[0].infections));
+
+    var x = document.getElementById("globalbutton");
+    x.style.display = "none";
 };
 
 baseballCard.prototype.renderCenter = function(center){
     selectedCenter = center;
-
-    d3.select("#moreinfo").text("");
 
     // graph title
     d3.select("#title").text("Confirmed COVID-19 Cases Over Time")
@@ -58,34 +66,41 @@ baseballCard.prototype.renderCenter = function(center){
 
     // location
     d3.select("#loc")
-        .text("is located in " + center.County + ", " + center.State);
+        .text("is located in " + center.County + ", " + center.State)
+        .style("font-size", "15px");;
 
     // # of ICE detainees
     if (center['Number current ICE detainees'] == "") {
         d3.select("#detainees")
-            .text("has an unknown # of ICE detainees");
+            .text("has an unknown # of ICE detainees")
+            .style("font-size", "15px");
     }
     else {
         d3.select("#detainees")
-            .text("has " + formatComma(center['Number current ICE detainees']) + " ICE detainees");
+            .text("has " + formatComma(center['Number current ICE detainees']) + " ICE detainees")
+            .style("font-size", "15px");;
     }
 
     // operator
     d3.select("#operator")
-        .text("is operated by " + center['Name of Operator']);
+        .text("is operated by " + center['Name of Operator'])
+        .style("font-size", "15px");;
 
     // # of confirmed COVID cases
     let cases = totalCases[center.name];
     if (cases == "") {
-        d3.select("#cases").text("has no reported cases");
+        d3.select("#cases").text("has no reported cases")
+        .style("font-size", "15px");;
     }
     else if (cases == 1) {
         d3.select("#cases")
-        .text("has "+ cases + " confirmed case");
+        .text("has "+ cases + " confirmed case")
+        .style("font-size", "15px");;
     }
     else {
         d3.select("#cases")
-        .text("has "+ cases + " confirmed cases");
+        .text("has "+ cases + " confirmed cases")
+        .style("font-size", "15px");;
     }
 
     myFacilityGraph.plotGraph(center.name);

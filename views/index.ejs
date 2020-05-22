@@ -19,25 +19,6 @@
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
 
-    <!-- Header -->
-    <!-- <header class="w3-container w3-center w3-padding-32">
-        
-        <div class="w3-card w3-center" style="background: white; margin: 30px; padding: 2%">
-            <div class="title" style="padding-bottom: 50px;">
-                <h1 style="float: left;"><b>ICE COVID-19 Information</b></h1>
-                <img src="girl.jpg" style="max-width:25%; max-height:25%">
-                <img src="prison_hallway.jpg" style="max-width:25%; max-height:25%">
-                <p style="text-align: center; float: right; padding-top: 10px;">
-                <span class="hcdagheader" style="display: inline-block; padding: 10px;">Compiled by <b>Human Rights First and the Harvard 
-                    College Data Analytics Group</b></span></p>
-            </div>
-          <div class="w3-container">
-        <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers across the country. To date, <span id="positives"></span> ICE detainees have tested positive for COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared living spaces and ration PPE. In early May, the inevitable occured: after being denied release, the first ICE detainee tragically passed away from COVID-19.
-            The map below provides an opportunity to learn about how the pandemic has infiltrated each ICE detention center differently. We then report data on testing administration and bring the map to life by tracking the lived experiences of detainees held at three key detention centers: Otay Mesa, Adelanto and __.</p>
-        </div>
-    </div>
-      </header> -->
-
     <!-- Grid -->
     <div class="w3-row">
 
@@ -67,8 +48,9 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <div class="w3-container">
                     <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers</b></h3>
                     <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                    <h5></h5>
                 </div>
-                <div class="w3-container w3-white" style="height: 70vh; width: 100%; background: white;">
+                <div class="w3-container w3-white" style="display: inline-block; position: relative;overflow: hidden; height: 70vh;width: 100%;background: white;">
                     <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
                 </div>
                 <div class="w3-container w3-white" style="height: 100px; width: 100%; background: white; padding: 0;">
@@ -114,31 +96,34 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
         <div class="w3-col l4">
-            <div class="w3-margin-top">
-            <div class="w3-container" style="text-align: center; height: 100%; width: auto">
-                <img src="girl.jpg" style="max-width:100%; max-height:100%">
+            <div class="w3-card w3-margin w3-margin-top">
+            <div class="w3-container w3-margin w3-margin-top" style="margin: 30px; text-align: center; height: 100%; width: auto">
+                <img src="girl.jpg" style="max-width:100%; max-height:100%;">
                 </div>
+            </div>
+            <div class="w3-card w3-margin w3-margin-top">
+                <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px;">
+                    
+                      
+                    <img src="hrf_logo.jpg" style="max-width:75%; max-height:75%; display: block; margin-left: auto;
+                    margin-right: auto;" alt="Human Rights First Logo"><br>
+                   <img src="hcdag_logo.png" style="max-width:85%; max-height:85%; display: block; margin-left: auto;
+                    margin-right: auto; " alt="HCDAG Logo"></p>
             </div>
             <!-- SPOT FOR BASEBALL CARD GRAPHIC -->
             <div class="w3-card w3-margin w3-margin-top">
+                
               <!-- <div id="facilityGraphDiv" class="w3-container" style="height: 100%; width: 100%; background: white"></div> -->
                 <div id="baseballCard" class="w3-container w3-card">
-                  <br>
                     <!-- insert graph here -->
-                    <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px;">
-                    
-                      
-                      <img src="hrf_logo.jpg" style="max-width:75%; max-height:75%; display: block; margin-left: auto;
-                      margin-right: auto;" alt="Human Rights First Logo"><br>
-                     <img src="hcdag_logo.png" style="max-width:85%; max-height:85%; display: block; margin-left: auto;
-                      margin-right: auto; " alt="HCDAG Logo"></p>
                         <br>
                        <div class="w3-card w3-container w3-white" style="height: 100%; width: 100%; background: white; padding: 6;">
                         <span id="title" style="background: white; display: inline-block; padding: 10px; font-size: large; font-weight: bold;"></span>
-                        <h3 id="moreinfo" style="text-align: center;">Click a facility on the map for <br> up-to-date facility-specific statistics.</h3>
+                        <div id="graphcover">
                         <div id="facilityGraphDiv" class="w3-container w3-white" style="height: 25vh; width: 100%"></div>
+                        </div> 
                         <div>
-                        <h4 id="facilityname" style="padding-top: 6; font-size: large; font-weight: bold;"></h4>
+                        <h4 id="facilityname" style="display: inline; padding-top: 6; font-size: large; font-weight: bold;"></h4>
                         <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6; font-size: 15px; font-weight: bold;">
                             <li id="loc"></li>
                             <li id="cases"></li>
@@ -148,8 +133,15 @@ and is wrapped around the whole page content, except for the footer in this exam
                                                                                style="color:blue"><b></b></a></li> -->
                         </ul>
         
-                        <div style=" text-align: center"><button type="button" style="text-align: center">Return to global statistics</button>
+                        <div id="globalbutton" style=" text-align: center"><button type="button" style="text-align: center" onclick="myFunction()">Return to global statistics</button>
                         </div>
+                        <script>
+                            function myFunction() {
+                                baseballCard.prototype.init();
+                                var x = document.getElementById("facilityGraphDiv");
+                                x.style.display = "none";
+                            }
+                            </script>
                         <br>
                       </div>
                     </div>
