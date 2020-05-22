@@ -60,6 +60,28 @@ and is wrapped around the whole page content, except for the footer in this exam
 
             <div class="w3-col l4 s8">
 
+
+
+                <div class="w3-row l4 s8">
+                    <!-- Posts -->
+                    <div class="w3-card w3-margin">
+                        <div class="w3-container w3-padding" style="height: 100%; width:100%">
+                            <h4><b>ICE Centers Ranked by Confirmed Cases</b></h4>
+                            <h5>Select a facility from the list to view location and statistics.</h5>
+                            <!--      <div class="w3-container" style="height: 100%; width: 100%; background: white;">-->
+                            <!--        <div id="chartDiv" class="rankingtable" style="height: 15vh; width:100%; background: white">  &lt;!&ndash; div is scrollable &ndash;&gt;</div>-->
+                            <!--      </div>-->
+                        </div>
+                        <div style="height: 40vh; width: 100%; background: white">
+                            <ul id="chartDiv" class="w3-ul w3-hoverable w3-white"
+                                style="overflow-y: auto; height: 100%; width:100%">
+                                <!-- ranking table is instered here-->
+                            </ul>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
                 <div class="w3-row l4 s8">
                     <div class="w3-card w3-margin w3-margin-top">
 
@@ -111,85 +133,44 @@ and is wrapped around the whole page content, except for the footer in this exam
                     </div>
                 </div>
 
-                <div class="w3-row l4 s8">
-                    <!-- Posts -->
-                    <div class="w3-card w3-margin">
-                        <div class="w3-container w3-padding" style="height: 100%; width:100%">
-                            <h4><b>ICE Centers Ranked by Confirmed Cases</b></h4>
-                            <h5>Select a facility from the list to view location and statistics.</h5>
-                            <!--      <div class="w3-container" style="height: 100%; width: 100%; background: white;">-->
-                            <!--        <div id="chartDiv" class="rankingtable" style="height: 15vh; width:100%; background: white">  &lt;!&ndash; div is scrollable &ndash;&gt;</div>-->
-                            <!--      </div>-->
-                        </div>
-                        <div style="height: 40vh; width: 100%; background: white">
-                            <ul id="chartDiv" class="w3-ul w3-hoverable w3-white"
-                                style="overflow-y: auto; height: 100%; width:100%">
-                                <!-- ranking table is instered here-->
-                            </ul>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-
 
             </div>
 
             <div class="w3-col l8 s12">
                 <!-- map -->
-                <div class="w3-card-4 w3-margin">
-                    <div class="w3-container">
-                        <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers</b></h3>
-                        <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
-                        <h5></h5>
+                <div class="w3-row l8 s12">
+                    <div class="w3-card-4 w3-margin">
+                        <div class="w3-container">
+                            <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers</b></h3>
+                            <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                            <h5></h5>
+                        </div>
+                        <div class="w3-container w3-white"
+                             style="display: inline-block; position: relative;overflow: hidden; height: 70vh;width: 100%;background: white;">
+                            <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
+                        </div>
+                        <div class="w3-container w3-white"
+                             style="height: 100px; width: 100%; background: white; padding: 0;">
+                            <div id="mapLegendDiv" style="height: 100%; width:100%; background: white"></div>
+                        </div>
                     </div>
-                    <div class="w3-container w3-white"
-                         style="display: inline-block; position: relative;overflow: hidden; height: 70vh;width: 100%;background: white;">
-                        <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
+                </div>
+                <div class="w3-row l8 s12">
+                    <div class="w3-card-4 w3-margin">
+                        <div class="w3-container">
+                            <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
+                            <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                        </div>
+                        <div class="w3-container w3-white" style="height: 25vh; width: 100%; background: white;">
+                            <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
+                        </div>
                     </div>
-                    <div class="w3-container w3-white"
-                         style="height: 100px; width: 100%; background: white; padding: 0;">
-                        <div id="mapLegendDiv" style="height: 100%; width:100%; background: white"></div>
-                    </div>
+
                 </div>
             </div>
 
         </div>
 
-        <div class="w3-row l8 s12">
-
-            <div class="w3-col l4 s12">
-                <div class="w3-card w3-margin w3-margin-top">
-                    <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px;">
-                        <a href="https://www.humanrightsfirst.org/">
-                            <img src="hrf_logo.jpg" style="max-width:75%; max-height:75%; display: block; margin-left: auto;
-                    margin-right: auto;" alt="Human Rights First Logo">
-                        </a>
-                        <br>
-                        <a href="https://www.harvardanalytics.org/">
-                            <img src="hcdag_logo.png"
-                                 style="max-width:85%; max-height:85%; display: block; margin-left: auto; margin-right: auto; "
-                                 alt="HCDAG Logo">
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="w3-col l8 s12">
-                <div class="w3-card-4 w3-margin">
-                    <div class="w3-container">
-                        <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
-                        <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
-                    </div>
-                    <div class="w3-container w3-white" style="height: 25vh; width: 100%; background: white;">
-                        <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
 
         <div class="w3-row l8 s12">
             <hr>
@@ -296,70 +277,87 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
     <div class="w3-row l4">
-<!--        <div class="w3-card w3-margin w3-margin-top">-->
-<!--            <div class="w3-container w3-margin w3-margin-top"-->
-<!--                 style="margin: 30px; text-align: center; height: 100%; width: auto">-->
-<!--                <img src="girl.jpg" style="max-width:100%; max-height:100%;">-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="w3-card w3-margin w3-margin-top">-->
+        <!--            <div class="w3-container w3-margin w3-margin-top"-->
+        <!--                 style="margin: 30px; text-align: center; height: 100%; width: auto">-->
+        <!--                <img src="girl.jpg" style="max-width:100%; max-height:100%;">-->
+        <!--            </div>-->
+        <!--        </div>-->
 
-<!--        <hr>-->
-
-
-<!--        <div class="w3-card w3-margin">-->
-<!--            <div class="w3-container w3-padding" style="height:100%; width:100%; background-color:white">-->
-<!--                <div class="infographics" style="background-color: white">-->
-<!--                    <h3><b>Data Visualizations</b></h3>-->
-<!--                    <div class="infoLeft">-->
-<!--                        &lt;!&ndash;<img src="SOURCE" alt="Infographic #1">&ndash;&gt;-->
-<!--                        </img>-->
-<!--                    </div>-->
-<!--                    <div class="infoRight">-->
-<!--                        &lt;!&ndash;<img src="SOURCE" alt="Infographic #2">&ndash;&gt;-->
-<!--                        </img>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <hr>-->
 
 
-        <div class="w3-card w3-margin">
-            <div class="w3-container w3-padding" style="height:100%; width:100%; background-color: white">
-                <div class="acknowledgements" style="background-color: white">
-                    <h3><b>Acknowledgements</b></h3>
-                    <div class="info">
-                        <p><h4><i>Authors</i></h4> This website is the result of a collaboration between the
-                        <a href="https://www.harvardanalytics.org/" style="color:#00BFFF"><i>Harvard College Data
-                                Analytics Group</i></a>
-                        and
-                        <a href="https://www.humanrightsfirst.org/" style="color:#00BFFF"><i>Human Rights First</i></a>.
+        <!--        <div class="w3-card w3-margin">-->
+        <!--            <div class="w3-container w3-padding" style="height:100%; width:100%; background-color:white">-->
+        <!--                <div class="infographics" style="background-color: white">-->
+        <!--                    <h3><b>Data Visualizations</b></h3>-->
+        <!--                    <div class="infoLeft">-->
+        <!--                        &lt;!&ndash;<img src="SOURCE" alt="Infographic #1">&ndash;&gt;-->
+        <!--                        </img>-->
+        <!--                    </div>-->
+        <!--                    <div class="infoRight">-->
+        <!--                        &lt;!&ndash;<img src="SOURCE" alt="Infographic #2">&ndash;&gt;-->
+        <!--                        </img>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
-                        The main authors are <i>Anna Duffy</i>, <i>Paige Lee</i>, <i>Noah List</i>, <i>Jakob
-                            Troidl</i>, <i>Kathryn Kuhar</i> and <i>Alex Domash</i>.
-                        </p>
+        <div class="w3-col l4 s12">
+            <div class="w3-card w3-margin w3-margin-top">
+                <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px;">
+                    <a href="https://www.humanrightsfirst.org/">
+                        <img src="hrf_logo.jpg" style="max-width:75%; max-height:75%; display: block; margin-left: auto;
+                    margin-right: auto;" alt="Human Rights First Logo">
+                    </a>
+                    <br>
+                    <a href="https://www.harvardanalytics.org/">
+                        <img src="hcdag_logo.png"
+                             style="max-width:85%; max-height:85%; display: block; margin-left: auto; margin-right: auto; "
+                             alt="HCDAG Logo">
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="w3-col l4 s12">
+            <div class="w3-card w3-margin">
+                <div class="w3-container w3-padding" style="height:100%; width:100%; background-color: white">
+                    <div class="acknowledgements" style="background-color: white">
+                        <h3><b>Acknowledgements</b></h3>
+                        <div class="info">
+                            <p><h4><i>Authors</i></h4> This website is the result of a collaboration between the
+                            <a href="https://www.harvardanalytics.org/" style="color:#00BFFF"><i>Harvard College Data
+                                    Analytics Group</i></a>
+                            and
+                            <a href="https://www.humanrightsfirst.org/" style="color:#00BFFF"><i>Human Rights First</i></a>.
+
+                            The main authors are <i>Anna Duffy</i>, <i>Paige Lee</i>, <i>Noah List</i>, <i>Jakob
+                                Troidl</i>, <i>Kathryn Kuhar</i> and <i>Alex Domash</i>.
+                            </p>
+                        </div>
+                        <div class="info">
+                            <p><h4><a href="https://www.ice.gov/coronavirus" style="color:#00BFFF"><i>ICE.gov</i></a>
+                            </h4> We use a
+                            webscraping algorithm to take a publicly-available
+                            ICE detainee COVID-19 count from ice.gov</p>
+                        </div>
+
+                        <div class="infosec">
+                            <p><h4>
+                                <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_blog&stacked=h"
+                                   style="color: #00BFFF"><i>W3</i></a>
+                            </h4> We utilized and modified a W3 template for the HTML and CSS of
+                            this website </p>
+                        </div>
+                        <div class="infothird">
+                            <p><h4>
+                                <a href="http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782"
+                                   style="color: #00BFFF"><i>bl.ocks.org</i></a>
+                            </h4> Our map visualization was derived from the
+                            template by bl.ocks.org</p>
+                        </div>
+
                     </div>
-                    <div class="info">
-                        <p><h4><a href="https://www.ice.gov/coronavirus" style="color:#00BFFF"><i>ICE.gov</i></a>
-                        </h4> We use a
-                        webscraping algorithm to take a publicly-available
-                        ICE detainee COVID-19 count from ice.gov</p>
-                    </div>
-
-                    <div class="infosec">
-                        <p><h4>
-                            <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_blog&stacked=h"
-                               style="color: #00BFFF"><i>W3</i></a>
-                        </h4> We utilized and modified a W3 template for the HTML and CSS of
-                        this website </p>
-                    </div>
-                    <div class="infothird">
-                        <p><h4>
-                            <a href="http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782"
-                               style="color: #00BFFF"><i>bl.ocks.org</i></a>
-                        </h4> Our map visualization was derived from the
-                        template by bl.ocks.org</p>
-                    </div>
-
                 </div>
             </div>
         </div>
