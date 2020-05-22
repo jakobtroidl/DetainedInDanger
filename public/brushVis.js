@@ -21,7 +21,10 @@ brushVis.prototype.initVis = function () {
         .attr("width", brush_width + brush_margin.left + brush_margin.right)
         .attr("height", brush_height + brush_margin.top + brush_margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + brush_margin.left + "," + brush_margin.top + ")");
+        .attr("transform", "translate(" + brush_margin.left + "," + brush_margin.top + ")")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 300 300")
+        .classed("svg-content", true);;
     
     let new_data = [];
     Object.keys(this.data).forEach(function (k) {

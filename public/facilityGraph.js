@@ -19,9 +19,20 @@ facilityGraph.prototype.initVis = function () {
         .attr("height", bc_height + bc_margin.top + bc_margin.bottom)
         .append("g")
         .attr("transform", "translate(" + bc_margin.left + "," + bc_margin.top + ")");
+
+    var f = document.getElementById("facilityGraphDiv");
+    f.style.display = "none";
+    var x = document.getElementById("globalbutton");
+    x.style.display = "none";
 };
 
 facilityGraph.prototype.plotGraph = function (selectedFacility) {
+    var f = document.getElementById("facilityGraphDiv");
+    f.style.display = "block";
+
+    var x = document.getElementById("globalbutton");
+    x.style.display = "block";
+
     // clear svg first before plotting something new
     fg_svg.selectAll("*").remove();
 
