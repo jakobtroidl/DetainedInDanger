@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
     body, h1, h2, h3, h4, h5 {
-        font-family: "Raleway", sans-serif
+        font-family: "Arial", sans-serif
     }
 </style>
 <body class="w3-light-grey">
@@ -20,20 +20,23 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-content" style="max-width:1400px">
 
     <!-- Header -->
-    <header class="w3-container w3-center w3-padding-32">
+    <!-- <header class="w3-container w3-center w3-padding-32">
         
         <div class="w3-card w3-center" style="background: white; margin: 30px; padding: 2%">
             <div class="title" style="padding-bottom: 50px;">
                 <h1 style="float: left;"><b>ICE COVID-19 Information</b></h1>
+                <img src="girl.jpg" style="max-width:25%; max-height:25%">
+                <img src="prison_hallway.jpg" style="max-width:25%; max-height:25%">
                 <p style="text-align: center; float: right; padding-top: 10px;">
                 <span class="hcdagheader" style="display: inline-block; padding: 10px;">Compiled by <b>Human Rights First and the Harvard 
                     College Data Analytics Group</b></span></p>
             </div>
           <div class="w3-container">
-        <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers across the country. To date, ___ ICE detainees have tested positive for COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared living spaces and ration PPE. In early May, the inevitable occured: after being denied release, the first ICE detainee tragically passed away from COVID-19.
+        <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers across the country. To date, <span id="positives"></span> ICE detainees have tested positive for COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared living spaces and ration PPE. In early May, the inevitable occured: after being denied release, the first ICE detainee tragically passed away from COVID-19.
             The map below provides an opportunity to learn about how the pandemic has infiltrated each ICE detention center differently. We then report data on testing administration and bring the map to life by tracking the lived experiences of detainees held at three key detention centers: Otay Mesa, Adelanto and __.</p>
-        </div></div>
-      </header>
+        </div>
+    </div>
+      </header> -->
 
     <!-- Grid -->
     <div class="w3-row">
@@ -41,6 +44,25 @@ and is wrapped around the whole page content, except for the footer in this exam
         <!-- Blog entries -->
         <div class="w3-col l8 s12">
             <!-- Blog entry -->
+            <!-- <header class="w3-container w3-center w3-padding-32"> -->
+                <div class="w3-card w3-center" style="height: 60vh; background: white; margin: 30px; background-image: url('barbed.jpg');background-size: cover;">
+                    <div class="title" style="padding-bottom: 50px;">
+                        <h1 class="w3-container w3-card" style="float: left; margin: 20px; background-color: white; opacity: .90; padding: 20px;"><b>ICE COVID-19 Information</b></h1>
+                    </div>    
+                    <div style="height: 10vh"></div>
+                    <p class="w3-container" style="text-align: center; float: right;">
+                        <span class="hcdagheader" style="display: inline-block; background-color: white; opacity: .85; padding: 15px">Compiled by <b>Human Rights First and the Harvard 
+                            College Data Analytics Group</b></span></p>
+                  <div style="height: 10vh"></div>
+                  <div class="w3-container w3-card" style="height: auto; width: auto; background-color: white; opacity: 0.85; margin: 30px; padding: 15px">
+                    <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers across the country. To date, <span id="positives"></span> ICE detainees have tested positive for COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared living spaces and ration PPE. In early May, the inevitable occured: after being denied release, the first ICE detainee tragically passed away from COVID-19.
+                    The map below provides an opportunity to learn about how the pandemic has infiltrated each ICE detention center differently. We then report data on testing administration and bring the map to life by tracking the lived experiences of detainees held at three key detention centers: Otay Mesa, Adelanto and __.</p>
+                </div>
+            </div>         
+              <!-- </header> -->
+
+
+            <!-- map -->
             <div class="w3-card-4 w3-margin">
                 <div class="w3-container">
                     <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers</b></h3>
@@ -80,7 +102,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <div class="w3-row">
                         <div class="w3-col m8 s12">
                             <p>
-                                <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b>
+                                <button class="w3-button w3-padding-large w3-white w3-border" onclick="window.location.href = 'article.ejs'"><b>READ MORE »</b>
                                 </button>
                             </p>
                         </div>
@@ -96,25 +118,32 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
         <div class="w3-col l4">
+            <div class="w3-margin-top">
+            <div class="w3-container" style="text-align: center; height: 100%; width: auto">
+                <img src="girl.jpg" style="max-width:100%; max-height:100%">
+                </div>
+            </div>
             <!-- SPOT FOR BASEBALL CARD GRAPHIC -->
             <div class="w3-card w3-margin w3-margin-top">
               <!-- <div id="facilityGraphDiv" class="w3-container" style="height: 100%; width: 100%; background: white"></div> -->
-                <div id="baseballCard" class="w3-container w3-card ">
+                <div id="baseballCard" class="w3-container w3-card">
                   <br>
                     <!-- insert graph here -->
                     <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px;">
-                      <img src="hrf_logo.png" style="max-width:75%; max-height:75%; display: block; margin-left: auto;
+                    
+                      
+                      <img src="hrf_logo.jpg" style="max-width:75%; max-height:75%; display: block; margin-left: auto;
                       margin-right: auto;" alt="Human Rights First Logo"><br>
                      <img src="hcdag_logo.png" style="max-width:85%; max-height:85%; display: block; margin-left: auto;
                       margin-right: auto; " alt="HCDAG Logo"></p>
                         <br>
                        <div class="w3-card w3-container w3-white" style="height: 100%; width: 100%; background: white; padding: 6;">
-                        <span id="title" style="background: white; display: inline-block; padding: 10px;"></span>
-                        <h3 id="moreinfo" style=>Click a facility on the map for <br> up-to-date statistics.</h3>
+                        <span id="title" style="background: white; display: inline-block; padding: 10px; font-size: large; font-weight: bold;"></span>
+                        <h3 id="moreinfo" style="text-align: center;">Click a facility on the map for <br> up-to-date facility-specific statistics.</h3>
                         <div id="facilityGraphDiv" class="w3-container w3-white" style="height: 25vh; width: 100%"></div>
                         <div>
-                        <h4 id="facilityname" style="padding-top: 6; font-size: x-large;"></h4>
-                        <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6; font-size: larger;">
+                        <h4 id="facilityname" style="padding-top: 6; font-size: large; font-weight: bold;"></h4>
+                        <ul class="card-text w3-container" style="list-style: none; padding-left: 6; padding-bottom: 6; font-size: 15px; font-weight: bold;">
                             <li id="loc"></li>
                             <li id="cases"></li>
                             <li id="detainees"></li>
@@ -122,6 +151,9 @@ and is wrapped around the whole page content, except for the footer in this exam
                             <!-- <li id="newslink" class="card-body text-center"><a href="#" class="card-link"
                                                                                style="color:blue"><b></b></a></li> -->
                         </ul>
+        
+                        <div style=" text-align: center"><button type="button" style="text-align: center">Return to global statistics</button>
+                        </div>
                         <br>
                       </div>
                     </div>
