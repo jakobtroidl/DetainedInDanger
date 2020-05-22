@@ -26,6 +26,12 @@ app.get('/', function (req, res)
     res.render("index", {latestUpdate: out, });
 });
 
+app.get('/article', function(req, res)
+{
+    res.render('article');
+});
+
+
 async function scrapeICEPage()
 {
     const array = [];
@@ -127,5 +133,5 @@ async function scrapeICEPage()
      timeZone: 'America/New_York'
  });
 
-app.listen(process.env.PORT, process.env.IP);
-//app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+//app.listen(process.env.PORT, process.env.IP);
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
