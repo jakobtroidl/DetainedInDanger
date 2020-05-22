@@ -1,7 +1,7 @@
 /* * * * * * * * * * * * * *
 *          BaseballCard    *
 * * * * * * * * * * * * * */
-let bc_new_data;
+let bc_new_data, text;
 
 // constructor
 baseballCard = function(_parentElement, _totalCases, _dailyCases)
@@ -43,6 +43,7 @@ baseballCard.prototype.renderCenter = function(center){
     selectedCenter = center;
 
     d3.select("#moreinfo").text("");
+
     // graph title
     d3.select("#title").text("Confirmed COVID-19 Cases Over Time")
     .attr("x", (width / 2))             
