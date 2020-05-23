@@ -52,8 +52,10 @@ chart.prototype.init = function() {
                 d3.csv("facilities.csv").then(function(data) {
                     data.forEach(function (row) {
                         if (row.name === selectedCenter){
-                            myBaseballCard.renderCenter(row);
+                            resetMapZoom();
                             myMapVis.updateDot(row);
+                            myBaseballCard.renderCenter(row);
+
                         }
                     })
                 })

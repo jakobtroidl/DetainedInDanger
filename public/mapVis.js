@@ -165,7 +165,7 @@ mapVis.prototype.ready = function(us) {
         .enter().append("path")
         .attr("d", path)
         .attr("class", "county-boundary")
-        .on("click", reset);
+        .on("click", resetMapZoom);
 
     g.append("g")
         .attr("id", "states")
@@ -267,9 +267,9 @@ mapVis.prototype.ready = function(us) {
 }
 
 function clicked(d) {
-    if (d3.select('.background').node() === this) return reset;
+    if (d3.select('.background').node() === this) return resetMapZoom;
 
-    if (active.node() === this) return reset;
+    if (active.node() === this) return resetMapZoom;
 
     active.classed("active", false);
     active = d3.select(this).classed("active", true);
@@ -290,7 +290,7 @@ function clicked(d) {
 }
 
 
-function reset() {
+function resetMapZoom() {
     active.classed("active", false);
     active = d3.select(null);
 
