@@ -31,15 +31,6 @@ mapVis.prototype.initVis = function() {
     dotRadiusBig = 13;
     dotRadiusSmall = 4;
 
-    //colorScale = d3.scaleLinear().range(['lightgrey', 'red']).domain([0, 60]);
-//     let array = Object.values(totalCases);
-//     array = array.filter(function(el) {
-//         return el.length && el==+el;
-// //  more comprehensive: return !isNaN(parseFloat(el)) && isFinite(el);
-//     });
-//     let max_cases = Math.max.apply(Math, array);
-
-
     margin = {top: 1, right: 10, bottom: 5, left: 10};
     width = $("#" + this.parentElement).width() - margin.left - margin.right;
     height = $("#" + this.parentElement).height() - margin.top - margin.bottom;
@@ -165,7 +156,7 @@ mapVis.prototype.ready = function(us) {
         .enter().append("path")
         .attr("d", path)
         .attr("class", "county-boundary")
-        .on("click", reset);
+        .on("click", resetMapZoom);
 
     g.append("g")
         .attr("id", "states")
@@ -184,7 +175,10 @@ mapVis.prototype.ready = function(us) {
             .data(data).enter()
             .append("circle")
             .attr("id", function (d){
-                return d.name.replace(/\s+/g, '');
+                let out = d.name.replace("(", "");
+                out = out.replace(")", "");
+                out = out.replace(/\s+/g, '');
+                return out;
             })
             .attr("cx", function (d) {
                 return projection([d.lon, d.lat])[0]; })
@@ -254,7 +248,12 @@ mapVis.prototype.ready = function(us) {
             .on("click", function(d) {
                 selectedCenter = d;
                 d3.selectAll("circle").attr("r", dotRadiusSmall);
-                d3.select("#" + d.name.replace(/\s+/g, '')).attr("r", dotRadiusBig);
+                console.log(d.name);
+                let out = d.name.replace("(", "");
+                out = out.replace(")", "");
+                out = out.replace(/\s+/g, '');
+                d3.select("#" + out)
+                    .attr("r", dotRadiusBig);
                 myBaseballCard.renderCenter(d);
             });
     });
@@ -267,9 +266,9 @@ mapVis.prototype.ready = function(us) {
 }
 
 function clicked(d) {
-    if (d3.select('.background').node() === this) return reset;
+    if (d3.select('.background').node() === this) return resetMapZoom;
 
-    if (active.node() === this) return reset;
+    if (active.node() === this) return resetMapZoom;
 
     active.classed("active", false);
     active = d3.select(this).classed("active", true);
@@ -290,7 +289,7 @@ function clicked(d) {
 }
 
 
-function reset() {
+function resetMapZoom() {
     active.classed("active", false);
     active = d3.select(null);
 
@@ -303,8 +302,12 @@ function reset() {
 
 mapVis.prototype.updateDot = function(center) {
     d3.selectAll("circle").attr("r", dotRadiusSmall);
-    let dot_id = center.name.replace(/\s+/g, '')
-    d3.selectAll("#" + dot_id).transition()
+
+    let out = center.name.replace("(", "");
+    out = out.replace(")", "");
+    out = out.replace(/\s+/g, '');
+    //let dot_id = center.name.replace(/\s+/g, '');
+    d3.selectAll("#" + out).transition()
         .duration(200)
         .attr("r", dotRadiusBig);
 }

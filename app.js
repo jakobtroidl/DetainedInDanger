@@ -5,7 +5,7 @@ const csv_writer = require('objects-to-csv');
 const CronJob = require('cron').CronJob;
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 app.use(express.static("public"));
 app.use(express.static("data"));
@@ -13,7 +13,6 @@ app.use(express.static("resources"));
 app.set("view engine", "ejs");
 
 let data = csv_loader('data/dailydetentioncases.csv');
-let meta = csv_loader("data/meta_data.csv")
 
 app.get('/', function (req, res)
 {
