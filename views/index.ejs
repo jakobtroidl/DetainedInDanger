@@ -27,21 +27,18 @@ and is wrapped around the whole page content, except for the footer in this exam
             <!-- Blog entry -->
             <!-- <header class="w3-container w3-center w3-padding-32"> -->
             <div class="w3-card-4 w3-margin"
-                 style="height: 50vh; background: white; margin: 30px; background-image: url('barbed.jpg');background-size: cover;">
+                 style="height: 100%; background: white; margin: 30px; background-image: url('barbed.jpg');background-size: cover;">
                 <div class="title" style="padding-bottom: 50px;">
                     <h1 class="w3-container w3-card"
-                        style="border: 1px solid #275889;float: left; margin: 20px; background-color: white; opacity: .90; padding: 20px;">
-                        <b>ICE
-                            COVID-19 Information</b></h1>
-                </div>
-                <div style="height: 10vh"></div>
-                <p class="w3-container" style="text-align: center; float: right;">
-                        <span class="hcdagheader"
-                              style="border: 1px solid #bc541e;display: inline-block; background-color: white; opacity: .85; padding: 15px">Compiled by <b>the Harvard
-                            College Data Analytics Group</b> under the auspices of <b>Human Rights First</b> </span></p>
-                <div style="height: 10vh"></div>
+                        style="font: Franklin; border: 1px solid #275889;float: left; margin: 20px; background-color: white; opacity: .90; padding: 20px;">
+                        <b>ICE COVID-19 Information</b></h1>
+                    <p class="w3-container w3-card"
+                        style="border: 1px solid #bc541e;float: right; margin: 20px; background-color: white; opacity: .90; padding: 20px;">
+                        Compiled by <b>the Harvard
+                            College Data Analytics Group</b> under the auspices of <b>Human Rights First</p>
+                <div style="height: 15vh"></div>
                 <div class="w3-container w3-card"
-                     style="border: 1px solid #f1ac7b; height: auto; width: auto; background-color: white; opacity: 0.85; margin: 30px; padding: 15px">
+                     style="border: 1px solid #f1ac7b; background-color: white; opacity: 0.85; padding: 20px; margin: 20px">
                     <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention centers
                         across the country. To date, <span id="positives"></span> ICE detainees have tested positive for
                         COVID-19. This number continues to rapidly climb as facilities cramp detainees into small shared
@@ -54,6 +51,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 </div>
             </div>
         </div>
+    </div>
 
         <!-- </header> -->
 
@@ -67,7 +65,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <div class="w3-container w3-padding"
                              style="background-color: #f1ac7b; height: 100%; width:100%">
                             <h4><b>ICE Centers Ranked by Confirmed Cases</b></h4>
-                            <h5>Select a facility from the list to view location and statistics.</h5>
+                            <h5 class="w3-opacity">Select a facility from the list to view location and statistics.</h5>
                         </div>
                         <div style="height: 25vh; width: 100%; background: white">
                             <ul id="chartDiv" class="w3-ul w3-hoverable w3-white"
@@ -140,8 +138,8 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <div class="w3-card-4 w3-margin">
                         <div class="w3-container" style="background-color: #275889; color: white">
                             <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers</b></h3>
-                            <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
-                            <h5></h5>
+                            <p style="float:left">Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></p>
+                            <p class="w3-opacity" style="float:right">Select a facility on the map to view statistics.</p>
                         </div>
                         <div class="w3-container w3-white"
                              style="display: inline-block; position: relative;overflow: hidden; height: 75vh;width: 100%;background: white;">
@@ -165,7 +163,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <h3><b>Limitations</b></h3>
                     </div>
 
-                    <div style="height: 40vh; width: auto; opacity: 0.85; margin: 5px; padding: 15px">
+                    <div style="height: 100%; width: auto; opacity: 0.85; margin: 5px; padding: 15px; background-color: white;">
                         <p style="font-size: medium;">While this database aims to provide a complete visualization of
                             the hidden epidemic, several limitations must be noted.
                             First, by public health standards, ICE has not tested enough detainees; half of all tests
@@ -188,7 +186,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
                         <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
                     </div>
-                    <div class="w3-container w3-white" style="height: 39vh; width: 100%; background: white;">
+                    <div class="w3-container w3-white" style="height: 37vh; width: 100%; background: white;">
                         <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
                     </div>
                 </div>
@@ -201,7 +199,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             <hr>
 
             <div class="w3-card-4 w3-margin"
-                 style="height: 50vh; background: white; margin: 20px; background-image: url('prison.jpg');background-size: cover;">
+                 style="height: 100%; background: white; margin: 20px; background-image: url('prison.jpg');background-size: cover;">
 
                 <h3 class="w3-container w3-card"
                     style="float: left; margin: 20px; background-color: white; opacity: .70; padding: 20px;"><b>A story
@@ -234,7 +232,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             <hr>
 
             <div class="w3-card-4 w3-margin"
-                 style="height: 50vh; background: white; margin: 20px; background-image: url('prison_hallway.jpg');background-size: cover;">
+                 style="height: 100%; background: white; margin: 20px; background-image: url('prison_hallway.jpg');background-size: cover;">
 
                 <h3 class="w3-container w3-card"
                     style="float: left; margin: 20px; background-color: white; opacity: .70; padding: 20px;"><b>Adelanto: A COVID-free ICE Detention Center?</b></h3>
@@ -262,7 +260,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             <hr>
 
             <div class="w3-card-4 w3-margin"
-                 style="height: 50vh; background: white; margin: 20px; background-image: url('girl.jpg');background-size: cover;">
+                 style="height: 100%; background: white; margin: 20px; background-image: url('girl.jpg');background-size: cover;">
 
                 <h3 class="w3-container w3-card"
                     style="float: left; margin: 20px; background-color: white; opacity: .70; padding: 20px;"><b>A story
