@@ -13,7 +13,6 @@ app.use(express.static("resources"));
 app.set("view engine", "ejs");
 
 let data = csv_loader('data/dailydetentioncases.csv');
-let meta = csv_loader("data/meta_data.csv")
 
 app.get('/', function (req, res)
 {
@@ -134,5 +133,5 @@ async function scrapeICEPage()
      timeZone: 'America/New_York'
  });
 
-//app.listen(process.env.PORT, process.env.IP);
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(process.env.PORT, process.env.IP);
+//app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
