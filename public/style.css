@@ -46,7 +46,7 @@ div.tooltip {
 }
 
 .county-boundary:hover, .state:hover {
-    fill: orange;
+    fill: #BC541E;
 }
 
 div.tooltip {
