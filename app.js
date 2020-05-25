@@ -1,8 +1,7 @@
 const express = require('express')
-const puppeteer = require('puppeteer');
+
 const csv_loader = require('csv-load-sync');
 const csv_writer = require('objects-to-csv');
-const CronJob = require('cron').CronJob;
 
 const app = express();
 const port = 5000;

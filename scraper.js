@@ -1,6 +1,13 @@
+const puppeteer = require('puppeteer');
+const csv_writer = require('objects-to-csv');
+const csv_loader = require('csv-load-sync');
+
 async function scrapeICEPage()
 {
+
     console.log("scrape started");
+
+    let data = csv_loader('data/dailydetentioncases.csv');
 
     const array = [];
     const url = "https://www.ice.gov/coronavirus";
@@ -85,6 +92,8 @@ async function scrapeICEPage()
     //console.log(timeHistory);
     const csv = new csv_writer(timeHistory);
     await csv.toDisk('data/dailydetentioncases.csv', false);
+
+    console.log("Scrape done");
 }
 
 scrapeICEPage();
