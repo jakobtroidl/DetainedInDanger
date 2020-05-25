@@ -52,8 +52,6 @@ async function scrapeICEPage()
 
     let number_tests = name_tests.replace(",", "");
 
-    console.log(number_tests);
-
     // scrape number of people detained
     const [el_detained] = await page.$x('//*[@id="node-page-56400"]/div/div/div[2]/p[2]');
     const text_detained = await el_detained.getProperty('textContent');
