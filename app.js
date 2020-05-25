@@ -31,12 +31,12 @@ app.get('/article', function(req, res)
     res.render('article');
 });
 
-app.get('/adelanto', function(req, res)
+app.get('/adelanto_article', function(req, res)
 {
     res.render('adelanto_article');
 });
 
-app.get('/transfers', function(req, res)
+app.get('/transfers_article', function(req, res)
 {
     res.render('transfers_article');
 });
