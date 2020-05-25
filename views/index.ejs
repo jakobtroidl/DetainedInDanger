@@ -35,8 +35,8 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <p class="w3-container w3-card"
                        style="font-size: auto; height: 100%; width: auto; border: 1px solid #bc541e;float: right; background-color: white; opacity: .90; margin: 20px; padding: 15px">
                         Compiled by <b>the Harvard
-                            College Data Analytics Group</b><br>under the auspices of <b>Human Rights First</p>
-<!--                    <div style="height: 15vh"></div>-->
+                            College Data Analytics Group</b><br>under the auspices of <b>Human Rights First</b></p>
+                    <!--                    <div style="height: 15vh"></div>-->
                     <div class="w3-container w3-card"
                          style="display: inline-block; border: 1px solid #f1ac7b; background-color: white; opacity: 0.85; margin: 20px; padding: 15px">
                         <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention
@@ -107,17 +107,24 @@ and is wrapped around the whole page content, except for the footer in this exam
 
                                 <div style=" opacity: 0.85; margin: 5px; padding: 15px">
 
-                                    <ul class="card-text w3-container"
-                                        style=" padding-left: 10px; padding-bottom: 6px; font-size: 20px;">
-                                        <li id="loc"></li>
+                                    <ul id="globalStats" class="card-text w3-container"
+                                        style=" padding-left: 15px; padding-bottom: 6px; font-size: 20px;">
                                         <li> There are <span style="font-weight: bold"><span id="cases"></span> total confirmed cases</span>
                                             among ICE detainees.
                                         </li>
-                                        <li>ICE has administered <span style="font-weight: bold"><span
-                                                        id="detainees"></span> COVID-19 tests</span>.
-                                        </li>
+                                        <li>ICE has administered <span style="font-weight: bold"><span id="detainees"></span> COVID-19 tests</span>.</li>
                                         <li> There are <span style="font-weight: bold"><span id="operator"></span> detainees in ICE custody</span>.
                                         </li>
+                                    </ul>
+
+                                    <ul id="facilityStats"
+                                        style=" display: none; padding-left: 15px; padding-bottom: 6px; font-size: 20px;">
+
+                                        <li> <span id="cases"></span></li>
+                                        <li> <span id="detainees"></span></li>
+                                        <li> <span id="loc"> </span></li>
+                                        <li> <span id="operator"></span></li>
+
                                     </ul>
 
                                     <div id="globalbutton" style=" text-align: center">
@@ -203,7 +210,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
                     </div>
 
-                        <div id="brushDiv" style="flex-grow: 1; width: 100%; background: white"></div>
+                        <div id="brushDiv" style="flex-grow: 1; background: white"></div>
 
 
                 </div>

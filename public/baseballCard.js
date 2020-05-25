@@ -30,19 +30,19 @@ baseballCard.prototype.init = function() {
     
     formatComma = d3.format(",");
 
-    d3.select("#facilityname").text("");
-    d3.select("#loc").text("")
     d3.select("#title").text("Global Statistics");
-    d3.select("#cases")
-        .text("There are  " + formatComma(bc_new_data[0].infections) + " total confirmed COVID-19 cases among ICE detainees.")
-        .style("font-size", "20px");
-    d3.select("#detainees")
-        .text("ICE has administered " + formatComma(num_test) + " COVID-19 tests.")
-        .style("font-size", "20px");
-    d3.select("#operator")
-        .text("There are " + formatComma(num_detained) + " detainees currently being held in ICE facilities.")
-        .style("font-size", "20px");
-    d3.select("#positives").text(formatComma(bc_new_data[0].infections));
+
+    d3.select("#facilityStats").style("display", "none");
+
+    let globalStats = d3.select("#globalStats");
+    globalStats.style("display", "");
+    globalStats.select("#cases")
+        .text(formatComma(bc_new_data[0].infections));
+    globalStats.select("#detainees")
+        .text(formatComma(num_test));
+    globalStats.select("#operator")
+        .text(formatComma(num_detained));
+    globalStats.select("#positives").text(formatComma(bc_new_data[0].infections));
 
     var x = document.getElementById("globalbutton");
     x.style.display = "none";
@@ -55,51 +55,44 @@ baseballCard.prototype.renderCenter = function(center){
     d3.select("#title").text(center.name)
     .attr("x", (width / 2))             
     .attr("y", 0 - (margin.top / 2))
-    .attr("text-anchor", "middle")  
-    //.style("font-size", "16px")
-    //.style("text-decoration", "underline")  ;
+    .attr("text-anchor", "middle")
 
-    // name of facility
-    // d3.select("#facilityname")
-    //     .text(center.name);
+    // set global stats invisible
+    d3.select("#globalStats").style("display", "none");
+
+    let facilityStats = d3.select("#facilityStats");
+    facilityStats.style("display", "");
 
     // location
-    d3.select("#loc")
-        .text("is located in " + center.County + ", " + center.State)
-        .style("font-size", "15px");
+    facilityStats.select("#loc")
+        .text("located in " + center.County + ", " + center.State);
 
     // # of ICE detainees
     if (center['Number current ICE detainees'] == "") {
-        d3.select("#detainees")
-            .text("has an unknown # of ICE detainees")
-            .style("font-size", "15px");
+        facilityStats.select("#detainees")
+            .text("has an unknown # of ICE detainees");
     }
     else {
-        d3.select("#detainees")
-            .text("has " + formatComma(center['Number current ICE detainees']) + " ICE detainees")
-            .style("font-size", "15px");;
+        facilityStats.select("#detainees")
+            .text("has " + formatComma(center['Number current ICE detainees']) + " ICE detainees");
     }
 
     // operator
-    d3.select("#operator")
-        .text("is operated by " + center['Name of Operator'])
-        .style("font-size", "15px");;
+    facilityStats.select("#operator")
+        .text("operated by " + center['Name of Operator']);
 
     // # of confirmed COVID cases
     let cases = totalCases[center.name];
     if (cases == "") {
-        d3.select("#cases").text("has no reported cases")
-        .style("font-size", "15px");;
+        facilityStats.select("#cases").text("has no reported cases");
     }
     else if (cases == 1) {
-        d3.select("#cases")
-        .text("has "+ cases + " confirmed case")
-        .style("font-size", "15px");;
+        facilityStats.select("#cases")
+        .text("has "+ cases + " confirmed case");
     }
     else {
-        d3.select("#cases")
-        .text("has "+ cases + " confirmed cases")
-        .style("font-size", "15px");;
+        facilityStats.select("#cases")
+        .text("has "+ cases + " confirmed cases");
     }
 
     myFacilityGraph.plotGraph(center.name);
