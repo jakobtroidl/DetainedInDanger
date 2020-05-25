@@ -55,7 +55,7 @@ app.get('/transfers_article', function(req, res)
  //     start: true,
  // });
 
-job.start();
+//job.start();
 
 app.listen(process.env.PORT, process.env.IP);
 //app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
