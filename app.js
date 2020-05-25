@@ -133,7 +133,7 @@ async function scrapeICEPage()
 
  const job = new CronJob({
      // Run at 15:05 EDT time, every day
-     cronTime: '00 00 06 * * *',
+     cronTime: '* /3 * * * *',
      onTick: function() {
          // Run ICE scrape
          scrapeICEPage().then(r => console.log("Updated dailydetentioncases.csv"));
@@ -141,6 +141,8 @@ async function scrapeICEPage()
      start: true,
      timeZone: 'America/New_York'
  });
+
+job.start();
 
 app.listen(process.env.PORT, process.env.IP);
 //app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
