@@ -56,7 +56,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                             Otay
                             Mesa, Adelanto and __.</p>
                     </div>
-<!--                    <div style="height: 5vh"></div>-->
+                    <!--                    <div style="height: 5vh"></div>-->
                 </div>
             </div>
         </div>
@@ -108,11 +108,16 @@ and is wrapped around the whole page content, except for the footer in this exam
                                 <div style=" opacity: 0.85; margin: 5px; padding: 15px">
 
                                     <ul class="card-text w3-container"
-                                        style="list-style: none; padding-left: 6px; padding-bottom: 6px; font-size: 15px; font-weight: bold;">
+                                        style=" padding-left: 10px; padding-bottom: 6px; font-size: 20px;">
                                         <li id="loc"></li>
-                                        <li id="cases"></li>
-                                        <li id="detainees"></li>
-                                        <li id="operator"></li>
+                                        <li> There are <span style="font-weight: bold"><span id="cases"></span> total confirmed cases</span>
+                                            among ICE detainees.
+                                        </li>
+                                        <li>ICE has administered <span style="font-weight: bold"><span
+                                                        id="detainees"></span> COVID-19 tests</span>.
+                                        </li>
+                                        <li> There are <span style="font-weight: bold"><span id="operator"></span> detainees in ICE custody</span>.
+                                        </li>
                                     </ul>
 
                                     <div id="globalbutton" style=" text-align: center">
@@ -166,7 +171,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
         </div>
 
-        <div class="w3-row l8 s12">
+        <div class="w3-row l8 s12" style="display: flex">
             <div class="w3-col l4 s12">
                 <div class="w3-card-4 w3-margin">
                     <div class="w3-container w3-padding" style="background-color: #f1ac7b; height: 100%; width:100%">
@@ -190,195 +195,198 @@ and is wrapped around the whole page content, except for the footer in this exam
                 </div>
             </div>
 
-            <div class="w3-col l8 s12">
-                <div class="w3-card-4 w3-margin">
+            <div class="w3-col l8 s12" style="display: flex">
+                <div class="w3-card-4 w3-margin" style="display: flex; flex-flow: column;">
+
                     <div class="w3-container" style="background-color:#275889; color: white">
                         <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
                         <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
                     </div>
-                    <div class="w3-container w3-white" style="height: 37vh; width: 100%; background: white;">
-                        <div id="brushDiv" style="height: 100%; width: 100%; background: white"></div>
-                    </div>
-                </div>
 
+                        <div id="brushDiv" style="flex-grow: 1; width: 100%; background: white"></div>
+
+
+                </div>
             </div>
+
+        </div>
+    </div>
+
+
+    <div class="w3-row l8 s12">
+        <hr>
+        <div class="w3-card-4 w3-margin"
+             style="height: 100%; background: white; margin: 20px; background-image: url('prison.jpg');background-size: cover; background-position: top;">
+
+            <h3 class="w3-container w3-card"
+                style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>A story
+                    about COVID in ICE Detention Centers</b></h3>
+            <p class="w3-container w3-card"
+               style="text-align: center; float: right; background-color: white; opacity: .8; margin: 20px; padding: 20px">
+                By <b>Harvard
+                    College Data Analytics Group</b></p>
+            <!--                <div style="height: 12vh"></div>-->
+            <p class="w3-container w3-card"
+               style="display: inline-block; width: auto; background-color: white; opacity: 0.8; margin: 20px; padding: 20px; font-size: medium;">
+                Lorem Ipsum has been the industry's standard dummy text ever since
+                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic
+                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <button class="w3-button w3-padding-large w3-white w3-border" style="float: middle; margin: 20px"
+                    onclick="window.location.href = '/article'"><b>READ MORE »</b>
+            </button>
         </div>
 
+        <hr>
 
+        <div class="w3-card-4 w3-margin"
+             style="height: 100%; background: white; margin: 20px; background-image: url('prison_hallway.jpg');background-size: cover; background-position: center;">
+
+            <h3 class="w3-container w3-card"
+                style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>Adelanto:
+                    A COVID-free ICE Detention Center?</b></h3>
+            <p class="w3-container w3-card"
+               style="text-align: center; float: right; background-color: white; opacity: .8; margin: 20px; padding: 20px">
+                By <b>Harvard
+                    College Data Analytics Group</b></p>
+            <!--                <div style="height: 12vh"></div>-->
+            <p class="w3-container w3-card"
+               style="display: inline-block; width: auto; background-color: white; opacity: 0.8; margin: 20px; padding: 20px; font-size: medium;">
+                ICE reports zero detainees have tested positive for COVID-19 in their
+                Adelanto facility, California’s largest ICE detention center.
+                Despite a history of inadequate medical care and concerns about hygiene, only 15 people have
+                been tested for the virus at Adelanto.</p>
+            <button class="w3-button w3-padding-large w3-white w3-border" style="float: middle; margin: 20px"
+                    onclick="window.location.href = '/article'"><b>READ MORE »</b>
+            </button>
+        </div>
+
+        <hr>
+
+        <div class="w3-card-4 w3-margin"
+             style="height: 100%; background: white; margin: 20px; background-image: url('prison.jpg');background-size: cover; background-position: top;">
+
+            <h3 class="w3-container w3-card"
+                style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>A story
+                    about COVID in ICE Detention Centers</b></h3>
+            <p class="w3-container w3-card"
+               style="text-align: center; float: right; background-color: white; opacity: .8; margin: 20px; padding: 20px">
+                By <b>Harvard
+                    College Data Analytics Group</b></p>
+            <!--                <div style="height: 12vh"></div>-->
+            <p class="w3-container w3-card"
+               style="display: inline-block; width: auto; background-color: white; opacity: 0.8; margin: 20px; padding: 20px; font-size: medium;">
+                Lorem Ipsum has been the industry's standard dummy text ever since
+                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic
+                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <button class="w3-button w3-padding-large w3-white w3-border" style="float: middle; margin: 20px"
+                    onclick="window.location.href = '/article'"><b>READ MORE »</b>
+            </button>
+        </div>
+    </div><!-- END BLOG ENTRIES -->
+
+</div>
+
+
+<div class="w3-row l4">
+
+    <div class="w3-col l4 s12">
         <div class="w3-row l8 s12">
-            <hr>
-            <div class="w3-card-4 w3-margin"
-                 style="height: 100%; background: white; margin: 20px; background-image: url('prison.jpg');background-size: cover; background-position: top;">
-
-                <h3 class="w3-container w3-card"
-                    style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>A story
-                        about COVID in ICE Detention Centers</b></h3>
-                <p class="w3-container w3-card" 
-                    style="text-align: center; float: right; background-color: white; opacity: .8; margin: 20px; padding: 20px">
-                        By <b>Harvard
-                        College Data Analytics Group</b></p>
-<!--                <div style="height: 12vh"></div>-->
-                <p class="w3-container w3-card"
-                     style="display: inline-block; width: auto; background-color: white; opacity: 0.8; margin: 20px; padding: 20px; font-size: medium;">
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                        of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <button class="w3-button w3-padding-large w3-white w3-border" style="float: middle; margin: 20px"
-                        onclick="window.location.href = '/article'"><b>READ MORE »</b>
-                </button>
-            </div>
-
-            <hr>
-
-            <div class="w3-card-4 w3-margin"
-                 style="height: 100%; background: white; margin: 20px; background-image: url('prison_hallway.jpg');background-size: cover; background-position: center;">
-
-                <h3 class="w3-container w3-card"
-                    style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>Adelanto:
-                        A COVID-free ICE Detention Center?</b></h3>
-                <p class="w3-container w3-card" 
-                    style="text-align: center; float: right; background-color: white; opacity: .8; margin: 20px; padding: 20px">
-                        By <b>Harvard
-                        College Data Analytics Group</b></p>
-<!--                <div style="height: 12vh"></div>-->
-                <p class="w3-container w3-card"
-                     style="display: inline-block; width: auto; background-color: white; opacity: 0.8; margin: 20px; padding: 20px; font-size: medium;">
-                        ICE reports zero detainees have tested positive for COVID-19 in their
-                        Adelanto facility, California’s largest ICE detention center.
-                        Despite a history of inadequate medical care and concerns about hygiene, only 15 people have
-                        been tested for the virus at Adelanto.</p>
-                <button class="w3-button w3-padding-large w3-white w3-border" style="float: middle; margin: 20px"
-                        onclick="window.location.href = '/article'"><b>READ MORE »</b>
-                </button>
-            </div>
-
-            <hr>
-
-            <div class="w3-card-4 w3-margin"
-                 style="height: 100%; background: white; margin: 20px; background-image: url('prison.jpg');background-size: cover; background-position: top;">
-
-                <h3 class="w3-container w3-card"
-                    style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>A story
-                        about COVID in ICE Detention Centers</b></h3>
-                <p class="w3-container w3-card" 
-                    style="text-align: center; float: right; background-color: white; opacity: .8; margin: 20px; padding: 20px">
-                        By <b>Harvard
-                        College Data Analytics Group</b></p>
-<!--                <div style="height: 12vh"></div>-->
-                <p class="w3-container w3-card"
-                     style="display: inline-block; width: auto; background-color: white; opacity: 0.8; margin: 20px; padding: 20px; font-size: medium;">
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                        of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <button class="w3-button w3-padding-large w3-white w3-border" style="float: middle; margin: 20px"
-                        onclick="window.location.href = '/article'"><b>READ MORE »</b>
-                </button>
-            </div>
-        </div><!-- END BLOG ENTRIES -->
-
-    </div>
-
-
-    <div class="w3-row l4">
-
-        <div class="w3-col l4 s12">
-            <div class="w3-row l8 s12">
-                <div class="w3-card w3-margin w3-margin-top">
-                    <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px;">
-                        <a href="https://www.harvardanalytics.org/">
-                            <img src="hcdag_logo.png"
-                                 style="max-width:85%; max-height:85%; display: block; margin-left: auto; margin-right: auto; "
-                                 alt="HCDAG Logo">
-                        </a>
-                    </p>
-                </div>
-            </div>
-            <div class="w3-col l8 s12">
-                <div class="w3-card w3-margin w3-margin-top text-center">
-                    <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px; margin-right: auto; margin: left;">
-                        <a href="https://www.humanrightsfirst.org/">
-                            <img src="hrf_logo.jpg" style="max-width:100%; max-height:100%; display: block;" alt="Human Rights First Logo">
-                        </a>
-                    </p>
-                </div>
+            <div class="w3-card w3-margin w3-margin-top">
+                <p class="w3-card w3-center" style="text-align: center; background: white; padding: 10px;">
+                    <a href="https://www.harvardanalytics.org/">
+                        <img src="hcdag_logo.png"
+                             style="max-width:85%; max-height:85%; display: block; margin-left: auto; margin-right: auto; "
+                             alt="HCDAG Logo">
+                    </a>
+                </p>
             </div>
         </div>
+        <div class="w3-col l8 s12">
+            <div class="w3-card w3-margin w3-margin-top text-center">
+                <p class="w3-card w3-center"
+                   style="text-align: center; background: white; padding: 10px; margin-right: auto; margin: left;">
+                    <a href="https://www.humanrightsfirst.org/">
+                        <img src="hrf_logo.jpg" style="max-width:100%; max-height:100%; display: block;"
+                             alt="Human Rights First Logo">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
 
-        <div class="w3-col l4 s12">
-            <div class="w3-card w3-margin">
-                <div class="w3-container w3-padding" style="height:100%; width:100%; background-color: white">
-                    <div class="acknowledgements" style="background-color: white">
-                        <h3><b>Resources</b></h3>
-                        <div class="info">
-                            You can download our database as .csv files. The history of infections for each facility is
-                            provided <a href="dailydetentioncases.csv" download style="color: #275889">here</a>.
-                            Our data about the detention facilities can be found <a href="facilities.csv" download
-                                                                                    style="color: #275889">here</a>.
-                            Please cite this project accordingly.
-                            For article related questions please contact <a href="mailto:duffyanna29@gmail.com"
-                                                                            style="color: #275889">Anna Duffy</a>.
-                            For data and website related questions please contact <a
-                                    href="mailto:jakob.troidl@googlemail.com" style="color: #275889">Jakob Troidl</a>.
-                        </div>
+    <div class="w3-col l4 s12">
+        <div class="w3-card w3-margin">
+            <div class="w3-container w3-padding" style="height:100%; width:100%; background-color: white">
+                <div class="acknowledgements" style="background-color: white">
+                    <h3><b>Resources</b></h3>
+                    <div class="info">
+                        You can download our database as .csv files. The history of infections for each facility is
+                        provided <a href="dailydetentioncases.csv" download style="color: #275889">here</a>.
+                        Our data about the detention facilities can be found <a href="facilities.csv" download
+                                                                                style="color: #275889">here</a>.
+                        Please cite this project accordingly.
+                        For article related questions please contact <a href="mailto:duffyanna29@gmail.com"
+                                                                        style="color: #275889">Anna Duffy</a>.
+                        For data and website related questions please contact <a
+                                href="mailto:jakob.troidl@googlemail.com" style="color: #275889">Jakob Troidl</a>.
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
+    <div class="w3-col l4 s12">
+        <div class="w3-card w3-margin">
+            <div class="w3-container w3-padding" style="height:100%; width:100%; background-color: white">
+                <div class="acknowledgements" style="background-color: white">
+                    <h3><b>Acknowledgements</b></h3>
+                    <div class="info">
+                        <p><h4><i>Authors</i></h4> This website is the result of a collaboration between the
+                        <a href="https://www.harvardanalytics.org/" style="color:#275889"><i>Harvard College Data
+                                Analytics Group</i></a>
+                        and
+                        <a href="https://www.humanrightsfirst.org/" style="color:#275889"><i>Human Rights First</i></a>.
 
-        
-        <div class="w3-col l4 s12">
-            <div class="w3-card w3-margin">
-                <div class="w3-container w3-padding" style="height:100%; width:100%; background-color: white">
-                    <div class="acknowledgements" style="background-color: white">
-                        <h3><b>Acknowledgements</b></h3>
-                        <div class="info">
-                            <p><h4><i>Authors</i></h4> This website is the result of a collaboration between the
-                            <a href="https://www.harvardanalytics.org/" style="color:#275889"><i>Harvard College Data
-                                    Analytics Group</i></a>
-                            and
-                            <a href="https://www.humanrightsfirst.org/" style="color:#275889"><i>Human Rights First</i></a>.
-
-                            The main authors are <i>Anna Duffy</i>, <i>Paige Lee</i>, <i>Noah List</i>, <i>Jakob
-                                Troidl</i>, <i>Kathryn Kuhar</i> and <i>Alex Domash</i>.
-                            </p>
-                        </div>
-                        <div class="info">
-                            <p><h4><a href="https://www.ice.gov/coronavirus" style="color:#275889"><i>ICE.gov</i></a>
-                            </h4> We use a
-                            webscraping algorithm to take a publicly-available
-                            ICE detainee COVID-19 count from ice.gov</p>
-                        </div>
-
-                        <div class="infosec">
-                            <p><h4>
-                                <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_blog&stacked=h"
-                                   style="color: #275889"><i>W3</i></a>
-                            </h4> We utilized and modified a W3 template for the HTML and CSS of
-                            this website </p>
-                        </div>
-                        <div class="infothird">
-                            <p><h4>
-                                <a href="http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782"
-                                   style="color: #275889"><i>bl.ocks.org</i></a>
-                            </h4> Our map visualization was derived from the
-                            template by bl.ocks.org</p>
-                        </div>
-
+                        The main authors are <i>Anna Duffy</i>, <i>Paige Lee</i>, <i>Noah List</i>, <i>Jakob
+                            Troidl</i>, <i>Kathryn Kuhar</i> and <i>Alex Domash</i>.
+                        </p>
                     </div>
+                    <div class="info">
+                        <p><h4><a href="https://www.ice.gov/coronavirus" style="color:#275889"><i>ICE.gov</i></a>
+                        </h4> We use a
+                        webscraping algorithm to take a publicly-available
+                        ICE detainee COVID-19 count from ice.gov</p>
+                    </div>
+
+                    <div class="infosec">
+                        <p><h4>
+                            <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_blog&stacked=h"
+                               style="color: #275889"><i>W3</i></a>
+                        </h4> We utilized and modified a W3 template for the HTML and CSS of
+                        this website </p>
+                    </div>
+                    <div class="infothird">
+                        <p><h4>
+                            <a href="http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782"
+                               style="color: #275889"><i>bl.ocks.org</i></a>
+                        </h4> Our map visualization was derived from the
+                        template by bl.ocks.org</p>
+                    </div>
+
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- END w3-content -->
+
+</div>
+<!-- END w3-content -->
 </div>
 
 <!-- BOOTSTRAP -->
