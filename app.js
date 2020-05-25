@@ -1,7 +1,5 @@
 const express = require('express')
-
 const csv_loader = require('csv-load-sync');
-const csv_writer = require('objects-to-csv');
 
 const app = express();
 const port = 5000;
