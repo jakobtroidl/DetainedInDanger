@@ -31,6 +31,15 @@ app.get('/article', function(req, res)
     res.render('article');
 });
 
+app.get('/adelanto', function(req, res)
+{
+    res.render('adelanto_article');
+});
+
+app.get('/transfers', function(req, res)
+{
+    res.render('transfers_article');
+});
 
 async function scrapeICEPage()
 {

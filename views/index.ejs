@@ -31,7 +31,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <div class="title">
                     <h1 class="w3-container w3-card"
                         style="height: 100%; font-family: 'Franklin Gothic Book'; border: 1px solid #275889; float: left; background-color: white; opacity: .90; margin: 20px; padding: 15px">
-                        <b>ICE COVID-19 Information</b></h1>
+                        <b>Detained In Danger</b></h1>
                     <p class="w3-container w3-card"
                        style="font-size: auto; height: 100%; width: auto; border: 1px solid #bc541e;float: right; background-color: white; opacity: .90; margin: 20px; padding: 15px">
                         Compiled by the <b>Harvard
@@ -112,7 +112,9 @@ and is wrapped around the whole page content, except for the footer in this exam
                                         <li> There are <span style="font-weight: bold"><span id="cases"></span> total confirmed cases</span>
                                             among ICE detainees.
                                         </li>
-                                        <li>ICE has administered <span style="font-weight: bold"><span id="detainees"></span> COVID-19 tests</span>.</li>
+                                        <li>ICE has administered <span style="font-weight: bold"><span
+                                                        id="detainees"></span> COVID-19 tests</span>.
+                                        </li>
                                         <li> There are <span style="font-weight: bold"><span id="operator"></span> detainees in ICE custody</span>.
                                         </li>
                                     </ul>
@@ -120,10 +122,10 @@ and is wrapped around the whole page content, except for the footer in this exam
                                     <ul id="facilityStats"
                                         style=" display: none; padding-left: 15px; padding-bottom: 6px; font-size: 20px;">
 
-                                        <li> <span id="cases"></span></li>
-                                        <li> <span id="detainees"></span></li>
-                                        <li> <span id="loc"> </span></li>
-                                        <li> <span id="operator"></span></li>
+                                        <li><span id="cases"></span></li>
+                                        <li><span id="detainees"></span></li>
+                                        <li><span id="loc"> </span></li>
+                                        <li><span id="operator"></span></li>
 
                                     </ul>
 
@@ -205,12 +207,12 @@ and is wrapped around the whole page content, except for the footer in this exam
             <div class="w3-col l8 s12 w3-card-4 w3-margin" style="display: flex; flex-flow: column;">
 
 
-                    <div class="w3-container" style="background-color:#275889; color: white">
-                        <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
-                        <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
-                    </div>
+                <div class="w3-container" style="background-color:#275889; color: white">
+                    <h3><b>Confirmed COVID-19 Cases in ICE Detention Centers (over time)</b></h3>
+                    <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                </div>
 
-                    <div id="brushDiv" style="flex-grow: 1; background: white"></div>
+                <div id="brushDiv" style="flex-grow: 1; background: white"></div>
 
 
             </div>
@@ -275,8 +277,9 @@ and is wrapped around the whole page content, except for the footer in this exam
              style="height: 100%; background: white; margin: 20px; background-image: url('prison.jpg');background-size: cover; background-position: top;">
 
             <h3 class="w3-container w3-card"
-                style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>A story
-                    about COVID in ICE Detention Centers</b></h3>
+                style="float: left; margin: 20px; background-color: white; opacity: .8; padding: 20px;"><b>ICE Continues
+                    to Transfer Detainees Between Facilities,
+                    as Covid-19 Cases Spike in Detention Centers</b></h3>
             <p class="w3-container w3-card"
                style="text-align: center; float: right; background-color: white; opacity: .8; margin: 20px; padding: 20px">
                 By <b>Harvard
@@ -284,12 +287,9 @@ and is wrapped around the whole page content, except for the footer in this exam
             <!--                <div style="height: 12vh"></div>-->
             <p class="w3-container w3-card"
                style="display: inline-block; width: auto; background-color: white; opacity: 0.8; margin: 20px; padding: 20px; font-size: medium;">
-                Lorem Ipsum has been the industry's standard dummy text ever since
-                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                specimen book. It has survived not only five centuries, but also the leap into electronic
-                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                ICE is regularly transferring immigrant detainees between facilities, despite the high-risk of moving
+                detainees during a pandemic. The transfer policy has shuffled thousands of immigrant detainees across
+                the country in recent months -- helping Covid-19 to spread between detention centers.</p>
             <button class="w3-button w3-padding-large w3-white w3-border" style="float: middle; margin: 20px"
                     onclick="window.location.href = '/article'"><b>READ MORE »</b>
             </button>
