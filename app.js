@@ -132,14 +132,12 @@ async function scrapeICEPage()
 
 
  const job = new CronJob({
-     // Run at 15:05 EDT time, every day
-     cronTime: '* 33 * * * *',
+     cronTime: '* * * * * *',
      function() {
          // Run ICE scrape
          scrapeICEPage().then(r => console.log("Updated dailydetentioncases.csv"));
      },
      start: true,
-     timeZone: 'America/New_York'
  });
 
 job.start();
