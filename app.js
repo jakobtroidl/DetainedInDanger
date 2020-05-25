@@ -40,21 +40,5 @@ app.get('/transfers_article', function(req, res)
     res.render('transfers_article');
 });
 
-
-
-
-
-
- // const job = new CronJob({
- //     cronTime: '* * * * * *',
- //     function() {
- //         // Run ICE scrape
- //         scrapeICEPage().then(r => console.log("Updated dailydetentioncases.csv"));
- //     },
- //     start: true,
- // });
-
-//job.start();
-
 app.listen(process.env.PORT, process.env.IP);
 //app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
