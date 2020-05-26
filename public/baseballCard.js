@@ -30,7 +30,9 @@ baseballCard.prototype.init = function() {
     
     formatComma = d3.format(",");
 
-    d3.select("#title").text("Global Statistics");
+    d3.select("#title").text("Global Statistics")
+        .style("font-family", "'Franklin Gothic Book'")
+        .style("font-size", "x-large");
 
     d3.select("#facilityStats").style("display", "none");
 
