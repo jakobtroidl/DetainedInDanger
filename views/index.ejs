@@ -27,32 +27,40 @@ and is wrapped around the whole page content, except for the footer in this exam
             <!-- Blog entry -->
             <!-- <header class="w3-container w3-center w3-padding-32"> -->
             <div class="w3-card-4 w3-margin"
-                 style="height: 100%; background: white; background-image: url('barbed.jpg');background-size: cover; background-position: center;">
-                <div class="title">
+                 style="height: 100%; background: white; background-image: url('barbed_3.png'); background-size: cover; background-position: center;">
+                
+                 <div class="title">
                     <h1 class="w3-container w3-card"
-                        style="height: 100%; font-family: 'Franklin Gothic Book'; border: 1px solid #275889; float: left; background-color: white; opacity: .90; margin: 20px; padding: 15px">
+                        style="font-family: 'Franklin Gothic Book'; border: 1px solid #275889; float: left; background-color: white; opacity: .90; margin: 20px; padding: 15px">
                         <b>Detained In Danger: </b><br> The COVID-19 Epidemic Inside ICE Facilities</h1>
-                    <p class="w3-container w3-card"
-                       style="font-size: auto; height: 100%; width: auto; border: 1px solid #bc541e;float: right; background-color: white; opacity: .90; margin: 20px; padding: 15px">
-                        Compiled by the <b>Harvard
-                            College Data Analytics Group</b><br>under the auspices of <b>Human Rights First</b></p>
+                        <div class="img w3-card" style="padding:0px;">
+                            <img src="girl.jpg" alt="B&W image of girl" style="float: right; height: 27%; width: 27%; margin: 20px;">
+                       </div>
+                </div>
+                <div class="title">
+                    <h3 class="w3-container w3-card"
+                        style="font-family: 'Franklin Gothic Book'; border: 1px solid #bc541e; float: left; background-color: white; opacity: .90; margin: 20px; padding: 15px">
+                        Compiled by the <b>Harvard College Data Analytics Group</b><br>under the auspices of <b>Human Rights First</h3>
+                </div>
+                <div class="title">
                     <div class="w3-container w3-card"
-                         style="display: inline-block; border: 1px solid #f1ac7b; background-color: white; opacity: 0.92; margin: 20px; padding: 15px">
-                        <p style="font-size: medium;"> This database tracks instances of COVID-19 in ICE detention
-                            centers
-                            across the country. To date, <span id="positives"></span> ICE detainees have tested positive
-                            for
-                            COVID-19. This number continues to rapidly climb as facilities cramp detainees into small
-                            shared
-                            living spaces and ration PPE. In early May, the inevitable occured: after being denied
-                            release,
-                            the first ICE detainee tragically passed away from COVID-19.
-                            The map below provides an opportunity to learn about how the pandemic has infiltrated each
-                            ICE
-                            detention center differently. We then report data on testing administration and bring the
-                            map to
-                            life by tracking the lived experiences of detainees.</p>
-                    </div>
+                        style="display: inline-block; border: 1px solid #f1ac7b; background-color: white; opacity: 0.92; margin: 20px; padding: 15px">
+                        <p style="font-size: medium;"> 
+                            This database tracks instances of COVID-19 in ICE detention
+                        centers
+                        across the country. To date, <span id="positives"></span> ICE detainees have tested positive
+                        for
+                        COVID-19. This number continues to rapidly climb as facilities cramp detainees into small
+                        shared
+                        living spaces and ration PPE. In early May, the inevitable occured: after being denied
+                        release,
+                        the first ICE detainee tragically passed away from COVID-19.
+                        The map below provides an opportunity to learn about how the pandemic has infiltrated each
+                        ICE
+                        detention center differently. We then report data on testing administration and bring the
+                        map to
+                        life by tracking the lived experiences of detainees.</p>
+                     </div>
                 </div>
             </div>
         </div>
@@ -72,7 +80,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         </div>
                         <div style="height: 25vh; width: 100%; background: white">
                             <ul id="chartDiv" class="w3-ul w3-hoverable w3-white"
-                                style="overflow-y: auto; height: 100%; width:100%">
+                                style="overflow-y: scroll; height: 100%; width:100%;">
                                 <!-- ranking table is instered here-->
                             </ul>
                         </div>
