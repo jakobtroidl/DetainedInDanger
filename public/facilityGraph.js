@@ -75,7 +75,7 @@ facilityGraph.prototype.plotGraph = function (selectedFacility) {
         .filter(tick => Number.isInteger(tick));
 
     fg_svg.append("g")
-        .call(d3.axisLeft(fg_y));
+        .call(d3.axisLeft(fg_y).tickValues(yAxisTicks).tickFormat(d3.format("d")));
 
     // sorting array by date
     fgData = fgData.sort((a, b) => b.date - a.date)
