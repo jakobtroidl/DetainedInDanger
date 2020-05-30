@@ -1,3 +1,7 @@
+/* * * * * * * * * * * * * *
+*   Global line graph     *
+* * * * * * * * * * * * * */
+
 let brush_margin, brush_height, brush_width;
 
 brushVis = function (_parentElement, _data) {
@@ -27,6 +31,7 @@ brushVis.prototype.initVis = function () {
         .classed("svg-content", true);;
     
     let new_data = [];
+    
     Object.keys(this.data).forEach(function (k) {
             new_data.push({date: new Date(k), infections: totalICEHistory[k]});
         }
