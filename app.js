@@ -2,7 +2,7 @@ const express = require('express')
 const csv_loader = require('csv-load-sync');
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(express.static("public"));
 app.use(express.static("data"));
@@ -39,5 +39,5 @@ app.get('/transfers_article', function(req, res)
     console.log("hello");
 });
 
-app.listen(process.env.PORT, process.env.IP);
-//app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+//app.listen(process.env.PORT, process.env.IP);
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
