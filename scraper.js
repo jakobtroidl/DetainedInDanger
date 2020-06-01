@@ -83,7 +83,7 @@ async function scrapeICEPage()
         const day = today.getDate();
         const month = today.toLocaleString('default', { month: 'long' });
         const year = today.getFullYear();
-        let key = day + "/" + month + "/" + year;
+        let key = day + " " + month + " " + year;
         row[key] = infections_today;
 
         timeHistory.push(row);
