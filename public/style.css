@@ -17,6 +17,27 @@ div.tooltip {
 
 }
 
+.btn {
+    position: absolute;
+    top: 93%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #275889;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1;
+}
+
+.btn:hover {
+    background-color: #f1ac7b;
+}
+
 .background {
     fill: none;
     pointer-events: all;

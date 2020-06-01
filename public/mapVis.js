@@ -286,6 +286,10 @@ function clicked(d) {
         .style("stroke-width", 1.5 / scale + "px")
         .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
 
+    let zoom_btn = document.getElementById("zoom_btn");
+    console.log(zoom_btn);
+    zoom_btn.style.display = "";
+
 }
 
 
@@ -298,6 +302,9 @@ function resetMapZoom() {
         .duration(750)
         .style("stroke-width", "1.5px")
         .attr('transform', 'translate('+margin.left+','+margin.top+')');
+
+    let zoom_btn = document.getElementById("zoom_btn");
+    zoom_btn.style.display = "none";
 }
 
 mapVis.prototype.updateDot = function(center) {

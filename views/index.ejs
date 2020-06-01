@@ -163,8 +163,14 @@ and is wrapped around the whole page content, except for the footer in this exam
                                 statistics or click a state to zoom in.</p>
                         </div>
                         <div class="w3-container w3-white"
-                             style="display: inline-block; position: relative;overflow: hidden; height: 75vh;width: 100%;background: white;">
-                            <div id="mapDiv" style="height: 100%; width: 100%; background: white"></div>
+                             style="display: inline-block; position: relative; overflow: hidden; height: 75vh;width: 100%;background: white;">
+                            <div id="mapDiv" style="height: 100%; width: 100%; background: white;">
+
+                            </div>
+
+                            <button id="zoom_btn" class="btn" style="display: none" onclick="resetMapZoom()">-</button>
+
+
                         </div>
                         <div class="w3-container w3-white"
                              style="height: 100px; width: 100%; background: white; padding: 0;">
