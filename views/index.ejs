@@ -12,6 +12,12 @@
     body, h1, h2, h3, h4, h5 {
         font-family: "Arial", sans-serif
     }
+    @media only screen and (max-width: 768px) {
+    #images {
+        display: none; }
+    #headercol {
+        width: 100% }
+    }   
 </style>
 <body class="w3-light-grey">
 
@@ -23,7 +29,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="row">
 
         <div class="w3-row">
-            <div class="w3-col w3-padding" style="float: left; width: 66%">
+            <div id="headercol" class="w3-col w3-padding" style="float: left; width: 66%">
 
                 <div class="w3-card-4 w3-margin w3-margin-top"
                     style="height: 100%; background: white; background-image: url('barbed_3.png'); background-size: cover; background-position: center;">
@@ -58,14 +64,14 @@ and is wrapped around the whole page content, except for the footer in this exam
                 </div>
             </div>
 
-            <div class="w3-col" style="float: left; width: 34%;">
+            <div id="images" class="w3-col" style="float: left; width: 34%;">
                 <div >
-                    <img src="girl.jpg" class="w3-container"
+                    <img src="girl.jpg" class="w3-container w3-padding"
                         style="float: right; width: 100%; height: 100%; margin-top: 20px; margin-left: 5px"
                         alt="B&W image of girl">
                 </div>
                 <div >
-                    <img src="flag.png" class="w3-container"
+                    <img src="flag.png" class="w3-container w3-padding"
                         style="float: right; width: 100%; height: 100%; margin-top: 20px; margin-left: 5px"
                         alt="B&W image of flag">
                 </div>
