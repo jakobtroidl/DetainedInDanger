@@ -36,7 +36,11 @@ app.get('/adelanto_article', function(req, res)
 app.get('/transfers_article', function(req, res)
 {
     res.render('transfers_article');
-    console.log("hello");
+});
+
+app.get('/otay_article', function(req, res)
+{
+    res.render('otay_article');
 });
 
 //app.listen(process.env.PORT, process.env.IP);
