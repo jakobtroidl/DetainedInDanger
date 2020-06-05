@@ -15,49 +15,59 @@ async function scrapeICEPage()
     const page = await browser.newPage();
     await page.goto(url);
 
-    let i = 1;
+    let i = 2;
+    let term_counter = 0;
     let terminate = false;
     while(!terminate) {
         try {
-            const [el] = await page.$x('//*[@id="node-page-56400"]/div/div/div[2]/table[1]/tbody/tr/td[2]/ul/li[' + i + ']');
-            const text = await el.getProperty('textContent');
-            const name = await text.jsonValue();
+            const [cases] = await page.$x('//*[@id="node-page-56400"]/div/div/div[3]/table[2]/tbody/tr[' + i + ']/td[4]');
+            const [jail] = await page.$x('//*[@id="node-page-56400"]/div/div/div[3]/table[2]/tbody/tr[' + i + ']/td[1]/text()[1]');
 
-            // extracting data
-            const list = name.split(/\s+/);
-            const cases = list[0];
+            let text = await cases.getProperty('textContent');
+            const num_cases = await text.jsonValue();
 
-            // find end of jail name
-            let idx;
-            for (let j = 0; j < list.length; j++){
-                if (list[j].includes("(")){
-                    idx = j;
-                }
+            text = await jail.getProperty('textContent');
+            const jail_name = await text.jsonValue();
+
+            term_counter = 0;
+
+            console.log(num_cases + " in " + jail_name);
+
+            if(jail_name == "TOTAL"){
+                console.log("breaking");
+                break;
             }
-            const jail = list.slice(3, idx).join(" ");
 
-            const entry = {infections: cases, jail: jail};
+            const entry = {infections: num_cases, jail: jail_name};
             array.push(entry);
-            i++;
+
         }
         catch (e) {
-            terminate = true;
+            // do nothing
+        }
+        finally {
+            i++;
         }
     }
 
     // scrape number of tests
-    const [el_tests] = await page.$x('//*[@id="node-page-56400"]/div/div/div[2]/table[1]/tbody/tr/td[1]/div[4]');
+    const [el_tests] = await page.$x('//*[@id="node-page-56400"]/div/div/div[3]/table[1]/tbody/tr/td[3]/div[2]');
+
     const text_tests = await el_tests.getProperty('textContent');
     const name_tests = await text_tests.jsonValue();
 
     let number_tests = name_tests.replace(",", "");
 
     // scrape number of people detained
-    const [el_detained] = await page.$x('//*[@id="node-page-56400"]/div/div/div[2]/p[2]');
+    const [el_detained] = await page.$x('//*[@id="node-page-56400"]/div/div/div[3]/table[1]/tbody/tr/td[1]/div[2]');
     const text_detained = await el_detained.getProperty('textContent');
     const name_detained = await text_detained.jsonValue();
 
-    let number_detained = name_detained.split(":")[1].replace(",", "").replace(".", "").split(/\s+/)[1];
+    let number_detained = name_detained.replace(",", "");
+
+    //let number_detained = name_detained.split(":")[1].replace(",", "").replace(".", "").split(/\s+/)[1];
+
+    console.log(number_tests + ", " + number_detained);
 
     browser.close();
 
@@ -89,7 +99,6 @@ async function scrapeICEPage()
         timeHistory.push(row);
     })
 
-    //console.log(timeHistory);
     const csv = new csv_writer(timeHistory);
     await csv.toDisk('data/dailydetentioncases.csv', false);
 
@@ -97,3 +106,6 @@ async function scrapeICEPage()
 }
 
 scrapeICEPage();
+
+
+
