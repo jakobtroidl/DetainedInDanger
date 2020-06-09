@@ -214,9 +214,20 @@ and is wrapped around the whole page content, except for the footer in this exam
 
     <div class="w3-row l8 s12">
 
-
-
         <div class="w3-col l4">
+            <div class=" w3-card-4 w3-margin">
+
+                <div class="w3-container" style="background-color:#275889; color: white">
+                    <h3 style="font-family: Libre Franklin, sans-serif;"><b>Confirmed COVID-19 Cases in ICE Detention
+                            Centers (over time)</b></h3>
+                    <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
+                </div>
+
+                <div id="brushDiv" style="background: white; height: 30vh"></div>
+            </div>
+        </div>
+
+        <div class="w3-col l8">
             <div class="w3-card-4 w3-margin" style="background-color: white">
                 <div class="w3-container w3-padding" style="background-color: #f1ac7b;">
                     <h4 style="font-family: Libre Franklin, sans-serif; "><b>Limitations</b></h4>
@@ -236,20 +247,6 @@ and is wrapped around the whole page content, except for the footer in this exam
                 </div>
             </div>
         </div>
-
-        <div class="w3-col l8">
-            <div class=" w3-card-4 w3-margin">
-
-                <div class="w3-container" style="background-color:#275889; color: white">
-                    <h3 style="font-family: Libre Franklin, sans-serif;"><b>Confirmed COVID-19 Cases in ICE Detention
-                            Centers (over time)</b></h3>
-                    <h5>Updated as of, <span class="w3-opacity"> <%= latestUpdate %> </span></h5>
-                </div>
-
-                <div id="brushDiv" style="background: white; height: 30vh"></div>
-            </div>
-        </div>
-
     </div>
 
 
