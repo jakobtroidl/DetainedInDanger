@@ -34,7 +34,7 @@ Promise.all(promises)
 // initMainPage
 function initMainPage(dataArray) {
 
-    dailyCases = dataArray[0]; //TODO should be used in baseball card timeline
+    dailyCases = dataArray[0];
     totalCases = []; // used for dot color coding on map
     totalICEHistory = []; // used for global timeline
 
