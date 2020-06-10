@@ -45,6 +45,7 @@ baseballCard.prototype.init = function() {
     globalStats.select("#operator")
         .text(formatComma(num_detained));
     d3.select("#positives").text(formatComma(bc_new_data[0].infections));
+    d3.select("#article_positives").text(formatComma(bc_new_data[0].infections));
 
     var x = document.getElementById("globalbutton");
     x.style.display = "none";
