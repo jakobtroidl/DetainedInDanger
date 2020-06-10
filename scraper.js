@@ -27,11 +27,19 @@ async function scrapeICEPage()
             const num_cases = await text.jsonValue();
 
             text = await jail.getProperty('textContent');
-            const jail_name = await text.jsonValue();
+            let jail_name = await text.jsonValue();
 
             term_counter = 0;
 
-            console.log(num_cases + " in " + jail_name);
+            // mysterious space bugfix at aurora facility
+            let special = String.fromCharCode(160)
+
+            if(jail_name.endsWith(special))
+            {
+                jail_name = jail_name.slice(0, -1);
+            }
+
+            //console.log(num_cases + " in " + jail_name);
 
             if(jail_name == "TOTAL"){
                 console.log("breaking");
@@ -65,9 +73,7 @@ async function scrapeICEPage()
 
     let number_detained = name_detained.replace(",", "");
 
-    //let number_detained = name_detained.split(":")[1].replace(",", "").replace(".", "").split(/\s+/)[1];
-
-    console.log(number_tests + ", " + number_detained);
+    //console.log(number_tests + ", " + number_detained);
 
     browser.close();
 
@@ -82,8 +88,11 @@ async function scrapeICEPage()
 
     data.forEach(function (row) {
         let infections_today;
+
         let result = array.find(obj => obj.jail === row.Name);
-        if (result !== undefined){
+
+        if (result !== undefined)
+        {
             infections_today = result.infections;
         }
         else {
