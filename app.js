@@ -43,5 +43,5 @@ app.get('/otay_article', function(req, res)
     res.render('otay_article');
 });
 
-app.listen(process.env.PORT, process.env.IP);
-// app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+//app.listen(process.env.PORT, process.env.IP);
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
