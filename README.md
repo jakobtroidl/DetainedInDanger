@@ -1,4 +1,4 @@
-# humanrightsfirst
+# Detained in Danger
 
 ## Prerequisites
 * internet connection
