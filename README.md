@@ -1,4 +1,6 @@
 # Detained in Danger
+This project the result of a collaboration between the [Harvard College Data Analytics Club](https://www.harvardanalytics.org/) and [Human Rights First](https://www.humanrightsfirst.org/).
+
 
 ## Prerequisites
 * internet connection
