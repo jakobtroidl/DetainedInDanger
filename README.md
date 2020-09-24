@@ -4,7 +4,7 @@
 * internet connection
 * install node.js and npm. You can downlond both [here](https://www.npmjs.com/get-npm)
 
-## Get started
+## Getting started
 * navigate to the `/humanrightsfirst-master` folder
 * run `npm install`
 * run `node app.js`
